@@ -49,7 +49,10 @@ const socialX = SITE.socials.x;
     <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large'} />
     <meta name="theme-color" content="#fff8ec" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#121733" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <link rel="alternate" type="application/rss+xml" title={`${SITE_NAME} new games`} href="/rss.xml" />
     {ANALYTICS.googleSiteVerification && <meta name="google-site-verification" content={ANALYTICS.googleSiteVerification} />}
 

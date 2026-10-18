@@ -54,7 +54,14 @@ const jsonLd = [
 ];
 ---
 
-<BaseLayout title={info.metaTitle} description={info.metaDescription} path={path} noindex={noindex} jsonLd={jsonLd}>
+<BaseLayout
+  title={info.metaTitle}
+  description={info.metaDescription}
+  path={path}
+  ogImage={`/og/category-${category}.png`}
+  noindex={noindex}
+  jsonLd={jsonLd}
+>
   <div class="wrap">
     <Breadcrumbs items={crumbs} />
     <h1><span aria-hidden="true">{info.emoji}</span> {info.h1}</h1>

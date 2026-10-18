@@ -7,9 +7,10 @@
     "dev": "astro dev",
     "validate": "node scripts/validate-content.mjs",
     "check": "astro check",
-    "build": "node scripts/validate-content.mjs && astro check && astro build",
+    "build": "node scripts/validate-content.mjs && astro check && astro build && node scripts/audit-dist.mjs",
     "build:live": "node scripts/update-net-worth.mjs && npm run build",
     "update-net-worth": "node scripts/update-net-worth.mjs",
+    "icons": "node scripts/make-icons.mjs",
     "preview": "astro preview",
     "new-game": "node scripts/new-game.mjs"
   },
