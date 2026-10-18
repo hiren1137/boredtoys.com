@@ -5,8 +5,8 @@ import { join, relative, sep } from 'node:path';
 import { ROOT } from './lib/games.mjs';
 
 const DIST = join(ROOT, 'dist');
-const DOMAIN = readFileSync(join(ROOT, 'src/config/site.ts'), 'utf8').match(/DOMAIN = '([^']+)'/)?.[1];
-const ORIGIN = `https://${DOMAIN}`;
+const HOST = readFileSync(join(ROOT, 'src/config/site.ts'), 'utf8').match(/HOST = '([^']+)'/)?.[1];
+const ORIGIN = `https://${HOST}`;
 const REQUIRED_ICONS = ['/favicon.ico', '/favicon.svg', '/apple-touch-icon.png', '/site.webmanifest'];
 
 const walk = (dir) =>

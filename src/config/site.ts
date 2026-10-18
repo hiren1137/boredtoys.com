@@ -2,11 +2,13 @@
 
 export const SITE_NAME = 'BoredToys';
 export const DOMAIN = 'boredtoys.com';
+// Canonical host. The other host must 301-redirect here.
+export const HOST = 'www.boredtoys.com';
 
 export const SITE = {
   name: SITE_NAME,
   domain: DOMAIN,
-  url: `https://${DOMAIN}`,
+  url: `https://${HOST}`,
   tagline: 'Tiny, silly games for when you are bored',
   description:
     'Free, silly browser games and toys you can play in seconds. No downloads, no sign-ups, just fun games to play when bored.',
