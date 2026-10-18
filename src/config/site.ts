@@ -25,7 +25,7 @@ export const SITE = {
 
 export const ANALYTICS = {
   cloudflareToken: '', // Cloudflare Web Analytics token
-  googleSiteVerification: '', // Google Search Console meta tag content
+  googleSiteVerification: '0WC0ZFEvoXUX90MpyYWk8KtghoGrR1YD-OJy9tpNoQg', // Google Search Console meta tag content
 };
 
 export const ADS_ENABLED = false;
