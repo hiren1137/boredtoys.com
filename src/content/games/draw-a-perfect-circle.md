@@ -52,9 +52,9 @@ You will see a small black dot in the middle of the drawing area. Your job is to
 2. Drag all the way around the dot without lifting.
 3. When you get back to where you started, the game stops and gives you a score.
 
-As you draw, your line changes color. Green means that part of the line sits at a nice, even distance from the dot. Yellow and orange mean you are starting to drift. Red means that part has wandered far off. You can watch your live score change under the dot while you draw.
+As you draw, your line changes color. Green means that part of the line sits at a nice, even distance from the dot. Yellow and orange mean you are starting to drift. Red means that part has wandered far off. You can watch your live score change under the dot while you draw. With sound on, a tone plays as you go, and it climbs higher the rounder your circle gets. Tap the speaker button in the corner to mute it.
 
-A few things will end your round early. Starting too close to the dot, drawing through it, taking longer than 8 seconds, or making a circle that is too small all count as a fail. Letting go before you get most of the way around counts too. Do not worry, you can try again right away.
+A few things will end your round early. Starting too close to the dot, drawing through it, taking longer than 8 seconds, or making a circle that is too small all count as a fail. Letting go before you get most of the way around counts too. Do not worry, there is no button to press. Just start drawing again.
 
 ## What Your Score Means
 

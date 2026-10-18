@@ -1,9 +1,10 @@
 import './game.css';
 import { getBest, saveBest } from '../../lib/storage';
-import { createResultPanel } from '../../lib/result-panel';
+import { buildShareRow, readContext } from '../../lib/share';
+import { createSound } from './sound';
 
 const SLUG = 'draw-a-perfect-circle';
-type State = 'start' | 'playing' | 'result';
+type State = 'idle' | 'playing' | 'scored' | 'failed';
 interface Pt {
   x: number;
   y: number;
@@ -16,19 +17,19 @@ const FULL_TURN = Math.PI * 2;
 const ALMOST_FULL = FULL_TURN * 0.94;
 
 const FAILS = {
-  close: ['Too close to the dot! Give it some room to breathe.', 'You poked the dot. The dot is upset.'],
-  small: ['That is a dot, not a circle. Go bigger!', 'Tiny! Even an ant would want more room.'],
-  slow: ['Too slow! The circle fell asleep.', 'Circles are fast. Try it in one smooth swoop.'],
-  loop: ['Go all the way around the dot!', 'That is a rainbow, not a circle. Keep going around.'],
+  close: ['Too close to the dot!', 'You poked the dot. The dot is upset.'],
+  small: ['Too small! Go bigger.', 'Tiny! Even an ant wants more room.'],
+  slow: ['Too slow! Try one smooth swoop.', 'The circle fell asleep. Go faster!'],
+  loop: ['Go all the way around!', 'That is a rainbow, not a circle.'],
 };
 const pick = (arr: string[]) => arr[Math.floor(Math.random() * arr.length)];
 
 function verdict(score: number): string {
   if (score >= 98) return 'Are you secretly a compass? 🧭';
-  if (score >= 95) return 'Wow. Mathematicians are weeping with joy.';
-  if (score >= 90) return 'Super round! That is a seriously good circle.';
-  if (score >= 80) return 'Nice and round. A little wobble, but nice.';
-  if (score >= 70) return 'Round-ish. It has a lot of personality.';
+  if (score >= 95) return 'Mathematicians are weeping with joy.';
+  if (score >= 90) return 'Super round!';
+  if (score >= 80) return 'Nice and round.';
+  if (score >= 70) return 'Round-ish. Lots of personality.';
   if (score >= 50) return 'That is more of a potato. 🥔';
   return 'Bold. Abstract. Not a circle. 🎨';
 }
@@ -58,26 +59,39 @@ function roundness(points: Pt[], c: Pt): { score: number; mean: number } {
   return { score, mean };
 }
 
+const scoreColor = (score: number) => `hsl(${Math.round(Math.max(0, Math.min(1, (score - 50) / 45)) * 140)} 70% 36%)`;
+
 export function mount(root: HTMLElement): void {
+  const sound = createSound();
+  const share = readContext(root);
+
   const el = document.createElement('div');
   el.className = 'g-circle';
   el.tabIndex = -1;
-  const canvas = document.createElement('canvas');
-  canvas.className = 'g-canvas';
-  canvas.setAttribute('role', 'img');
-  canvas.setAttribute('aria-label', 'Drawing area. Draw a circle around the dot in the middle.');
-  const live = document.createElement('div');
-  live.className = 'g-live';
-  live.setAttribute('aria-hidden', 'true');
-  const hint = document.createElement('div');
-  hint.className = 'g-hint';
-  const overlay = document.createElement('div');
-  overlay.className = 'g-overlay';
-  el.append(canvas, live, hint, overlay);
+  el.innerHTML = `
+    <canvas class="g-canvas" role="img" aria-label="Drawing area. Draw a circle around the dot in the middle."></canvas>
+    <div class="g-center" role="status" aria-live="polite">
+      <p class="g-score" data-score></p>
+      <p class="g-msg" data-msg></p>
+      <p class="g-best" data-best></p>
+    </div>
+    <button type="button" class="g-mute" data-mute></button>
+    <div class="g-bar">
+      <p class="g-hint" data-hint></p>
+      <div class="g-share" data-share hidden></div>
+    </div>`;
   root.append(el);
 
+  const canvas = el.querySelector('canvas')!;
   const ctx = canvas.getContext('2d')!;
-  let state: State = 'start';
+  const scoreEl = el.querySelector<HTMLElement>('[data-score]')!;
+  const msgEl = el.querySelector<HTMLElement>('[data-msg]')!;
+  const bestEl = el.querySelector<HTMLElement>('[data-best]')!;
+  const hintEl = el.querySelector<HTMLElement>('[data-hint]')!;
+  const shareEl = el.querySelector<HTMLElement>('[data-share]')!;
+  const muteBtn = el.querySelector<HTMLButtonElement>('[data-mute]')!;
+
+  let state: State = 'idle';
   let w = 0;
   let h = 0;
   let center: Pt = { x: 0, y: 0 };
@@ -87,6 +101,24 @@ export function mount(root: HTMLElement): void {
   let startTime = 0;
   let pointerId: number | null = null;
   let timer = 0;
+  let lastScore = '';
+
+  function setState(next: State): void {
+    state = next;
+    el.dataset.state = next;
+  }
+
+  function renderMute(): void {
+    const muted = sound.isMuted();
+    muteBtn.textContent = muted ? '🔇' : '🔊';
+    muteBtn.setAttribute('aria-label', muted ? 'Turn sound on' : 'Turn sound off');
+    muteBtn.setAttribute('aria-pressed', String(muted));
+  }
+
+  function bestText(): string {
+    const best = getBest(SLUG);
+    return best != null ? `Best: ${best.toFixed(1)}%` : '';
+  }
 
   function resize(): void {
     const rect = el.getBoundingClientRect();
@@ -98,8 +130,9 @@ export function mount(root: HTMLElement): void {
     canvas.style.width = `${w}px`;
     canvas.style.height = `${h}px`;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const moved = Math.abs(center.x - w / 2) > 1 || Math.abs(center.y - h / 2) > 1;
     center = { x: w / 2, y: h / 2 };
-    if (state === 'playing') reset();
+    if (moved && state !== 'idle') idle();
     else redraw();
   }
 
@@ -109,7 +142,8 @@ export function mount(root: HTMLElement): void {
     return `hsl(${Math.round(140 - off * 140)} 75% ${42 - off * 4}%)`;
   }
 
-  function drawDot(): void {
+  function redraw(): void {
+    ctx.clearRect(0, 0, w, h);
     ctx.beginPath();
     ctx.arc(center.x, center.y, 7, 0, FULL_TURN);
     ctx.fillStyle = '#1f1a2e';
@@ -119,48 +153,38 @@ export function mount(root: HTMLElement): void {
     ctx.strokeStyle = 'rgba(31,26,46,.25)';
     ctx.lineWidth = 2;
     ctx.stroke();
-  }
-
-  function redraw(): void {
-    ctx.clearRect(0, 0, w, h);
-    drawDot();
     if (points.length < 2) return;
     const { mean } = roundness(points, center);
     ctx.lineCap = 'round';
     ctx.lineJoin = 'round';
     ctx.lineWidth = 7;
+    ctx.globalAlpha = state === 'failed' ? 0.35 : 1;
     for (let i = 1; i < points.length; i++) {
       const a = points[i - 1];
       const b = points[i];
-      const r = Math.hypot(b.x - center.x, b.y - center.y);
-      ctx.strokeStyle = colorFor(r, mean);
+      ctx.strokeStyle = state === 'failed' ? '#9a93a8' : colorFor(Math.hypot(b.x - center.x, b.y - center.y), mean);
       ctx.beginPath();
       ctx.moveTo(a.x, a.y);
       ctx.lineTo(b.x, b.y);
       ctx.stroke();
     }
+    ctx.globalAlpha = 1;
   }
 
-  function setHint(text: string): void {
-    hint.textContent = text;
+  function showText(score: string, msg: string, best: string, color = ''): void {
+    scoreEl.textContent = score;
+    scoreEl.style.color = color;
+    msgEl.textContent = msg;
+    bestEl.textContent = best;
   }
 
-  function reset(): void {
+  function idle(): void {
+    release();
     points = [];
-    angle = 0;
-    pointerId = null;
-    window.clearTimeout(timer);
-    live.textContent = '';
-    live.classList.remove('is-shown');
-    state = 'start';
-    overlay.replaceChildren();
-    el.dataset.state = state;
-    const best = getBest(SLUG);
-    setHint(
-      best != null
-        ? `Draw a circle around the dot in one stroke. Your best: ${best.toFixed(1)}%`
-        : 'Draw a circle around the dot in one stroke',
-    );
+    setState('idle');
+    showText('', '', '');
+    shareEl.hidden = true;
+    hintEl.textContent = getBest(SLUG) != null ? `✏️ Draw a circle around the dot · ${bestText()}` : '✏️ Draw a circle around the dot';
     redraw();
   }
 
@@ -171,8 +195,9 @@ export function mount(root: HTMLElement): void {
 
   function begin(e: PointerEvent): void {
     if (pointerId !== null) return;
-    if (state === 'result') reset();
     const p = local(e);
+    points = [];
+    shareEl.hidden = true;
     if (Math.hypot(p.x - center.x, p.y - center.y) < DOT_ZONE) {
       fail(pick(FAILS.close));
       return;
@@ -183,9 +208,9 @@ export function mount(root: HTMLElement): void {
     } catch {
       // Capture is a nice-to-have; drawing still works without it.
     }
-    state = 'playing';
-    el.dataset.state = state;
-    setHint('');
+    setState('playing');
+    hintEl.textContent = '';
+    showText('', '', '');
     points = [p];
     angle = 0;
     lastAngle = Math.atan2(p.y - center.y, p.x - center.x);
@@ -193,6 +218,7 @@ export function mount(root: HTMLElement): void {
     timer = window.setTimeout(() => {
       if (state === 'playing') fail(pick(FAILS.slow));
     }, MAX_MS);
+    sound.startTone();
     redraw();
   }
 
@@ -219,10 +245,11 @@ export function mount(root: HTMLElement): void {
         return;
       }
     }
-    const { score } = roundness(points, center);
     if (points.length > 8) {
-      live.textContent = `${score.toFixed(1)}%`;
-      live.classList.add('is-shown');
+      const { score } = roundness(points, center);
+      scoreEl.textContent = `${score.toFixed(1)}%`;
+      scoreEl.style.color = scoreColor(score);
+      sound.updateTone(score);
     }
     redraw();
   }
@@ -241,41 +268,11 @@ export function mount(root: HTMLElement): void {
 
   function fail(message: string): void {
     release();
-    state = 'result';
-    el.dataset.state = state;
-    live.classList.remove('is-shown');
+    setState('failed');
+    sound.fail();
+    showText('✗', message, bestText());
+    hintEl.textContent = 'Draw again any time';
     redraw();
-    const best = getBest(SLUG);
-    overlay.replaceChildren(
-      createResultPanel(root, {
-        label: 'Oops',
-        score: '✗',
-        message,
-        best: best != null ? `${best.toFixed(1)}%` : undefined,
-        playAgainLabel: '✏️ Try again',
-        onPlayAgain: reset,
-        hideShare: true,
-      }),
-    );
-  }
-
-  /** Small copy of the drawing so it stays visible next to the score. */
-  function preview(): HTMLCanvasElement {
-    let reach = 0;
-    for (const p of points) reach = Math.max(reach, Math.abs(p.x - center.x), Math.abs(p.y - center.y));
-    const half = reach + 10;
-    const size = 96;
-    const small = document.createElement('canvas');
-    const dpr = canvas.width / w;
-    small.width = size * 2;
-    small.height = size * 2;
-    small.className = 'g-preview';
-    small.setAttribute('role', 'img');
-    small.setAttribute('aria-label', 'Your circle');
-    small
-      .getContext('2d')
-      ?.drawImage(canvas, (center.x - half) * dpr, (center.y - half) * dpr, half * 2 * dpr, half * 2 * dpr, 0, 0, size * 2, size * 2);
-    return small;
   }
 
   function finish(): void {
@@ -284,26 +281,23 @@ export function mount(root: HTMLElement): void {
     const { score, mean } = roundness(points, center);
     if (mean < MIN_RADIUS) return fail(pick(FAILS.small));
     if (elapsed > MAX_MS) return fail(pick(FAILS.slow));
-    state = 'result';
-    el.dataset.state = state;
+    setState('scored');
     const rounded = Math.round(score * 10) / 10;
-    live.textContent = `${rounded.toFixed(1)}%`;
-    live.classList.add('is-shown');
-    redraw();
     const { best, isNewBest } = saveBest(SLUG, rounded);
-    overlay.replaceChildren(
-      createResultPanel(root, {
-        label: 'Your circle is',
-        score: `${rounded.toFixed(1)}%`,
-        message: verdict(rounded),
-        best: `${best.toFixed(1)}%`,
-        isNewBest,
-        extra: preview(),
-        playAgainLabel: '✏️ Draw again',
-        onPlayAgain: reset,
-      }),
-    );
+    lastScore = `${rounded.toFixed(1)}%`;
+    sound.chime(rounded, isNewBest);
+    showText(lastScore, verdict(rounded), isNewBest ? '🏆 New best!' : `Best: ${best.toFixed(1)}%`, scoreColor(rounded));
+    hintEl.textContent = 'Draw again any time';
+    shareEl.hidden = false;
+    redraw();
   }
+
+  shareEl.append(buildShareRow(share, () => lastScore || undefined));
+  renderMute();
+  muteBtn.addEventListener('click', () => {
+    sound.setMuted(!sound.isMuted());
+    renderMute();
+  });
 
   canvas.addEventListener('pointerdown', (e) => {
     if (e.button !== 0 && e.pointerType === 'mouse') return;
@@ -316,14 +310,14 @@ export function mount(root: HTMLElement): void {
     if (e.pointerId === pointerId) fail(pick(FAILS.loop));
   });
   el.addEventListener('keydown', (e) => {
-    if ((e.key === ' ' || e.key === 'Enter' || e.key === 'r' || e.key === 'Escape') && state !== 'start') {
-      if ((e.target as HTMLElement).closest('button, a') && e.key !== 'Escape') return;
+    if ((e.key === 'Escape' || e.key === 'r') && state !== 'idle') {
       e.preventDefault();
-      reset();
+      sound.stopTone();
+      idle();
     }
   });
 
   new ResizeObserver(() => resize()).observe(el);
   resize();
-  reset();
+  idle();
 }
