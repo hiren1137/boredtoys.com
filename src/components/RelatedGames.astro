@@ -1,0 +1,20 @@
+---
+import GameGrid from './GameGrid.astro';
+import { relatedGames, type Game } from '../lib/games';
+
+interface Props {
+  current: Game;
+  all: Game[];
+}
+const { current, all } = Astro.props;
+const games = relatedGames(current, all, 4);
+---
+
+{
+  games.length > 0 && (
+    <section class="section" aria-labelledby="related-title">
+      <h2 id="related-title" class="section-title">More Games Like {current.data.title}</h2>
+      <GameGrid games={games} />
+    </section>
+  )
+}

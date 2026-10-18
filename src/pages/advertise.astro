@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE, SITE_NAME, SPONSORS_ENABLED, SPONSOR_PRICES } from '../config/site';
+
+const slots = [
+  {
+    key: 'homeTile' as const,
+    name: 'Homepage Tile',
+    text: 'A tile inside the homepage game grid, styled like a game card and clearly labeled "Sponsored". It links straight to your site.',
+  },
+  {
+    key: 'gameBar' as const,
+    name: 'Game Page Bar',
+    text: 'A slim bar right under the game on every game page, where players look when a round ends.',
+  },
+  {
+    key: 'footer' as const,
+    name: 'Footer Line',
+    text: 'A short line with your name and link in the footer of every page on the site.',
+  },
+];
+const mail = `mailto:${SITE.contactEmail}?subject=${encodeURIComponent(`Sponsoring ${SITE_NAME}`)}`;
+---
+
+<BaseLayout
+  title={`Advertise on ${SITE_NAME}`}
+  description={`Sponsor a spot on ${SITE_NAME}, a growing site of free silly browser games. Simple, clearly labeled placements with no tracking pixels needed.`}
+  path="/advertise/"
+  noindex={!SPONSORS_ENABLED}
+>
+  <div class="wrap prose">
+    <h1>Advertise on {SITE_NAME}</h1>
+    <p class="lede">Put your brand in front of people who are having a good time.</p>
+    <p>
+      We offer a small number of simple sponsor spots. Every sponsor link is clearly labeled, opens in a new tab and
+      never pops up or covers a game. We keep it friendly, because that is why people come here.
+    </p>
+    <h2>Available Spots</h2>
+    <ul class="slots">
+      {
+        slots.map((s) => (
+          <li class="sticker slot">
+            <h3>{s.name}</h3>
+            <p>{s.text}</p>
+            {SPONSOR_PRICES[s.key] && <p class="price">{SPONSOR_PRICES[s.key]}</p>}
+          </li>
+        ))
+      }
+    </ul>
+    <h2>Get in Touch</h2>
+    <p>Tell us a little about your product and which spot you like. We will reply with dates and details.</p>
+    <p><a class="btn btn--big btn--mint" href={mail}>✉️ Contact Us About Sponsoring</a></p>
+  </div>
+</BaseLayout>
+
+<style>
+  .slots {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 16px;
+  }
+  .slot {
+    padding: 16px 18px;
+  }
+  .slot h3 {
+    margin-bottom: 4px;
+  }
+  .slot p {
+    margin: 0;
+  }
+  .price {
+    margin-top: 8px !important;
+    font-weight: 900;
+  }
+</style>

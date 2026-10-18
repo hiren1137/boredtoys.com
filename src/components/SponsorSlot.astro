@@ -1,0 +1,31 @@
+---
+import { sponsorsFor, type SponsorPlacement } from '../data/sponsors';
+
+interface Props {
+  placement: Exclude<SponsorPlacement, 'home-grid'>;
+}
+const { placement } = Astro.props;
+const sponsor = sponsorsFor(placement)[0];
+---
+
+{
+  sponsor && placement === 'game-bar' && (
+    <aside class="sponsor-bar sticker" aria-label="Sponsor">
+      <span class="sponsor-label">Sponsored</span>
+      <span aria-hidden="true">{sponsor.emoji}</span>
+      <a href={sponsor.url} rel="sponsored noopener" target="_blank">{sponsor.name}</a>
+      <span>{sponsor.text}</span>
+    </aside>
+  )
+}
+{
+  sponsor && placement === 'footer' && (
+    <p class="footer-sponsor">
+      <span class="sponsor-label">Sponsored by</span>{' '}
+      <a href={sponsor.url} rel="sponsored noopener" target="_blank">
+        {sponsor.emoji} {sponsor.name}
+      </a>{' '}
+      – {sponsor.text}
+    </p>
+  )
+}

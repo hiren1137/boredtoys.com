@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { gamePath, getGames } from '../lib/games';
+
+const games = await getGames();
+const paths = games.map((g) => gamePath(g.data.slug));
+---
+
+<BaseLayout title="Random Game" description="Opens a random game." path="/random/" noindex>
+  <div class="wrap prose">
+    <h1>Rolling the Dice…</h1>
+    <p id="random-msg">Picking a random game for you. If nothing happens, pick one below.</p>
+    <ul>
+      {games.map((g) => <li><a href={gamePath(g.data.slug)}>{g.data.title}</a></li>)}
+    </ul>
+  </div>
+  <script is:inline define:vars={{ paths }}>
+    (function () {
+      var from = '';
+      try {
+        from = new URL(document.referrer).pathname;
+      } catch (e) {}
+      var pool = paths.filter(function (p) {
+        return p !== from;
+      });
+      if (!pool.length) pool = paths;
+      if (pool.length) location.replace(pool[Math.floor(Math.random() * pool.length)]);
+    })();
+  </script>
+</BaseLayout>

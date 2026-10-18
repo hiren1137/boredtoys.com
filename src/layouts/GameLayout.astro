@@ -1,0 +1,113 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Faq from '../components/Faq.astro';
+import RelatedGames from '../components/RelatedGames.astro';
+import NewGames from '../components/NewGames.astro';
+import ShareButtons from '../components/ShareButtons.astro';
+import AdSlot from '../components/AdSlot.astro';
+import SponsorSlot from '../components/SponsorSlot.astro';
+import NetWorthSource from '../components/NetWorthSource.astro';
+import { CATEGORIES, SITE, SITE_NAME } from '../config/site';
+import { absUrl, categoryPath, gameColor, gamePath, type Game } from '../lib/games';
+
+interface Props {
+  game: Game;
+  all: Game[];
+}
+const { game, all } = Astro.props;
+const d = game.data;
+const cat = CATEGORIES[d.category];
+const path = gamePath(d.slug);
+const url = absUrl(path);
+const ogImage = `/og/${d.slug}.png`;
+
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: `${cat.label} Games`, href: categoryPath(d.category) },
+  { name: d.title, href: path },
+];
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'VideoGame',
+    name: d.title,
+    description: d.metaDescription,
+    url,
+    image: absUrl(ogImage),
+    genre: cat.label,
+    gamePlatform: 'Web browser',
+    applicationCategory: 'Game',
+    operatingSystem: 'Any',
+    inLanguage: SITE.lang,
+    isAccessibleForFree: true,
+    keywords: [d.primaryKeyword, ...d.secondaryKeywords].join(', '),
+    datePublished: d.publishedAt.toISOString().slice(0, 10),
+    dateModified: d.updatedAt.toISOString().slice(0, 10),
+    offers: { '@type': 'Offer', price: 0, priceCurrency: 'USD', availability: 'https://schema.org/InStock' },
+    publisher: { '@type': 'Organization', name: SITE_NAME, url: absUrl('/') },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: crumbs.map((c, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: c.name,
+      item: absUrl(c.href),
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: d.faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.question,
+      acceptedAnswer: { '@type': 'Answer', text: f.answer },
+    })),
+  },
+];
+
+const stageStyle = `--stage-h: ${d.stageHeight}px; --stage-h-mobile: ${d.stageHeightMobile ?? d.stageHeight}px;`;
+---
+
+<BaseLayout title={d.metaTitle} description={d.metaDescription} path={path} ogImage={ogImage} jsonLd={jsonLd}>
+  <div class="wrap">
+    <Breadcrumbs items={crumbs} />
+    <header class="game-head">
+      <h1>{d.h1}</h1>
+      <p class="game-intro">{d.intro}</p>
+      <NetWorthSource slug={d.slug} />
+    </header>
+
+    <div class="game-box" style={`--cat-color: ${gameColor(game)}`}>
+      <div
+        class="game-stage"
+        style={stageStyle}
+        data-game
+        data-game-root
+        data-slug={d.slug}
+        data-title={d.title}
+        data-url={url}
+        data-share-text={d.shareText}
+        data-site-name={SITE_NAME}
+      >
+        <div class="game-loading" data-game-loading>Loading the toy box…</div>
+        <noscript><div class="game-loading">This game needs JavaScript turned on to play.</div></noscript>
+      </div>
+    </div>
+
+    <ShareButtons title={d.title} url={url} />
+    <SponsorSlot placement="game-bar" />
+    <AdSlot id="below-game" />
+
+    <article class="page-copy prose">
+      <slot />
+    </article>
+
+    <Faq faqs={d.faqs} />
+    <RelatedGames current={game} all={all} />
+    <NewGames all={all} exclude={d.slug} />
+  </div>
+</BaseLayout>

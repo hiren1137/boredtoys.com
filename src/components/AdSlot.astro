@@ -1,0 +1,16 @@
+---
+import { ADS_ENABLED, AD_SLOT_HEIGHT } from '../config/site';
+
+interface Props {
+  id: string;
+}
+const { id } = Astro.props;
+---
+
+{
+  ADS_ENABLED && (
+    <aside class="ad-slot" id={`ad-${id}`} aria-label="Advertisement" style={`--ad-h: ${AD_SLOT_HEIGHT}px`}>
+      {/* Ad network snippet goes here once ads are enabled. */}
+    </aside>
+  )
+}

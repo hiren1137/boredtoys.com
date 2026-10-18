@@ -1,0 +1,207 @@
+.g-spend {
+  padding: 0 0 20px;
+  color: var(--ink);
+}
+.g-spend .sp-bar {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  padding: 12px 16px 10px;
+  text-align: center;
+  background: var(--mint);
+  color: #1f1a2e;
+  border-bottom: 3px solid var(--line);
+}
+.g-spend .sp-left {
+  margin: 0;
+}
+.g-spend .sp-money {
+  font-family: var(--font-round);
+  font-weight: 900;
+  font-size: clamp(1.45rem, 6.2vw, 2.6rem);
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+}
+.g-spend .sp-meter {
+  height: 10px;
+  max-width: 520px;
+  margin: 8px auto 6px;
+  background: #fffdf7;
+  border: 2px solid #1f1a2e;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.g-spend .sp-meter span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: var(--tomato);
+  transition: width 0.3s ease;
+}
+.g-spend .sp-meta {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+.g-spend .sp-grid {
+  list-style: none;
+  margin: 0;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+@media (min-width: 640px) {
+  .g-spend .sp-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+}
+@media (min-width: 980px) {
+  .g-spend .sp-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+.g-spend .sp-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 12px 10px;
+  background: #fffdf7;
+  color: #1f1a2e;
+  border: 2px solid #1f1a2e;
+  border-radius: 16px;
+  box-shadow: 3px 3px 0 var(--shadow);
+  transition: transform 0.15s ease;
+}
+.g-spend .sp-item.is-owned {
+  background: #fff3b0;
+}
+.g-spend .sp-item.is-broke {
+  animation: sp-shake 0.35s ease;
+}
+@keyframes sp-shake {
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-2px); }
+}
+.g-spend .sp-icon svg {
+  width: 64px;
+  height: 64px;
+  display: block;
+}
+.g-spend .sp-name {
+  margin: 6px 0 0;
+  font-weight: 800;
+  line-height: 1.2;
+  font-size: 0.98rem;
+}
+.g-spend .sp-note {
+  margin: 2px 0 0;
+  font-size: 0.75rem;
+  color: #4a4458;
+}
+.g-spend .sp-price {
+  margin: 4px 0 10px;
+  font-weight: 900;
+  color: #1a7a43;
+  font-variant-numeric: tabular-nums;
+}
+.g-spend .sp-controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  width: 100%;
+  margin-top: auto;
+}
+.g-spend .sp-qty {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  width: 100%;
+  min-height: 40px;
+  padding: 4px 8px;
+  font: inherit;
+  font-weight: 800;
+  text-align: center;
+  color: #1f1a2e;
+  background: #fff;
+  border: 2px solid #1f1a2e;
+  border-radius: 10px;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+.g-spend .sp-qty::-webkit-inner-spin-button,
+.g-spend .sp-qty::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.g-spend .sp-controls .btn {
+  min-height: 40px;
+  padding: 0.25em 0.4em;
+  width: 100%;
+}
+@media (min-width: 640px) {
+  .g-spend .sp-controls {
+    grid-template-columns: 1fr 1.1fr 1fr;
+  }
+  .g-spend .sp-qty {
+    grid-column: 2;
+  }
+  .g-spend .sp-sell {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .g-spend .sp-buy {
+    grid-column: 3;
+    grid-row: 1;
+  }
+}
+.g-spend .sp-receipt {
+  padding: 8px 16px 0;
+  display: grid;
+  gap: 20px;
+  justify-items: center;
+}
+.g-spend .sp-receipt[hidden] {
+  display: none;
+}
+.g-spend .sp-paper {
+  width: 100%;
+  max-width: 460px;
+  padding: 20px 22px;
+  background: #fffdf7;
+  color: #1f1a2e;
+  border: 2px solid #1f1a2e;
+  border-radius: 6px;
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  box-shadow: 4px 4px 0 var(--shadow);
+}
+.g-spend .sp-receipt-title {
+  margin: 0 0 12px;
+  text-align: center;
+  font-family: inherit;
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.g-spend .sp-lines {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 10px;
+  border-bottom: 2px dashed #1f1a2e;
+}
+.g-spend .sp-lines li,
+.g-spend .sp-total {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.9rem;
+  padding: 3px 0;
+}
+.g-spend .sp-total {
+  margin: 10px 0 0;
+  font-weight: 900;
+  font-size: 1rem;
+}

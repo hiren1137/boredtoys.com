@@ -1,0 +1,11 @@
+---
+import { SITE_NAME } from '../config/site';
+import Mascot from './Mascot.astro';
+
+const letters = [...SITE_NAME];
+---
+
+<a href="/" class="logo" id="site-logo" aria-label={`${SITE_NAME} home`}>
+  <Mascot />
+  <span class="logo-text" aria-hidden="true">{letters.map((ch) => <span>{ch}</span>)}</span>
+</a>

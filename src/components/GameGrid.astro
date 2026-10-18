@@ -1,0 +1,55 @@
+---
+import GameCard from './GameCard.astro';
+import { sponsorsFor } from '../data/sponsors';
+import type { Game } from '../lib/games';
+
+interface Props {
+  games: Game[];
+  wide?: boolean;
+  stagger?: boolean;
+  surprise?: boolean;
+  sponsor?: boolean;
+  id?: string;
+}
+const { games, wide = false, stagger = false, surprise = false, sponsor = false, id } = Astro.props;
+const sponsorTile = sponsor ? sponsorsFor('home-grid')[0] : undefined;
+const sponsorAt = Math.min(4, Math.max(0, games.length - 1));
+const classes = ['game-grid', wide && 'game-grid--wide', stagger && 'grid-stagger'].filter(Boolean).join(' ');
+---
+
+<ul class={classes} id={id}>
+  {
+    games.map((g, i) => (
+      <>
+        {sponsorTile && i === sponsorAt && (
+          <li data-sponsor style={`--i: ${i}`}>
+            <a class="tile tile--sponsor" href={sponsorTile.url} rel="sponsored noopener" target="_blank" style="--tile-bg: var(--card); color: var(--ink)">
+              <span class="tile-art" aria-hidden="true">
+                {sponsorTile.logo ? <img src={sponsorTile.logo} alt="" width="120" height="90" /> : sponsorTile.emoji}
+              </span>
+              <span class="tile-body" style="flex-direction: column">
+                <span class="sponsor-label">Sponsored</span>
+                <span class="tile-title">{sponsorTile.name}</span>
+                <span>{sponsorTile.text}</span>
+              </span>
+            </a>
+          </li>
+        )}
+        <li data-category={g.data.category} style={`--i: ${i}`}>
+          <GameCard game={g} index={i} />
+        </li>
+      </>
+    ))
+  }
+  {
+    surprise && (
+      <li data-surprise style={`--i: ${games.length}`}>
+        <a class="tile tile--surprise" href="/random/">
+          <span class="surprise-dice" aria-hidden="true">🎲</span>
+          <span class="tile-title">Surprise me</span>
+          <span>Open a random game</span>
+        </a>
+      </li>
+    )
+  }
+</ul>

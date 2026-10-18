@@ -1,0 +1,40 @@
+---
+import { render } from 'astro:content';
+import GameLayout from '../layouts/GameLayout.astro';
+import { getGames, type Game } from '../lib/games';
+
+export async function getStaticPaths() {
+  const all = await getGames();
+  return all.map((game) => ({ params: { slug: game.data.slug }, props: { game, all } }));
+}
+
+interface Props {
+  game: Game;
+  all: Game[];
+}
+const { game, all } = Astro.props;
+const { Content } = await render(game);
+---
+
+<GameLayout game={game} all={all}>
+  <Content />
+</GameLayout>
+
+<script>
+  type GameModule = { mount: (root: HTMLElement) => void };
+  const modules = import.meta.glob<GameModule>('../games/*/game.ts');
+  const root = document.querySelector<HTMLElement>('[data-game-root]');
+  const load = root && modules[`../games/${root.dataset.slug}/game.ts`];
+  if (root && load) {
+    load()
+      .then((m) => {
+        root.querySelector('[data-game-loading]')?.remove();
+        m.mount(root);
+      })
+      .catch((err) => {
+        console.error(err);
+        const msg = root.querySelector('[data-game-loading]');
+        if (msg) msg.textContent = 'Oops, the game did not load. Try refreshing the page.';
+      });
+  }
+</script>

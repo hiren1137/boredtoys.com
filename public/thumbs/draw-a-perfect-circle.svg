@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <rect width="400" height="300" fill="#fffdf7"/>
+  <g fill="#1f1a2e" opacity=".12">
+    <circle cx="30" cy="30" r="3"/><circle cx="90" cy="30" r="3"/><circle cx="150" cy="30" r="3"/><circle cx="210" cy="30" r="3"/><circle cx="270" cy="30" r="3"/><circle cx="330" cy="30" r="3"/><circle cx="390" cy="30" r="3"/>
+    <circle cx="30" cy="270" r="3"/><circle cx="90" cy="270" r="3"/><circle cx="150" cy="270" r="3"/><circle cx="210" cy="270" r="3"/><circle cx="270" cy="270" r="3"/><circle cx="330" cy="270" r="3"/><circle cx="390" cy="270" r="3"/>
+  </g>
+  <path d="M200 52c56 0 98 42 98 97 0 56-43 99-99 99-55 0-97-43-96-98 1-54 41-96 92-98" fill="none" stroke="#1f1a2e" stroke-width="20" stroke-linecap="round"/>
+  <path d="M200 52c56 0 98 42 98 97 0 56-43 99-99 99-55 0-97-43-96-98 1-54 41-96 92-98" fill="none" stroke="#3fcf7f" stroke-width="12" stroke-linecap="round"/>
+  <path d="M110 113c-6 14-8 26-7 37" fill="none" stroke="#ffd447" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="200" cy="150" r="9" fill="#1f1a2e"/>
+  <g transform="rotate(8 320 70)">
+    <rect x="270" y="44" width="104" height="52" rx="26" fill="#ff7466" stroke="#1f1a2e" stroke-width="5"/>
+    <text x="322" y="81" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="30" font-weight="900" text-anchor="middle" fill="#1f1a2e">94%</text>
+  </g>
+  <g transform="rotate(-30 92 232)">
+    <rect x="40" y="222" width="110" height="22" rx="6" fill="#ffd447" stroke="#1f1a2e" stroke-width="4"/>
+    <path d="M150 222l22 11-22 11z" fill="#ffc7a1" stroke="#1f1a2e" stroke-width="4" stroke-linejoin="round"/>
+    <rect x="30" y="222" width="18" height="22" rx="5" fill="#ffa3d1" stroke="#1f1a2e" stroke-width="4"/>
+  </g>
+</svg>

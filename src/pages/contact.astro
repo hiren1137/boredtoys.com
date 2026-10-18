@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE, SITE_NAME } from '../config/site';
+---
+
+<BaseLayout
+  title={`Contact ${SITE_NAME}`}
+  description={`Get in touch with ${SITE_NAME}. Report a bug, suggest a silly game idea or ask about sponsoring a spot on the site. We read every message.`}
+  path="/contact/"
+>
+  <div class="wrap prose">
+    <h1>Contact {SITE_NAME}</h1>
+    <p class="lede">Found a bug? Have a weird game idea? We want to hear it.</p>
+    <p>
+      The easiest way to reach us is by email at <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a>.
+    </p>
+    <h2>Helpful Things to Include</h2>
+    <ul>
+      <li>The name of the game, if your message is about one.</li>
+      <li>Your device and browser, for example "iPhone, Safari" or "Windows laptop, Chrome".</li>
+      <li>What you expected to happen, and what happened instead.</li>
+    </ul>
+    <p>Want to sponsor a spot? Take a look at the <a href="/advertise/">advertise page</a> first.</p>
+  </div>
+</BaseLayout>

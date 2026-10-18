@@ -1,0 +1,13 @@
+---
+interface Props {
+  data: Record<string, unknown> | Record<string, unknown>[];
+}
+const { data } = Astro.props;
+const blocks = Array.isArray(data) ? data : [data];
+---
+
+{
+  blocks.map((b) => (
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(b).replace(/</g, '\\u003c')} />
+  ))
+}

@@ -1,0 +1,33 @@
+---
+import { CATEGORIES } from '../config/site';
+import { gameColor, gamePath, isNew, tiltFor, type Game } from '../lib/games';
+
+interface Props {
+  game: Game;
+  index?: number;
+}
+const { game, index = 0 } = Astro.props;
+const d = game.data;
+const cat = CATEGORIES[d.category];
+const style = `--tile-bg: ${gameColor(game)}; --tilt: ${tiltFor(d.slug)}deg;`;
+const lazy = index >= 8;
+---
+
+<a class="tile" href={gamePath(d.slug)} style={style}>
+  {isNew(game) && <span class="tile-badge tile-badge--new">NEW</span>}
+  {d.featured && <span class="tile-badge tile-badge--hot">🔥 Popular</span>}
+  <span class="tile-art">
+    <img
+      src={`/thumbs/${d.slug}.svg`}
+      alt={d.thumbAlt}
+      width="400"
+      height="300"
+      loading={lazy ? 'lazy' : 'eager'}
+      decoding="async"
+    />
+  </span>
+  <span class="tile-body">
+    <span class="tile-title">{d.title}</span>
+    <span class="tile-emoji" role="img" aria-label={`${cat.label} game`}>{cat.emoji}</span>
+  </span>
+</a>

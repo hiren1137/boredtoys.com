@@ -1,0 +1,22 @@
+name: Daily net worth refresh
+
+# Rebuilds the Cloudflare Pages site once a day so spend games pick up fresh Forbes figures.
+# The Pages build command must be `npm run build:live`, which fetches the figures before building.
+on:
+  schedule:
+    - cron: '30 21 * * *' # 21:30 UTC, after US markets close (3:00 AM IST)
+  workflow_dispatch:
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Cloudflare Pages deploy hook
+        env:
+          HOOK: ${{ secrets.CLOUDFLARE_DEPLOY_HOOK }}
+        run: |
+          if [ -z "$HOOK" ]; then
+            echo "Add the CLOUDFLARE_DEPLOY_HOOK repository secret first." >&2
+            exit 1
+          fi
+          curl --fail --silent --show-error -X POST "$HOOK"

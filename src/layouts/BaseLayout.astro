@@ -1,0 +1,179 @@
+---
+import '../styles/global.css';
+import Logo from '../components/Logo.astro';
+import JsonLd from '../components/JsonLd.astro';
+import SponsorSlot from '../components/SponsorSlot.astro';
+import { ANALYTICS, CATEGORIES, CATEGORY_KEYS, FOOTER_LINES, SITE, SITE_NAME } from '../config/site';
+import { absUrl, categoryPath, fullTitle } from '../lib/games';
+
+interface Props {
+  /** Page title without the site-name suffix. */
+  title: string;
+  description: string;
+  /** Path with trailing slash, used for the canonical URL. */
+  path: string;
+  ogImage?: string;
+  ogType?: 'website' | 'article';
+  noindex?: boolean;
+  jsonLd?: Record<string, unknown>[];
+  /** Use the raw title without the suffix (homepage). */
+  rawTitle?: boolean;
+}
+
+const {
+  title,
+  description,
+  path,
+  ogImage = '/og/default.png',
+  ogType = 'website',
+  noindex = false,
+  jsonLd = [],
+  rawTitle = false,
+} = Astro.props;
+
+const pageTitle = rawTitle ? title : fullTitle(title);
+const canonical = absUrl(path);
+const ogUrl = absUrl(ogImage);
+const year = new Date().getFullYear();
+const socialX = SITE.socials.x;
+---
+
+<!doctype html>
+<html lang={SITE.lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large'} />
+    <meta name="theme-color" content="#fff8ec" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#121733" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" type="application/rss+xml" title={`${SITE_NAME} new games`} href="/rss.xml" />
+    {ANALYTICS.googleSiteVerification && <meta name="google-site-verification" content={ANALYTICS.googleSiteVerification} />}
+
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={title} />
+    <meta property="og:locale" content={SITE.locale} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogUrl} />
+    {socialX && <meta name="twitter:site" content={`@${socialX}`} />}
+
+    <JsonLd data={jsonLd} />
+    <slot name="head" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap">
+        <Logo />
+        <nav class="header-actions" aria-label="Main">
+          <a class="btn btn--small btn--mint" href="/random/">🎲 Random Game</a>
+          <details class="cat-menu">
+            <summary class="btn btn--small btn--white">Categories</summary>
+            <ul class="cat-menu-list sticker">
+              {
+                CATEGORY_KEYS.map((k) => (
+                  <li>
+                    <a href={categoryPath(k)}>
+                      <span aria-hidden="true">{CATEGORIES[k].emoji}</span> {CATEGORIES[k].label}
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </details>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <p class="footer-line" id="footer-line" data-lines={JSON.stringify(FOOTER_LINES)}>{FOOTER_LINES[0]}</p>
+        <SponsorSlot placement="footer" />
+        <nav aria-label="Footer">
+          <ul>
+            <li><a href="/">All games</a></li>
+            {CATEGORY_KEYS.map((k) => <li><a href={categoryPath(k)}>{CATEGORIES[k].label}</a></li>)}
+            <li><a href="/about/">About</a></li>
+            <li><a href="/advertise/">Advertise</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/privacy-policy/">Privacy</a></li>
+            <li><a href="/rss.xml">RSS</a></li>
+          </ul>
+        </nav>
+        <p class="footer-meta">© {year} {SITE_NAME}. {SITE.tagline}.</p>
+      </div>
+    </footer>
+
+    <script is:inline>
+      (function () {
+        var el = document.getElementById('footer-line');
+        if (!el) return;
+        try {
+          var lines = JSON.parse(el.getAttribute('data-lines') || '[]');
+          if (lines.length) el.textContent = lines[Math.floor(Math.random() * lines.length)];
+        } catch (e) {}
+      })();
+    </script>
+    {
+      ANALYTICS.cloudflareToken && (
+        <script
+          is:inline
+          defer
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon={JSON.stringify({ token: ANALYTICS.cloudflareToken })}
+        />
+      )
+    }
+  </body>
+</html>
+
+<style is:global>
+  .cat-menu {
+    position: relative;
+  }
+  .cat-menu summary {
+    list-style: none;
+  }
+  .cat-menu summary::-webkit-details-marker {
+    display: none;
+  }
+  .cat-menu-list {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 10px);
+    z-index: 50;
+    min-width: 190px;
+    margin: 0;
+    padding: 8px;
+    list-style: none;
+  }
+  .cat-menu-list a {
+    display: block;
+    padding: 8px 12px;
+    border-radius: 10px;
+    color: var(--ink);
+    font-weight: 800;
+    text-decoration: none;
+  }
+  .cat-menu-list a:hover,
+  .cat-menu-list a:focus-visible {
+    background: var(--sunshine);
+    color: var(--tile-ink);
+  }
+</style>

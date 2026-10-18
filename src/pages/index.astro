@@ -1,0 +1,398 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import GameGrid from '../components/GameGrid.astro';
+import Faq from '../components/Faq.astro';
+import { CATEGORIES, CATEGORY_KEYS, SITE, SITE_NAME } from '../config/site';
+import { absUrl, categoryPath, getGames } from '../lib/games';
+
+const games = await getGames();
+const count = games.length;
+const usedCategories = new Set(games.map((g) => g.data.category));
+
+const faqs = [
+  {
+    question: `Are the games on ${SITE_NAME} really free?`,
+    answer:
+      'Yes. Every game is free to play in your browser. There is nothing to download and you never need to make an account.',
+  },
+  {
+    question: 'Do these games work on my phone?',
+    answer:
+      'They do. Each game is built for touch screens as well as a mouse and keyboard, so you can play on a phone, tablet or computer.',
+  },
+  {
+    question: 'Where are my best scores saved?',
+    answer:
+      'Your personal bests are saved in your own browser on your own device. Nobody else can see them, and clearing your browser data will reset them.',
+  },
+  {
+    question: 'How often are new games added?',
+    answer:
+      'New games are added almost every day. The newest ones always show up first on this page with a little NEW sticker.',
+  },
+];
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: SITE_NAME,
+    url: absUrl('/'),
+    description: SITE.description,
+    inLanguage: SITE.lang,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: SITE_NAME,
+    url: absUrl('/'),
+    logo: absUrl('/favicon.svg'),
+    sameAs: Object.values(SITE.socials).filter(Boolean),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.question,
+      acceptedAnswer: { '@type': 'Answer', text: f.answer },
+    })),
+  },
+];
+---
+
+<BaseLayout
+  title="Fun Games to Play When Bored, Free and Silly"
+  description={SITE.description}
+  path="/"
+  jsonLd={jsonLd}
+>
+  <div class="wrap">
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Fun Games to Play When Bored <span class="hero-wink">(We Won't Tell Your Boss)</span></h1>
+        <p class="lede">
+          Tiny, silly games that load in a blink. Draw, click, solve, spend fake billions, then go back to pretending
+          you were busy.
+        </p>
+        <p class="counter sticker">
+          <span aria-hidden="true">🎮</span>
+          <strong>{count}</strong>
+          {count === 1 ? 'silly game' : 'silly games'} and counting
+        </p>
+      </div>
+
+      <div class="plant sticker" id="plant" data-stage="0">
+        <svg class="plant-art" viewBox="0 0 120 130" width="120" height="130" aria-hidden="true">
+          <g class="p-stem">
+            <path d="M60 98V40" stroke="#2f8f5b" stroke-width="5" stroke-linecap="round" fill="none"></path>
+          </g>
+          <path class="p-leaf p-1" d="M60 86c-14-2-20-10-22-18 10 0 20 6 22 18z" fill="#6be3a8" stroke="#1f1a2e" stroke-width="2"></path>
+          <path class="p-leaf p-2" d="M60 76c14-2 20-10 22-18-10 0-20 6-22 18z" fill="#6be3a8" stroke="#1f1a2e" stroke-width="2"></path>
+          <path class="p-leaf p-3" d="M60 62c-14-2-20-10-22-18 10 0 20 6 22 18z" fill="#6be3a8" stroke="#1f1a2e" stroke-width="2"></path>
+          <path class="p-leaf p-4" d="M60 54c14-2 20-10 22-18-10 0-20 6-22 18z" fill="#6be3a8" stroke="#1f1a2e" stroke-width="2"></path>
+          <g class="p-flower">
+            <circle cx="60" cy="30" r="9" fill="#ffa3d1" stroke="#1f1a2e" stroke-width="2"></circle>
+            <circle cx="48" cy="34" r="9" fill="#ffa3d1" stroke="#1f1a2e" stroke-width="2"></circle>
+            <circle cx="72" cy="34" r="9" fill="#ffa3d1" stroke="#1f1a2e" stroke-width="2"></circle>
+            <circle cx="52" cy="46" r="9" fill="#ffa3d1" stroke="#1f1a2e" stroke-width="2"></circle>
+            <circle cx="68" cy="46" r="9" fill="#ffa3d1" stroke="#1f1a2e" stroke-width="2"></circle>
+            <circle cx="60" cy="39" r="8" fill="#ffd447" stroke="#1f1a2e" stroke-width="2"></circle>
+            <g class="p-shades">
+              <rect x="51" y="35" width="8" height="5" rx="2" fill="#1f1a2e"></rect>
+              <rect x="61" y="35" width="8" height="5" rx="2" fill="#1f1a2e"></rect>
+              <path d="M59 37h2" stroke="#1f1a2e" stroke-width="2"></path>
+            </g>
+          </g>
+          <ellipse cx="60" cy="99" rx="26" ry="5" fill="#6b4a2f"></ellipse>
+          <path d="M32 98h56l-6 28H38z" fill="#ff7466" stroke="#1f1a2e" stroke-width="3" stroke-linejoin="round"></path>
+          <path d="M30 96h60v8H30z" fill="#ff7466" stroke="#1f1a2e" stroke-width="3" stroke-linejoin="round"></path>
+        </svg>
+        <div class="plant-text">
+          <p class="plant-title">Your desk plant</p>
+          <p class="plant-msg" id="plant-msg" aria-live="polite">It is a pot of dirt. Give it a drink?</p>
+          <button type="button" class="btn btn--small btn--sky" id="plant-btn">💧 Water me</button>
+          <p class="plant-note">Only you can see this plant. It lives in your browser.</p>
+        </div>
+      </div>
+    </section>
+
+    <nav aria-label="Game categories">
+      <ul class="chips" id="chips">
+        <li><a class="chip" href="/" data-filter="all" aria-current="true">All</a></li>
+        {
+          CATEGORY_KEYS.map((k) => (
+            <li>
+              <a class="chip" href={categoryPath(k)} data-filter={k}>
+                <span aria-hidden="true">{CATEGORIES[k].emoji}</span> {CATEGORIES[k].label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+    <p class="visually-hidden" id="filter-status" aria-live="polite"></p>
+
+    <GameGrid games={games} wide stagger surprise sponsor id="home-grid" />
+    <p class="empty-filter" id="empty-filter" hidden>No games in this category yet. New ones arrive almost every day!</p>
+
+    <div class="home-copy prose">
+      <h2>Free Online Games You Can Play Right Now</h2>
+      <p>
+        You know that feeling when you have five spare minutes and nothing to do with them? That is exactly what this
+        place is for. Every game here is a quick, fun game to play when bored, and each one opens right in your browser.
+        No app store, no sign-up, no waiting.
+      </p>
+      <p>
+        Try to draw a perfect circle with one wobbly swipe. Spend a billionaire's fortune on rubber ducks and rockets.
+        Build a password that follows rules so silly they should not exist. Every game saves your best score on your
+        own device, so you can come back later and try to beat yourself.
+      </p>
+      <h2>New Games Every Day</h2>
+      <p>
+        The toy box keeps getting bigger. Fresh games land almost every day and show up first in the grid with a NEW
+        sticker. If you cannot decide, hit the Random Game button and let the dice pick for you.
+      </p>
+      <p>
+        Everything works on phones, tablets and computers. Tap, click or use your keyboard, whichever feels best.
+      </p>
+      <h2>Browse Games by Category</h2>
+      <ul class="cat-links">
+        {
+          CATEGORY_KEYS.map((k) => (
+            <li>
+              <a href={categoryPath(k)}>
+                <span aria-hidden="true">{CATEGORIES[k].emoji}</span> {CATEGORIES[k].h1}
+              </a>
+              {!usedCategories.has(k) && <span class="soon"> (coming soon)</span>}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <Faq faqs={faqs} />
+  </div>
+</BaseLayout>
+
+<style>
+  .hero {
+    display: grid;
+    gap: 20px;
+    align-items: center;
+    margin: 8px 0 28px;
+  }
+  @media (min-width: 860px) {
+    .hero {
+      grid-template-columns: 1fr 340px;
+      gap: 32px;
+    }
+  }
+  .hero h1 {
+    margin-bottom: 12px;
+  }
+  .hero-wink {
+    display: block;
+    font-size: 0.5em;
+    font-weight: 800;
+    color: var(--ink-soft);
+    margin-top: 6px;
+  }
+  .counter {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    margin: 4px 0 0;
+    padding: 8px 16px;
+    font-weight: 800;
+    background: var(--sunshine);
+    color: var(--tile-ink);
+    border-radius: 999px;
+    transform: rotate(-1.5deg);
+  }
+  .plant {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    padding: 14px 16px;
+    transform: rotate(1deg);
+  }
+  .plant-art {
+    flex: none;
+    width: 96px;
+    height: 104px;
+  }
+  .plant-title {
+    font-family: var(--font-round);
+    font-weight: 900;
+    margin: 0;
+  }
+  .plant-msg {
+    margin: 2px 0 8px;
+    min-height: 3.2em;
+    font-size: 0.95rem;
+  }
+  .plant-note {
+    margin: 8px 0 0;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+  }
+  .p-stem {
+    transform-box: fill-box;
+    transform-origin: 50% 100%;
+    transform: scaleY(var(--stem, 0));
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .p-leaf,
+  .p-flower,
+  .p-shades {
+    opacity: 0;
+    transform-box: fill-box;
+    transform-origin: 50% 100%;
+    transform: scale(0.3);
+    transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .plant[data-stage='1'] { --stem: 0.25; }
+  .plant[data-stage='2'] { --stem: 0.45; }
+  .plant[data-stage='3'] { --stem: 0.65; }
+  .plant[data-stage='4'] { --stem: 0.85; }
+  .plant[data-stage='5'],
+  .plant[data-stage='6'],
+  .plant[data-stage='7'] { --stem: 1; }
+  .plant:is([data-stage='2'], [data-stage='3'], [data-stage='4'], [data-stage='5'], [data-stage='6'], [data-stage='7']) .p-1,
+  .plant:is([data-stage='3'], [data-stage='4'], [data-stage='5'], [data-stage='6'], [data-stage='7']) .p-2,
+  .plant:is([data-stage='4'], [data-stage='5'], [data-stage='6'], [data-stage='7']) .p-3,
+  .plant:is([data-stage='5'], [data-stage='6'], [data-stage='7']) .p-4,
+  .plant:is([data-stage='6'], [data-stage='7']) .p-flower,
+  .plant[data-stage='7'] .p-shades {
+    opacity: 1;
+    transform: none;
+  }
+  .plant.is-watered .plant-art {
+    animation: art-bounce 0.4s ease;
+  }
+  .empty-filter {
+    margin: 16px 0 0;
+    font-weight: 700;
+  }
+  .home-copy {
+    margin-top: 56px;
+  }
+  .cat-links {
+    columns: 2;
+    padding-left: 1.2em;
+  }
+  .cat-links li {
+    margin-bottom: 6px;
+  }
+  .soon {
+    color: var(--ink-soft);
+    font-size: 0.9em;
+  }
+  :global(.confetti-bit) {
+    position: fixed;
+    z-index: 999;
+    width: 10px;
+    height: 14px;
+    border: 2px solid var(--line);
+    border-radius: 3px;
+    pointer-events: none;
+  }
+</style>
+
+<script>
+  import { getJSON, setJSON } from '../lib/storage';
+
+  // Category chips: filter in place, links still work without JS.
+  const grid = document.getElementById('home-grid');
+  const chips = document.querySelectorAll<HTMLAnchorElement>('#chips [data-filter]');
+  const status = document.getElementById('filter-status');
+  const empty = document.getElementById('empty-filter');
+  chips.forEach((chip) =>
+    chip.addEventListener('click', (e) => {
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || !grid) return;
+      e.preventDefault();
+      const f = chip.dataset.filter;
+      let shown = 0;
+      grid.querySelectorAll<HTMLElement>('li[data-category]').forEach((li) => {
+        const show = f === 'all' || li.dataset.category === f;
+        li.hidden = !show;
+        li.style.animation = 'none';
+        if (show) shown++;
+      });
+      grid.querySelectorAll<HTMLElement>('li[data-sponsor]').forEach((li) => (li.hidden = f !== 'all'));
+      chips.forEach((c) => (c === chip ? c.setAttribute('aria-current', 'true') : c.removeAttribute('aria-current')));
+      if (empty) empty.hidden = shown > 0;
+      if (status) status.textContent = `Showing ${shown} game${shown === 1 ? '' : 's'}`;
+    }),
+  );
+
+  // Desk plant easter egg (personal, stored in this browser only).
+  const MSGS = [
+    'It is a pot of dirt. Give it a drink?',
+    'A sprout! It looks surprised to be here.',
+    'One leaf. It is very proud of it.',
+    'Two leaves. It is basically a tree now.',
+    'Three leaves! It has started humming.',
+    'Four leaves. It wants a name.',
+    'It bloomed! You are an excellent plant parent.',
+    'It got sunglasses. It is too cool for this desk.',
+  ];
+  const THRESHOLDS = [0, 1, 3, 6, 10, 15, 21, 30];
+  const plant = document.getElementById('plant');
+  const msg = document.getElementById('plant-msg');
+  const btn = document.getElementById('plant-btn');
+  const stageFor = (n: number) => THRESHOLDS.reduce((s, t, i) => (n >= t ? i : s), 0);
+  const draw = (n: number) => {
+    const stage = stageFor(n);
+    plant?.setAttribute('data-stage', String(stage));
+    if (msg) msg.textContent = `${MSGS[stage]} (Watered ${n} time${n === 1 ? '' : 's'}.)`;
+  };
+  let waters = getJSON<number>('plant', 0);
+  if (waters > 0) draw(waters);
+  btn?.addEventListener('click', () => {
+    waters += 1;
+    setJSON('plant', waters);
+    draw(waters);
+    plant?.classList.remove('is-watered');
+    void plant?.offsetWidth;
+    plant?.classList.add('is-watered');
+  });
+
+  // Logo confetti.
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const logo = document.getElementById('site-logo');
+  const COLORS = ['#ff7466', '#ffd447', '#6be3a8', '#6cc8ff', '#c7a3ff', '#ffa3d1'];
+  logo?.addEventListener('click', (e) => {
+    e.preventDefault();
+    logo.classList.remove('is-poked');
+    void logo.offsetWidth;
+    logo.classList.add('is-poked');
+    if (reduce.matches) return;
+    const r = logo.getBoundingClientRect();
+    const x = r.left + 22;
+    const y = r.top + r.height / 2;
+    for (let i = 0; i < 28; i++) {
+      const bit = document.createElement('span');
+      bit.className = 'confetti-bit';
+      bit.style.left = `${x}px`;
+      bit.style.top = `${y}px`;
+      bit.style.background = COLORS[i % COLORS.length];
+      if (i % 3 === 0) bit.style.borderRadius = '50%';
+      document.body.appendChild(bit);
+      const angle = Math.random() * Math.PI * 2;
+      const dist = 60 + Math.random() * 110;
+      const dx = Math.cos(angle) * dist;
+      const dy = Math.sin(angle) * dist - 40;
+      bit
+        .animate(
+          [
+            { transform: 'translate(0,0) rotate(0)', opacity: 1 },
+            { transform: `translate(${dx}px, ${dy + 140}px) rotate(${Math.random() * 720 - 360}deg)`, opacity: 0 },
+          ],
+          { duration: 800 + Math.random() * 400, easing: 'cubic-bezier(.2,.7,.4,1)' },
+        )
+        .finished.finally(() => bit.remove());
+    }
+  });
+</script>

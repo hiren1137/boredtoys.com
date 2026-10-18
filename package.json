@@ -1,0 +1,35 @@
+{
+  "name": "game-site",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "validate": "node scripts/validate-content.mjs",
+    "check": "astro check",
+    "build": "node scripts/validate-content.mjs && astro check && astro build",
+    "build:live": "node scripts/update-net-worth.mjs && npm run build",
+    "update-net-worth": "node scripts/update-net-worth.mjs",
+    "preview": "astro preview",
+    "new-game": "node scripts/new-game.mjs"
+  },
+  "dependencies": {
+    "@astrojs/rss": "^4.0.19",
+    "@astrojs/sitemap": "^3.7.4",
+    "astro": "~5.18.2"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@fontsource/nunito": "^5.3.0",
+    "@resvg/resvg-js": "^2.6.2",
+    "satori": "^0.62.0",
+    "typescript": "^5.9.3",
+    "yaml": "^2.9.1"
+  },
+  "overrides": {
+    "@astrojs/language-server": "2.16.16"
+  },
+  "engines": {
+    "node": ">=20.3.0"
+  }
+}

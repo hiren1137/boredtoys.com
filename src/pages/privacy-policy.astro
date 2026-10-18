@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { ADS_ENABLED, ANALYTICS, SITE, SITE_NAME } from '../config/site';
+
+const updated = '2026-10-18';
+---
+
+<BaseLayout
+  title="Privacy Policy"
+  description={`How ${SITE_NAME} handles your data. No accounts, no sign-ups: scores stay in your own browser and we only use privacy-friendly visit counts.`}
+  path="/privacy-policy/"
+>
+  <div class="wrap prose">
+    <h1>Privacy Policy</h1>
+    <p class="lede">Short version: we do not know who you are, and we like it that way.</p>
+    <p>Last updated: <time datetime={updated}>{updated}</time></p>
+
+    <h2>What We Store on Your Device</h2>
+    <p>
+      Games save things like your best score and simple settings in your browser's local storage. This data never
+      leaves your device and is never sent to us. You can delete it any time by clearing your browser's site data.
+    </p>
+
+    <h2>Accounts and Personal Data</h2>
+    <p>There are no accounts, logins or sign-up forms. We do not collect your name, email or any personal details while you play.</p>
+
+    <h2>Analytics</h2>
+    <p>
+      {
+        ANALYTICS.cloudflareToken
+          ? 'We use Cloudflare Web Analytics to count page views. It does not use cookies and does not track you across other websites.'
+          : 'We may use Cloudflare Web Analytics to count page views. It does not use cookies and does not track you across other websites.'
+      }
+    </p>
+
+    <h2>Ads and Sponsors</h2>
+    <p>
+      {
+        ADS_ENABLED
+          ? 'Some pages show ads. Ad partners may use cookies to show and measure ads. Sponsor links are clearly marked and lead to other websites with their own privacy policies.'
+          : 'We do not currently show ads. If that changes, this page will be updated first. Sponsor links, when they appear, are clearly marked and lead to other websites with their own privacy policies.'
+      }
+    </p>
+
+    <h2>Contact</h2>
+    <p>Questions about privacy? Email <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a>.</p>
+  </div>
+</BaseLayout>

@@ -1,0 +1,21 @@
+---
+import GameGrid from './GameGrid.astro';
+import type { Game } from '../lib/games';
+
+interface Props {
+  all: Game[];
+  exclude?: string;
+  title?: string;
+}
+const { all, exclude, title = 'Fresh Out of the Toy Box' } = Astro.props;
+const games = all.filter((g) => g.data.slug !== exclude).slice(0, 6);
+---
+
+{
+  games.length > 0 && (
+    <section class="section" aria-labelledby="new-games-title">
+      <h2 id="new-games-title" class="section-title">{title}</h2>
+      <GameGrid games={games} />
+    </section>
+  )
+}

@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import GameGrid from '../components/GameGrid.astro';
+import { getGames } from '../lib/games';
+
+const games = await getGames();
+---
+
+<BaseLayout
+  title="Page Not Found"
+  description="This page wandered off. Pick one of our free silly games instead, or roll the dice for a random one."
+  path="/404/"
+  noindex
+>
+  <div class="wrap">
+    <h1>Oops, This Page Rolled Under the Couch</h1>
+    <p class="lede">We looked everywhere. Here are some games to play while we keep searching.</p>
+    <GameGrid games={games} wide surprise />
+  </div>
+</BaseLayout>

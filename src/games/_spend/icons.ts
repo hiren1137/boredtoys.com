@@ -1,0 +1,92 @@
+// Original flat sticker-style icons, all drawn on a 64x64 grid with a dark outline.
+const R = '#ff7466';
+const Y = '#ffd447';
+const M = '#6be3a8';
+const S = '#6cc8ff';
+const G = '#c7a3ff';
+const P = '#ffa3d1';
+const O = '#ffac57';
+const W = '#ffffff';
+const K = '#1f1a2e';
+const B = '#b07a4f';
+const L = '#dcd8e4';
+
+export const ICONS = {
+  duck: `<path d="M14 38c0 10 8 16 20 16s20-6 20-15c0-6-4-9-9-9h-3c3-3 4-6 4-10 0-6-5-10-11-10s-11 4-11 10c0 4 2 7 5 9-8 0-15 3-15 9z" fill="${Y}"/><path d="M38 20l10 2-10 4z" fill="${O}"/><circle cx="30" cy="18" r="2" fill="${K}" stroke="none"/>`,
+  icecream: `<path d="M22 32l10 26 10-26z" fill="${O}"/><path d="M26 38l12 6M24 34l14 4" fill="none"/><circle cx="32" cy="22" r="12" fill="${P}"/><circle cx="32" cy="10" r="4" fill="${R}"/>`,
+  burger: `<path d="M10 30c0-12 10-18 22-18s22 6 22 18z" fill="${O}"/><path d="M8 34h48v6H8z" fill="${M}"/><path d="M10 40h44l-4 6H14z" fill="${R}"/><path d="M10 46h44v4c0 4-3 6-7 6H17c-4 0-7-2-7-6z" fill="${O}"/><path d="M24 20h.5M32 18h.5M40 21h.5" stroke-width="4"/>`,
+  coffee: `<path d="M14 22h30v22c0 7-5 12-12 12h-6c-7 0-12-5-12-12z" fill="${W}"/><path d="M44 28h4c4 0 6 3 6 6s-2 6-6 6h-4" fill="none"/><path d="M14 30h30" fill="none"/><path d="M24 8c-3 4 3 6 0 10M34 8c-3 4 3 6 0 10" fill="none"/>`,
+  socks: `<path d="M18 8h14v28l-12 12c-4 4-10 0-8-5l6-11z" fill="${S}"/><path d="M18 14h14" fill="none"/><path d="M36 12h12v28l-10 12c-4 4-10 0-8-5l6-11z" fill="${P}"/><path d="M36 18h12" fill="none"/>`,
+  ticket: `<path d="M8 20h48v8a5 5 0 0 0 0 10v8H8v-8a5 5 0 0 0 0-10z" fill="${Y}"/><path d="M40 20v26" stroke-dasharray="3 4" fill="none"/><path d="M18 30h14M18 36h10" fill="none"/>`,
+  pizza: `<path d="M32 58L8 14c14-8 34-8 48 0z" fill="${Y}"/><path d="M8 14c14-8 34-8 48 0l-3 6c-12-6-30-6-42 0z" fill="${O}"/><circle cx="30" cy="28" r="4" fill="${R}"/><circle cx="38" cy="38" r="3.5" fill="${R}"/><circle cx="26" cy="40" r="3" fill="${R}"/>`,
+  book: `<path d="M12 10h34a6 6 0 0 1 6 6v38H18a6 6 0 0 1-6-6z" fill="${G}"/><path d="M12 48a6 6 0 0 1 6-6h34" fill="none"/><path d="M22 20h20M22 27h14" fill="none"/>`,
+  gamepad: `<path d="M18 20h28c8 0 12 8 12 18 0 8-4 12-9 12-4 0-6-4-9-7H24c-3 3-5 7-9 7-5 0-9-4-9-12 0-10 4-18 12-18z" fill="${G}"/><path d="M16 32h10M21 27v10" fill="none"/><circle cx="42" cy="29" r="2.5" fill="${R}"/><circle cx="48" cy="35" r="2.5" fill="${Y}"/>`,
+  music: `<path d="M24 46V14l26-6v32" fill="none"/><ellipse cx="18" cy="46" rx="8" ry="6" fill="${P}"/><ellipse cx="44" cy="40" rx="8" ry="6" fill="${P}"/><path d="M24 22l26-6" fill="none"/>`,
+  sneaker: `<path d="M6 40c0-8 2-14 6-18l8 4c4 2 8 0 10-4l6 4c4 3 8 6 14 8 6 2 8 5 8 10v4H6z" fill="${R}"/><path d="M6 44h52v6H6z" fill="${W}"/><path d="M20 30l4 4M26 28l4 4" fill="none"/>`,
+  earbuds: `<path d="M18 14a8 8 0 0 1 8 8v4a8 8 0 0 1-8 8z" fill="${W}"/><path d="M18 34v18" stroke-width="6"/><path d="M18 34v18" stroke="${W}" stroke-width="2"/><path d="M46 14a8 8 0 0 0-8 8v4a8 8 0 0 0 8 8z" fill="${W}"/><path d="M46 34v18" stroke-width="6"/><path d="M46 34v18" stroke="${W}" stroke-width="2"/>`,
+  console: `<path d="M8 18h48v28H8z" fill="${L}"/><path d="M14 24h22v16H14z" fill="${S}"/><circle cx="46" cy="28" r="3" fill="${R}"/><circle cx="46" cy="38" r="3" fill="${M}"/><path d="M14 46v4M50 46v4" fill="none"/>`,
+  phone: `<rect x="18" y="6" width="28" height="52" rx="6" fill="${K}"/><rect x="21" y="12" width="22" height="38" rx="2" fill="${S}"/><path d="M29 54h6" stroke="${W}"/>`,
+  bike: `<circle cx="16" cy="42" r="10" fill="none"/><circle cx="48" cy="42" r="10" fill="none"/><path d="M16 42l10-18h16l6 18M26 24l8 18 8-18M22 20h8M42 24l-2-6h6" fill="none" stroke="${K}"/><path d="M26 24l8 18 8-18" stroke="${R}" stroke-width="3" fill="none"/>`,
+  puppy: `<path d="M16 26c0-10 7-16 16-16s16 6 16 16v12c0 9-7 16-16 16s-16-7-16-16z" fill="${O}"/><path d="M16 22c-6 0-10 6-8 16 4 0 8-4 8-8M48 22c6 0 10 6 8 16-4 0-8-4-8-8" fill="${B}"/><circle cx="26" cy="30" r="2.5" fill="${K}" stroke="none"/><circle cx="38" cy="30" r="2.5" fill="${K}" stroke="none"/><path d="M29 38h6l-3 4z" fill="${K}"/><path d="M32 42v3c0 3 4 3 4 0" fill="${P}"/>`,
+  laptop: `<path d="M14 14h36v26H14z" fill="${S}"/><path d="M6 44h52l-4 8H10z" fill="${L}"/><path d="M20 22h16M20 28h22" fill="none" stroke="${W}"/>`,
+  guitar: `<path d="M42 8l14 14-4 4-14-14z" fill="${B}"/><path d="M40 24L28 36" fill="none"/><path d="M26 22c4 0 8 4 6 10l6 6c6-2 10 2 10 6 0 8-12 14-22 6-8 2-18-6-14-16 2-6 8-10 14-12z" fill="${R}"/><circle cx="26" cy="40" r="4" fill="${K}"/>`,
+  horse: `<path d="M20 58V40c-4-2-8-8-6-16l10-14 4 6c10 0 18 8 18 18v6l8 4c2 4 0 8-4 8l-10-4-4 10z" fill="${B}"/><path d="M24 10c-4 4-6 10-4 18" fill="none"/><path d="M28 14c-2 6 0 12 4 14" fill="none" stroke="${K}"/><circle cx="38" cy="26" r="2" fill="${K}" stroke="none"/>`,
+  hottub: `<path d="M8 32h48v14c0 6-4 10-10 10H18c-6 0-10-4-10-10z" fill="${S}"/><path d="M8 32h48" fill="none"/><path d="M8 40c6-4 10 4 16 0s10 4 16 0 10 4 16 0" fill="none" stroke="${W}"/><path d="M20 10c-3 4 3 6 0 10s3 6 0 8M32 8c-3 4 3 6 0 10s3 6 0 8M44 10c-3 4 3 6 0 10s3 6 0 8" fill="none"/>`,
+  handbag: `<path d="M22 26v-6a10 10 0 0 1 20 0v6" fill="none"/><path d="M10 26h44l-4 30H14z" fill="${P}"/><path d="M26 36h12v6H26z" fill="${Y}"/>`,
+  jetski: `<path d="M6 42h40c6 0 12-4 14-8H38l-6-10H22l-4 10H6z" fill="${Y}"/><path d="M22 24l-2-6h8" fill="none"/><path d="M4 50c6-4 10 4 16 0s10 4 16 0 10 4 16 0 8 2 8 2" fill="none" stroke="${S}" stroke-width="4"/>`,
+  watch: `<path d="M24 6h16l2 12H22zM22 46h20l-2 12H24z" fill="${L}"/><circle cx="32" cy="32" r="16" fill="${Y}"/><circle cx="32" cy="32" r="11" fill="${W}"/><path d="M32 25v7l5 4" fill="none"/>`,
+  ring: `<circle cx="32" cy="40" r="15" fill="none" stroke-width="5"/><circle cx="32" cy="40" r="15" fill="none" stroke="${Y}" stroke-width="2.5"/><path d="M24 14h16l4 6-12 10-12-10z" fill="${S}"/><path d="M20 20h24M28 14l4 16 4-16" fill="none"/>`,
+  gradcap: `<path d="M4 26l28-12 28 12-28 12z" fill="${K}"/><path d="M16 32v12c8 6 24 6 32 0V32l-16 6z" fill="${G}"/><path d="M54 28v14" fill="none"/><circle cx="54" cy="44" r="3" fill="${Y}"/>`,
+  car: `<path d="M8 40v-6c0-4 2-6 6-7l6-9c2-2 4-3 7-3h12c3 0 5 1 7 3l6 9c4 1 6 3 6 7v6z" fill="${R}"/><path d="M22 26l4-7h12l4 7z" fill="${S}"/><circle cx="18" cy="42" r="6" fill="${K}"/><circle cx="46" cy="42" r="6" fill="${K}"/><path d="M8 34h4M52 34h4" fill="none"/>`,
+  truck: `<path d="M6 26h24v16H6zM30 18h14l8 10h6v14H30z" fill="${S}"/><path d="M34 22h8l5 6H34z" fill="${W}"/><circle cx="16" cy="44" r="6" fill="${K}"/><circle cx="46" cy="44" r="6" fill="${K}"/>`,
+  foodtruck: `<path d="M6 16h38v28H6zM44 24h8l6 10v10H44z" fill="${M}"/><path d="M12 22h26v10H12z" fill="${W}"/><path d="M8 22c4 0 6-3 6-3s2 3 6 3 6-3 6-3 2 3 6 3 6-3 6-3" fill="none" stroke="${R}"/><circle cx="16" cy="46" r="5" fill="${K}"/><circle cx="48" cy="46" r="5" fill="${K}"/>`,
+  monstertruck: `<path d="M12 22h20l6-8h10l6 8v10H12z" fill="${G}"/><path d="M40 16h6l4 6H38z" fill="${S}"/><circle cx="18" cy="44" r="12" fill="${K}"/><circle cx="46" cy="44" r="12" fill="${K}"/><circle cx="18" cy="44" r="4" fill="${L}"/><circle cx="46" cy="44" r="4" fill="${L}"/>`,
+  sportscar: `<path d="M4 40v-4c0-3 2-5 5-6l12-6c4-2 8-3 12-3h6c6 0 10 3 14 8l5 2c2 1 2 3 2 5v4z" fill="${Y}"/><path d="M24 26c3-2 6-2 9-2h5c3 0 6 2 8 6H20z" fill="${S}"/><circle cx="16" cy="42" r="6" fill="${K}"/><circle cx="48" cy="42" r="6" fill="${K}"/>`,
+  house: `<path d="M8 30L32 10l24 20" fill="${R}"/><path d="M14 28v26h36V28L32 14z" fill="${Y}"/><path d="M27 54V40h10v14z" fill="${B}"/><path d="M18 32h8v7h-8zM38 32h8v7h-8z" fill="${S}"/>`,
+  net: `<path d="M8 14h48L48 50H16z" fill="${W}" opacity=".9"/><path d="M14 22h36M16 32h32M18 42h28M22 14l4 36M32 14v36M42 14l-4 36" fill="none" stroke="${S}" stroke-width="2"/><path d="M8 14h48L48 50H16z" fill="none"/><path d="M32 6v8" fill="none"/>`,
+  franchise: `<path d="M10 24h44v32H10z" fill="${W}"/><path d="M6 14h52l-2 10H8z" fill="${R}"/><path d="M8 24c3 4 8 4 11 0 3 4 8 4 11 0 3 4 8 4 11 0 3 4 8 4 11 0" fill="${Y}"/><path d="M26 40h12v16H26z" fill="${S}"/><path d="M14 34h8v8h-8zM42 34h8v8h-8z" fill="${S}"/>`,
+  island: `<path d="M2 46c8-4 14 2 22-2s14 2 22-2 14 2 16 2v14H2z" fill="${S}"/><path d="M12 46c4-10 36-10 40 0z" fill="${Y}"/><path d="M32 42c0-12 2-20 6-26" fill="none" stroke="${B}" stroke-width="4"/><path d="M38 16c-8-4-16 0-18 4 6-2 12-2 18-4zM38 16c6-6 14-4 18 0-6 0-12-2-18 0zM38 16c2 6 0 12-4 14 0-6 2-10 4-14z" fill="${M}"/>`,
+  tv: `<rect x="6" y="14" width="52" height="34" rx="4" fill="${K}"/><rect x="10" y="18" width="44" height="26" rx="2" fill="${S}"/><path d="M24 8l8 6 8-6M22 52h20" fill="none"/><path d="M18 36l8-8 6 6 6-4 8 6" fill="none" stroke="${W}"/>`,
+  yacht: `<path d="M4 40h56l-8 12H14z" fill="${W}"/><path d="M14 40l4-10h22l6 10z" fill="${L}"/><path d="M22 30l2-6h12l2 6z" fill="${W}"/><path d="M20 34h4M28 34h4M36 34h4" fill="none" stroke="${S}"/><path d="M2 56c6-3 10 3 16 0s10 3 16 0 10 3 16 0 10 3 12 2" fill="none" stroke="${S}" stroke-width="3"/>`,
+  racecar: `<path d="M4 40h56v-4l-14-4-6-6H26l-4 6H10l-6 2z" fill="${R}"/><path d="M28 26h10l4 6H28z" fill="${K}"/><path d="M50 26h10v8H50z" fill="${R}"/><circle cx="16" cy="42" r="7" fill="${K}"/><circle cx="46" cy="42" r="7" fill="${K}"/><path d="M18 36h6" stroke="${W}" fill="none"/>`,
+  jet: `<path d="M6 34c0-4 4-6 10-6h30l10-12h4l-4 14c2 1 2 5 0 6H16c-6 0-10-0-10-2z" fill="${W}"/><path d="M24 34l6 14h6l-2-14z" fill="${L}"/><path d="M14 30h4M22 30h4M30 30h4" fill="none" stroke="${S}"/>`,
+  mansion: `<path d="M4 26h56v28H4z" fill="${W}"/><path d="M2 26L32 8l30 18z" fill="${G}"/><path d="M26 54V40h12v14z" fill="${B}"/><path d="M10 32h8v8h-8zM46 32h8v8h-8zM28 30h8v6h-8z" fill="${S}"/><path d="M20 26v28M44 26v28" fill="none"/>`,
+  movie: `<path d="M8 26h48v30H8z" fill="${K}"/><path d="M8 14l46-6 2 12-46 6z" fill="${W}"/><path d="M16 13l6 11M28 11l6 11M40 10l6 11" fill="none"/><path d="M14 34h36M14 42h24" fill="none" stroke="${W}"/>`,
+  jumbo: `<path d="M4 30c2-4 8-6 14-6h30c6 0 12 4 14 8-2 4-8 6-14 6H18c-6 0-12-2-14-8z" fill="${W}"/><path d="M28 30l-8 22h8l14-20zM28 30l-6-18h6l12 16z" fill="${S}"/><path d="M50 24l6-12h4l-2 14z" fill="${S}"/><path d="M10 28c2-2 4-2 6-2" fill="none"/>`,
+  painting: `<rect x="6" y="8" width="52" height="46" rx="3" fill="${Y}"/><rect x="12" y="14" width="40" height="34" fill="${S}"/><circle cx="32" cy="26" r="7" fill="${O}"/><path d="M20 48c0-8 6-12 12-12s12 4 12 12z" fill="${K}"/>`,
+  skyscraper: `<path d="M20 58V14l12-8 12 8v44z" fill="${S}"/><path d="M32 6V2" fill="none"/><path d="M26 18h4M34 18h4M26 26h4M34 26h4M26 34h4M34 34h4M26 42h4M34 42h4" fill="none" stroke="${W}"/><path d="M8 58V30h12v28zM44 58V36h12v22z" fill="${L}"/><path d="M4 58h56" fill="none"/>`,
+  cruise: `<path d="M4 38h56l-8 14H12z" fill="${W}"/><path d="M10 38v-8h44v8zM16 30v-8h30v8z" fill="${W}"/><path d="M36 22v-10h8v10z" fill="${R}"/><path d="M8 44h4M16 44h4M24 44h4M32 44h4M40 44h4M48 44h4" fill="none" stroke="${S}"/><path d="M2 58c6-3 10 3 16 0s10 3 16 0 10 3 16 0 10 3 12 2" fill="none" stroke="${S}" stroke-width="3"/>`,
+  basketball: `<circle cx="32" cy="32" r="24" fill="${O}"/><path d="M8 32h48M32 8v48M14 14c8 8 8 28 0 36M50 14c-8 8-8 28 0 36" fill="none"/>`,
+  football: `<path d="M8 32c6-14 18-22 24-22s18 8 24 22c-6 14-18 22-24 22S14 46 8 32z" fill="${B}" transform="rotate(-30 32 32)"/><path d="M22 42l20-20M28 30l6 6M32 26l6 6M24 34l6 6" fill="none" stroke="${W}"/>`,
+  carrier: `<path d="M2 36h60l-8 14H8z" fill="${L}"/><path d="M8 30h50v6H8z" fill="${L}"/><path d="M38 20h8v10h-8z" fill="${L}"/><path d="M14 33h30" fill="none" stroke="${W}" stroke-dasharray="4 3"/><path d="M14 24l8-3v3l-8 3z" fill="${K}"/>`,
+  tshirt: `<path d="M20 8l-14 8 6 12 6-3v31h28V25l6 3 6-12-14-8c-2 4-6 6-10 6s-8-2-10-6z" fill="${S}"/><path d="M24 34c2-4 6-4 8 0s6 4 8 0" fill="none"/><circle cx="26" cy="28" r="1.5" fill="${K}" stroke="none"/><circle cx="38" cy="28" r="1.5" fill="${K}" stroke="none"/>`,
+  scooter: `<path d="M44 8l-4 34H16" fill="none" stroke-width="4"/><path d="M38 8h12" fill="none" stroke-width="4"/><path d="M12 42h32" fill="none" stroke="${M}" stroke-width="5"/><circle cx="14" cy="48" r="6" fill="${K}"/><circle cx="46" cy="48" r="6" fill="${K}"/>`,
+  vr: `<path d="M6 24c0-4 3-6 7-6h38c4 0 7 2 7 6v14c0 4-3 6-7 6H40l-4-6h-8l-4 6H13c-4 0-7-2-7-6z" fill="${G}"/><path d="M12 24h16v10H12zM36 24h16v10H36z" fill="${S}"/><path d="M6 28H2M58 28h4" fill="none"/>`,
+  telescope: `<path d="M8 30l36-16 4 10-36 16z" fill="${S}"/><path d="M44 12l10-4 4 10-10 4z" fill="${R}"/><path d="M30 34l-10 22M30 34l10 22M30 34v22" fill="none"/>`,
+  vacuum: `<ellipse cx="32" cy="40" rx="26" ry="12" fill="${K}"/><ellipse cx="32" cy="36" rx="26" ry="12" fill="${L}"/><circle cx="32" cy="34" r="6" fill="${S}"/><path d="M14 34h6M44 34h6" fill="none"/>`,
+  robot: `<rect x="16" y="12" width="32" height="22" rx="8" fill="${L}"/><circle cx="26" cy="23" r="4" fill="${S}"/><circle cx="38" cy="23" r="4" fill="${S}"/><path d="M32 12V6" fill="none"/><circle cx="32" cy="5" r="2.5" fill="${R}"/><path d="M20 36h24v18H20z" fill="${L}"/><path d="M20 40l-8 10M44 40l8 10M26 54v6M38 54v6" fill="none"/><path d="M28 44h8" fill="none" stroke="${R}"/>`,
+  satdish: `<path d="M10 14c-6 10-2 26 10 32s26 2 32-8z" fill="${W}"/><path d="M28 32l14-14" fill="none"/><circle cx="44" cy="16" r="3" fill="${R}"/><path d="M20 46l-6 12h20l-4-8" fill="${L}"/>`,
+  satellite: `<path d="M24 24l16 16-6 6-16-16z" fill="${L}"/><path d="M6 20l12-12 10 10-12 12zM36 50l12-12 10 10-12 12z" fill="${S}"/><path d="M10 16l8 8M14 12l8 8M40 46l8 8M44 42l8 8" fill="none" stroke="${W}"/><path d="M40 24c4 0 6 2 6 6M44 18c6 0 10 4 10 10" fill="none"/>`,
+  spaceticket: `<path d="M32 4c10 8 14 20 14 32H18c0-12 4-24 14-32z" fill="${W}"/><circle cx="32" cy="22" r="5" fill="${S}"/><path d="M18 36l-8 10h10zM46 36l8 10H44z" fill="${R}"/><path d="M26 40l6 16 6-16z" fill="${Y}"/>`,
+  station: `<path d="M26 26h12v12H26z" fill="${L}"/><path d="M4 22h18v20H4zM42 22h18v20H42z" fill="${S}"/><path d="M22 32h4M38 32h4M32 26V12M32 38v14" fill="none"/><path d="M26 6h12v6H26zM26 52h12v6H26z" fill="${Y}"/><path d="M10 22v20M16 22v20M48 22v20M54 22v20" fill="none" stroke="${W}"/>`,
+  rocket: `<path d="M32 4c8 6 12 16 12 28v14H20V32c0-12 4-22 12-28z" fill="${W}"/><circle cx="32" cy="24" r="5" fill="${S}"/><path d="M20 36l-8 12h8zM44 36l8 12h-8z" fill="${R}"/><path d="M24 46h16l-4 8h-8z" fill="${L}"/><path d="M28 56c0 2 2 4 4 6 2-2 4-4 4-6z" fill="${O}"/>`,
+  heavyrocket: `<path d="M32 4c5 4 7 10 7 18v30H25V22c0-8 2-14 7-18z" fill="${W}"/><path d="M14 18c3 2 5 6 5 12v22h-10V30c0-6 2-10 5-12zM50 18c3 2 5 6 5 12v22H45V30c0-6 2-10 5-12z" fill="${L}"/><path d="M25 52h14v4H25zM9 52h10v4H9zM45 52h10v4H45z" fill="${K}"/><path d="M28 58l4 4 4-4M12 58l2 4 2-4M48 58l2 4 2-4" fill="${O}"/>`,
+  mars: `<circle cx="32" cy="32" r="24" fill="${R}"/><circle cx="24" cy="24" r="5" fill="${O}"/><circle cx="40" cy="38" r="7" fill="${O}"/><circle cx="22" cy="42" r="3" fill="${O}"/><path d="M10 26c8 2 14 0 22-2" fill="none" opacity=".5"/>`,
+  tunnel: `<path d="M4 58V34C4 18 16 8 32 8s28 10 28 26v24z" fill="${L}"/><path d="M14 58V36c0-10 8-18 18-18s18 8 18 18v22z" fill="${K}"/><path d="M28 58l2-30h4l2 30z" fill="${Y}"/><circle cx="22" cy="30" r="2" fill="${Y}" stroke="none"/><circle cx="42" cy="30" r="2" fill="${Y}" stroke="none"/>`,
+  socialapp: `<rect x="8" y="8" width="48" height="48" rx="14" fill="${S}"/><path d="M18 22h28v16H32l-8 6v-6h-6z" fill="${W}"/><path d="M24 30h.5M32 30h.5M40 30h.5" stroke-width="4"/>`,
+  datacenter: `<rect x="10" y="6" width="44" height="14" rx="3" fill="${L}"/><rect x="10" y="24" width="44" height="14" rx="3" fill="${L}"/><rect x="10" y="42" width="44" height="14" rx="3" fill="${L}"/><circle cx="18" cy="13" r="2" fill="${M}"/><circle cx="18" cy="31" r="2" fill="${M}"/><circle cx="18" cy="49" r="2" fill="${R}"/><path d="M28 13h20M28 31h20M28 49h20" fill="none"/>`,
+  factory: `<path d="M4 58V30l14-8v8l14-8v8l14-8v36z" fill="${L}"/><path d="M46 58V12h10v46z" fill="${R}"/><path d="M48 8c0-4 6-4 6-8" fill="none"/><path d="M10 40h6v6h-6zM22 40h6v6h-6zM34 40h6v6h-6z" fill="${Y}"/><path d="M2 58h60" fill="none"/>`,
+  soccer: `<circle cx="32" cy="32" r="24" fill="${W}"/><path d="M32 22l9 6-3 10H26l-3-10z" fill="${K}"/><path d="M32 8v14M41 28l13-4M38 38l8 12M26 38l-8 12M23 28l-13-4" fill="none"/>`,
+  moon: `<circle cx="32" cy="32" r="24" fill="${L}"/><circle cx="24" cy="24" r="5" fill="${W}"/><circle cx="40" cy="36" r="7" fill="${W}"/><circle cx="24" cy="44" r="3" fill="${W}"/><path d="M42 10l2 6M48 14l-4 2" fill="none" stroke="${Y}"/>`,
+  spacescope: `<path d="M20 20l12-12 12 12-12 12z" fill="${Y}"/><path d="M20 20l12 12M44 20L32 32M32 8v24" fill="none"/><path d="M6 40h52l-6 12H12z" fill="${G}"/><path d="M32 32v8" fill="none"/>`,
+  earthpizza: `<circle cx="32" cy="32" r="24" fill="${S}"/><path d="M18 18c6 2 8 8 4 12s2 10-2 14M40 12c-2 6 4 8 8 6M44 40c-4 0-8 4-6 8" fill="${M}"/><path d="M38 34l20-12c2 4 2 10 0 14z" fill="${Y}"/><circle cx="50" cy="28" r="2" fill="${R}"/>`,
+  fleet: `<path d="M4 30v-4c0-3 2-4 4-5l4-6h12l4 6c2 1 4 2 4 5v4z" fill="${R}"/><path d="M32 30v-4c0-3 2-4 4-5l4-6h12l4 6c2 1 4 2 4 5v4z" fill="${S}"/><path d="M18 52v-4c0-3 2-4 4-5l4-6h12l4 6c2 1 4 2 4 5v4z" fill="${M}"/><circle cx="12" cy="31" r="3" fill="${K}"/><circle cx="24" cy="31" r="3" fill="${K}"/><circle cx="40" cy="31" r="3" fill="${K}"/><circle cx="52" cy="31" r="3" fill="${K}"/><circle cx="26" cy="53" r="3" fill="${K}"/><circle cx="38" cy="53" r="3" fill="${K}"/>`,
+  cheese: `<path d="M6 44l40-26 12 10v20H6z" fill="${Y}"/><path d="M6 44h52" fill="none"/><circle cx="22" cy="40" r="3" fill="${O}"/><circle cx="38" cy="36" r="4" fill="${O}"/><circle cx="48" cy="44" r="2" fill="${O}"/>`,
+  donut: `<circle cx="32" cy="32" r="24" fill="${O}"/><path d="M12 28c2-10 10-16 20-16s18 6 20 16c-2 8-8 10-12 8-4-2-12-2-16 0-4 2-10 0-12-8z" fill="${P}"/><circle cx="32" cy="32" r="7" fill="${W}"/><path d="M22 20l2 3M40 18l-1 3M46 28l-3 1M18 30l3 1" fill="none" stroke="${S}"/>`,
+} as const;
+
+export type IconKey = keyof typeof ICONS;
+
+export function iconSvg(key: IconKey, label = ''): string {
+  return `<svg viewBox="0 0 64 64" width="64" height="64" ${label ? `role="img" aria-label="${label}"` : 'aria-hidden="true"'}><g stroke="${K}" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">${ICONS[key]}</g></svg>`;
+}

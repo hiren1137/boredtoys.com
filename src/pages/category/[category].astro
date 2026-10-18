@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import GameGrid from '../../components/GameGrid.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import NewGames from '../../components/NewGames.astro';
+import { CATEGORIES, CATEGORY_KEYS, type Category } from '../../config/site';
+import { absUrl, categoryPath, gamePath, gamesByCategory, getGames, type Game } from '../../lib/games';
+
+export async function getStaticPaths() {
+  const all = await getGames();
+  const byCat = gamesByCategory(all);
+  return CATEGORY_KEYS.map((category) => ({
+    params: { category },
+    props: { category, games: byCat[category], all },
+  }));
+}
+
+interface Props {
+  category: Category;
+  games: Game[];
+  all: Game[];
+}
+const { category, games, all } = Astro.props;
+const info = CATEGORIES[category];
+const path = categoryPath(category);
+const noindex = games.length < 2;
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: `${info.label} Games`, href: path },
+];
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: info.h1,
+    description: info.metaDescription,
+    url: absUrl(path),
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: games.map((g, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        url: absUrl(gamePath(g.data.slug)),
+        name: g.data.title,
+      })),
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: crumbs.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: absUrl(c.href) })),
+  },
+];
+---
+
+<BaseLayout title={info.metaTitle} description={info.metaDescription} path={path} noindex={noindex} jsonLd={jsonLd}>
+  <div class="wrap">
+    <Breadcrumbs items={crumbs} />
+    <h1><span aria-hidden="true">{info.emoji}</span> {info.h1}</h1>
+    <div class="prose cat-intro">
+      {info.intro.map((p) => <p>{p}</p>)}
+    </div>
+
+    {
+      games.length > 0 ? (
+        <GameGrid games={games} wide surprise />
+      ) : (
+        <p class="note sticker">
+          No {info.label.toLowerCase()} games yet. New games arrive almost every day, so check back soon or{' '}
+          <a href="/">browse every game</a>.
+        </p>
+      )
+    }
+    {games.length < 2 && <NewGames all={all} title="Try One of These Instead" />}
+  </div>
+</BaseLayout>
+
+<style>
+  .cat-intro {
+    margin-bottom: 28px;
+  }
+</style>

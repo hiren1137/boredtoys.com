@@ -1,0 +1,12 @@
+{
+  "spend-bill-gates-money": {
+    "forbesUri": "bill-gates",
+    "netWorth": 117800000000,
+    "asOf": "2026-10-18"
+  },
+  "spend-elon-musk-money": {
+    "forbesUri": "elon-musk",
+    "netWorth": 908500000000,
+    "asOf": "2026-10-18"
+  }
+}

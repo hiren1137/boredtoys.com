@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <rect width="400" height="300" fill="#fffdf7"/>
+  <rect x="40" y="22" width="320" height="64" rx="18" fill="#6be3a8" stroke="#1f1a2e" stroke-width="5"/>
+  <text x="200" y="66" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="32" font-weight="900" text-anchor="middle" fill="#1f1a2e">$117,800,000,000</text>
+  <g stroke="#1f1a2e" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M70 140h250l-26 90H100z" fill="#ffac57"/>
+    <path d="M40 120h30l10 20" fill="none"/>
+    <path d="M90 170h220M100 200h200" fill="none" stroke-width="3"/>
+    <circle cx="120" cy="256" r="16" fill="#1f1a2e"/>
+    <circle cx="270" cy="256" r="16" fill="#1f1a2e"/>
+    <path d="M96 140l8-30h70l14 30z" fill="#ffffff"/>
+    <path d="M108 110l4-14h40l10 14z" fill="#dcd8e4"/>
+    <path d="M116 120h8M134 120h8M152 120h8" stroke="#6cc8ff" fill="none"/>
+    <path d="M200 140c0-28 16-40 38-40s38 12 38 40z" fill="#ffac57"/>
+    <path d="M198 132h80" stroke="#6be3a8" stroke-width="8"/>
+    <path d="M226 116h.5M244 112h.5M260 118h.5" stroke-width="6"/>
+  </g>
+  <g transform="rotate(-12 330 130)" stroke="#1f1a2e" stroke-width="4">
+    <circle cx="330" cy="130" r="26" fill="#ffd447"/>
+    <text x="330" y="141" font-family="system-ui, sans-serif" font-size="30" font-weight="900" text-anchor="middle" fill="#1f1a2e" stroke="none">$</text>
+  </g>
+</svg>

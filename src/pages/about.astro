@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE_NAME } from '../config/site';
+import { getGames } from '../lib/games';
+
+const count = (await getGames()).length;
+---
+
+<BaseLayout
+  title={`About ${SITE_NAME}`}
+  description={`${SITE_NAME} is a growing box of tiny, silly browser games. Learn who makes them, how they work and why there is no sign-up.`}
+  path="/about/"
+>
+  <div class="wrap prose">
+    <h1>About {SITE_NAME}</h1>
+    <p class="lede">A small toy box of silly games you can play in seconds.</p>
+    <p>
+      {SITE_NAME} is a collection of quick browser games and toys. Right now there {count === 1 ? 'is' : 'are'}
+      {' '}{count} of them, and new ones are added almost every day. Each game does one funny little thing, and does it
+      well.
+    </p>
+    <h2>How It Works</h2>
+    <p>
+      Every game runs completely in your browser. There are no accounts, no logins and no servers storing your
+      scores. Your personal bests are kept on your own device using your browser's local storage.
+    </p>
+    <h2>Original Games, Familiar Fun</h2>
+    <p>
+      Some games are our own take on classic internet toys. We write all of our own code, draw our own art and write
+      our own words. If you spot a bug or have an idea for a game, we would love to hear from you on the
+      <a href="/contact/">contact page</a>.
+    </p>
+  </div>
+</BaseLayout>
