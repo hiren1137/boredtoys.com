@@ -51,8 +51,17 @@ export async function copyText(text: string): Promise<boolean> {
 
 export function xIntentUrl(ctx: GameContext, score?: string): string {
   const text = score == null ? `Play ${ctx.title}:` : fillShareText(ctx.shareText, score);
+  // twitter.com/intent/tweet is the share page that still opens a composer.
+  // x.com/intent/post sends people to a broken login screen instead.
   const params = new URLSearchParams({ text, url: ctx.url });
-  return `https://x.com/intent/post?${params.toString()}`;
+  return `https://twitter.com/intent/tweet?${params.toString()}`;
+}
+
+/** Opens the X composer. Falls back to this tab if a new tab is blocked. */
+export function openOnX(ctx: GameContext, score?: string): void {
+  const href = xIntentUrl(ctx, score);
+  const popup = window.open(href, '_blank', 'noopener,noreferrer');
+  if (!popup) window.location.href = href;
 }
 
 /** Builds Share / Copy link / Share on X buttons. Native share is only offered where the browser supports it. */
@@ -84,11 +93,13 @@ export function buildShareRow(ctx: GameContext, getScore: () => string | undefin
   const x = document.createElement('a');
   x.className = 'btn btn--white';
   x.textContent = '𝕏 Share on X';
-  x.target = '_blank';
-  x.rel = 'noopener';
-  x.addEventListener('pointerdown', () => (x.href = xIntentUrl(ctx, getScore())));
-  x.addEventListener('focus', () => (x.href = xIntentUrl(ctx, getScore())));
   x.href = xIntentUrl(ctx, getScore());
+  x.target = '_blank';
+  x.rel = 'noopener noreferrer';
+  x.addEventListener('click', (e) => {
+    e.preventDefault();
+    openOnX(ctx, getScore());
+  });
   row.append(x);
 
   wrap.append(row, status);

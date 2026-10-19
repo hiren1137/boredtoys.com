@@ -1,29 +1,32 @@
 ---
 // Static "share this game" row. Score-filled sharing lives in the result panel (src/lib/share.ts).
+import { xIntentUrl } from '../lib/share';
+
 interface Props {
   title: string;
   url: string;
 }
 const { title, url } = Astro.props;
 const text = `Play ${title}:`;
-const xHref = `https://x.com/intent/post?${new URLSearchParams({ text, url }).toString()}`;
+const xHref = xIntentUrl({ slug: '', title, url, shareText: text, siteName: '' });
 ---
 
 <div class="game-share" data-share-row data-share-title={title} data-share-text={text} data-share-url={url}>
   <span class="game-share-label">Share this game:</span>
   <button type="button" class="btn btn--small btn--sky" data-native-share hidden>📤 Share</button>
   <button type="button" class="btn btn--small btn--white" data-copy-link>🔗 Copy link</button>
-  <a class="btn btn--small btn--white" href={xHref} target="_blank" rel="noopener">𝕏 Share on X</a>
+  <a class="btn btn--small btn--white" href={xHref} target="_blank" rel="noopener noreferrer" data-share-x>𝕏 Share on X</a>
   <span class="share-status" role="status" data-share-status></span>
 </div>
 
 <script>
-  import { canNativeShare, copyText } from '../lib/share';
+  import { canNativeShare, copyText, openOnX } from '../lib/share';
 
   for (const row of document.querySelectorAll<HTMLElement>('[data-share-row]')) {
     const { shareTitle = '', shareText = '', shareUrl = location.href } = row.dataset;
     const status = row.querySelector<HTMLElement>('[data-share-status]');
     const native = row.querySelector<HTMLButtonElement>('[data-native-share]');
+    const ctx = { slug: '', title: shareTitle, url: shareUrl, shareText, siteName: '' };
     if (native && canNativeShare()) {
       native.hidden = false;
       native.addEventListener('click', () => {
@@ -33,6 +36,10 @@ const xHref = `https://x.com/intent/post?${new URLSearchParams({ text, url }).to
     row.querySelector('[data-copy-link]')?.addEventListener('click', async () => {
       const ok = await copyText(shareUrl);
       if (status) status.textContent = ok ? 'Link copied!' : 'Could not copy the link.';
+    });
+    row.querySelector('[data-share-x]')?.addEventListener('click', (e) => {
+      e.preventDefault();
+      openOnX(ctx);
     });
   }
 </script>
