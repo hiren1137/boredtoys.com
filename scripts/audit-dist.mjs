@@ -2,7 +2,7 @@
 // Checks every built page for the SEO basics: one H1, one correct canonical, an OG image and favicons.
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { join, relative, sep } from 'node:path';
-import { ROOT } from './lib/games.mjs';
+import { ROOT, readGames } from './lib/games.mjs';
 
 const DIST = join(ROOT, 'dist');
 const HOST = readFileSync(join(ROOT, 'src/config/site.ts'), 'utf8').match(/HOST = '([^']+)'/)?.[1];
@@ -46,10 +46,32 @@ for (const file of pages) {
   }
 }
 
+// Scheduled games must not leak into a live build before their release day.
+let scheduled = 0;
+if (process.env.SHOW_SCHEDULED !== '1') {
+  const tz = readFileSync(join(ROOT, 'src/config/site.ts'), 'utf8').match(/RELEASE_TIMEZONE = '([^']+)'/)?.[1];
+  const today = new Intl.DateTimeFormat('en-CA', { timeZone: tz }).format(new Date());
+  const listings = ['index.html', 'sitemap-0.xml', 'rss.xml', 'llms.txt']
+    .filter((f) => existsSync(join(DIST, f)))
+    .map((f) => [f, readFileSync(join(DIST, f), 'utf8')]);
+  for (const { data } of readGames()) {
+    const day = data.publishedAt instanceof Date ? data.publishedAt.toISOString().slice(0, 10) : String(data.publishedAt);
+    if (day <= today) continue;
+    scheduled++;
+    if (existsSync(join(DIST, data.slug))) errors.push(`/${data.slug}/: scheduled for ${day} but was built`);
+    for (const [f, text] of listings) {
+      if (text.includes(`/${data.slug}/`)) errors.push(`${f}: lists /${data.slug}/, which is scheduled for ${day}`);
+    }
+  }
+}
+
 if (errors.length) {
   console.error(`\nPage audit failed (${errors.length} problem${errors.length === 1 ? '' : 's'}):\n`);
   for (const e of errors) console.error(`  - ${e}`);
   console.error('');
   process.exit(1);
 }
-console.log(`Page audit passed for ${pages.length} pages (H1, canonical, OG image, favicons).`);
+console.log(
+  `Page audit passed for ${pages.length} pages (H1, canonical, OG image, favicons)` +
+    (scheduled ? `; ${scheduled} scheduled game${scheduled === 1 ? '' : 's'} correctly hidden.` : '.'),
+);
