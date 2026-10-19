@@ -1,0 +1,303 @@
+.g-tot {
+  padding: 20px 14px 24px;
+  color: var(--ink);
+}
+.g-tot[data-state='start'],
+.g-tot[data-state='handoff'] {
+  min-height: inherit;
+  display: grid;
+  place-items: center;
+}
+.g-tot .tot-start {
+  max-width: 480px;
+  text-align: center;
+}
+.g-tot .tot-vs {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-round);
+  font-weight: 900;
+  font-size: 1.5rem;
+}
+.g-tot .tot-vs span {
+  padding: 6px 14px;
+  color: #1f1a2e;
+  border: 3px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 3px 3px 0 var(--shadow);
+}
+.g-tot .tot-vs span:first-child {
+  background: var(--sky);
+  transform: rotate(-4deg);
+}
+.g-tot .tot-vs span:last-child {
+  background: var(--bubblegum);
+  transform: rotate(4deg);
+}
+.g-tot .tot-vs b {
+  font-size: 1.1rem;
+}
+.g-tot .tot-big {
+  margin: 16px 0 8px;
+  font-family: var(--font-round);
+  font-weight: 900;
+  font-size: 1.6rem;
+  line-height: 1.2;
+}
+.g-tot .tot-last {
+  font-weight: 700;
+}
+.g-tot .tot-modes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.g-tot .tot-play {
+  max-width: 680px;
+  margin: 0 auto;
+}
+.g-tot .tot-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.g-tot .tot-top .btn {
+  margin-left: auto;
+}
+.g-tot .tot-pill {
+  padding: 4px 12px;
+  font-weight: 900;
+  font-size: 0.9rem;
+  background: var(--card);
+  border: 2px solid var(--line);
+  border-radius: 999px;
+}
+.g-tot .tot-pill--theme {
+  background: #fff3b0;
+  color: #1f1a2e;
+}
+.g-tot .tot-pill--who {
+  background: var(--grape);
+  color: #1f1a2e;
+}
+.g-tot .tot-bar {
+  height: 10px;
+  margin: 12px 0 0;
+  background: color-mix(in srgb, var(--ink) 12%, transparent);
+  border: 2px solid var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.g-tot .tot-bar span {
+  display: block;
+  height: 100%;
+  background: var(--mint);
+}
+.g-tot .tot-q {
+  min-height: 2.6em;
+  margin: 18px 0 16px;
+  font-size: clamp(1.3rem, 4.6vw, 1.8rem);
+  line-height: 1.25;
+  text-align: center;
+  outline: none;
+}
+.g-tot .tot-options {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: stretch;
+  gap: 10px;
+}
+.g-tot .tot-or {
+  align-self: center;
+  font-weight: 900;
+  font-size: 1.1rem;
+}
+.g-tot .tot-opt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 190px;
+  padding: 16px 10px;
+  font: inherit;
+  font-weight: 800;
+  font-size: 1.05rem;
+  line-height: 1.2;
+  color: #1f1a2e;
+  border: 3px solid var(--line);
+  border-radius: 20px;
+  box-shadow: 4px 4px 0 var(--shadow);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+.g-tot .tot-opt--a {
+  background: var(--sky);
+}
+.g-tot .tot-opt--b {
+  background: var(--bubblegum);
+}
+.g-tot .tot-opt:hover:not(:disabled) {
+  transform: translate(-1px, -3px) rotate(-1deg);
+  box-shadow: 5px 7px 0 var(--shadow);
+}
+.g-tot .tot-opt:focus-visible {
+  outline: 4px solid var(--ink);
+  outline-offset: 4px;
+}
+.g-tot .tot-opt:disabled {
+  cursor: default;
+}
+.g-tot .tot-opt.is-picked {
+  transform: scale(1.04);
+  box-shadow: 0 0 0 5px var(--mint), 4px 4px 0 5px var(--shadow);
+}
+.g-tot .tot-opt:disabled:not(.is-picked) {
+  opacity: 0.55;
+}
+.g-tot .tot-emoji {
+  font-size: 3.2rem;
+  line-height: 1;
+}
+.g-tot .tot-keys {
+  margin: 16px 0 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+@media (pointer: coarse) {
+  .g-tot .tot-keys {
+    display: none;
+  }
+}
+
+.g-tot .tot-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+.g-tot .tot-result .result-panel {
+  width: 100%;
+}
+.g-tot .tot-result .result-score {
+  font-size: clamp(1.7rem, 7vw, 2.3rem);
+  line-height: 1.15;
+}
+.g-tot .tot-summary {
+  text-align: left;
+  margin-bottom: 14px;
+}
+.g-tot .tot-traits {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px;
+  display: grid;
+  gap: 6px;
+}
+.g-tot .tot-traits li {
+  display: grid;
+  grid-template-columns: 5.2em 1fr 1.6em;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+.g-tot .tot-trait-bar {
+  height: 14px;
+  background: #ece8f2;
+  border: 2px solid #1f1a2e;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.g-tot .tot-trait-bar span {
+  display: block;
+  height: 100%;
+}
+.g-tot .tot-trait-bar .is-cozy { background: var(--tangerine); }
+.g-tot .tot-trait-bar .is-bold { background: var(--tomato); }
+.g-tot .tot-trait-bar .is-chaos { background: var(--grape); }
+.g-tot .tot-trait-bar .is-order { background: var(--sky); }
+.g-tot .tot-trait-n {
+  text-align: right;
+}
+.g-tot .tot-log summary {
+  cursor: pointer;
+  font-weight: 800;
+}
+.g-tot .tot-log ol {
+  max-height: 220px;
+  overflow: auto;
+  margin: 8px 0 0;
+  padding-left: 1.5em;
+  font-size: 0.9rem;
+}
+.g-tot .tot-log li {
+  margin-bottom: 6px;
+}
+.g-tot .tot-log-q {
+  display: block;
+  color: #4a4458;
+}
+.g-tot .tot-log-a {
+  display: block;
+  font-weight: 800;
+}
+.g-tot .tot-copy {
+  margin-top: 12px;
+  text-align: center;
+}
+.g-tot .tot-duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.g-tot .tot-duo-card {
+  padding: 8px 10px;
+  background: #f4f2f8;
+  border: 2px solid #1f1a2e;
+  border-radius: 12px;
+  text-align: center;
+}
+.g-tot .tot-duo-name {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.g-tot .tot-duo-persona {
+  margin: 2px 0 0;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+@media (max-width: 460px) {
+  .g-tot .tot-options {
+    gap: 6px;
+  }
+  .g-tot .tot-opt {
+    min-height: 170px;
+    font-size: 0.98rem;
+  }
+  .g-tot .tot-emoji {
+    font-size: 2.8rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .g-tot .tot-opt {
+    transition: none;
+  }
+  .g-tot .tot-opt:hover:not(:disabled) {
+    transform: none;
+  }
+}
