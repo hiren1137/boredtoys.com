@@ -42,6 +42,10 @@ export const SPONSOR_PRICES: Record<'homeTile' | 'gameBar' | 'footer', string> =
 
 export const NEW_BADGE_DAYS = 7;
 
+// Games with a future publishedAt go live on that date in this timezone.
+// The daily rebuild runs at 21:30 UTC, which is 3:00 AM here.
+export const RELEASE_TIMEZONE = 'Asia/Kolkata';
+
 export const CATEGORY_KEYS = [
   'reflex',
   'memory',

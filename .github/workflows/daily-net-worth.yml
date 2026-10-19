@@ -1,6 +1,7 @@
-name: Daily net worth refresh
+name: Daily rebuild
 
-# Rebuilds the Cloudflare Pages site once a day so spend games pick up fresh Forbes figures.
+# Rebuilds the Cloudflare Pages site once a day so spend games pick up fresh Forbes figures
+# and games scheduled for the new day (publishedAt) go live.
 # The Pages build command must be `npm run build:live`, which fetches the figures before building.
 on:
   schedule:

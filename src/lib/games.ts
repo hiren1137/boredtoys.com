@@ -1,10 +1,25 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
-import { CATEGORIES, NEW_BADGE_DAYS, SITE, type Category } from '../config/site';
+import { CATEGORIES, NEW_BADGE_DAYS, RELEASE_TIMEZONE, SITE, type Category } from '../config/site';
 
 export type Game = CollectionEntry<'games'>;
 
+/** Today's date (YYYY-MM-DD) in the release timezone. */
+export function releaseDay(now = new Date()): string {
+  return new Intl.DateTimeFormat('en-CA', { timeZone: RELEASE_TIMEZONE }).format(now);
+}
+
+/**
+ * A game is live once its publishedAt date has arrived in RELEASE_TIMEZONE.
+ * Scheduled games are left out of every page, the sitemap, RSS and llms.txt until then.
+ * `npm run dev` and SHOW_SCHEDULED=1 builds include them so they can be previewed.
+ */
+export const isReleased = (g: Game, now = new Date()) =>
+  g.data.publishedAt.toISOString().slice(0, 10) <= releaseDay(now);
+
+const showScheduled = import.meta.env.DEV || process.env.SHOW_SCHEDULED === '1';
+
 export async function getGames(): Promise<Game[]> {
-  const games = await getCollection('games');
+  const games = (await getCollection('games')).filter((g) => showScheduled || isReleased(g));
   return games.sort(
     (a, b) =>
       b.data.publishedAt.getTime() - a.data.publishedAt.getTime() || a.data.title.localeCompare(b.data.title),
