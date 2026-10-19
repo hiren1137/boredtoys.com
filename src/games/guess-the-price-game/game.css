@@ -1,0 +1,13 @@
+.g-price { position: absolute; inset: 0; display: grid; place-items: center; padding: 16px; overflow: auto; }
+.g-price .pr-start, .g-price .pr-play { width: min(460px, 100%); text-align: center; }
+.g-price .pr-big { font-family: var(--font-round); font-weight: 900; font-size: clamp(1.6rem, 5vw, 2.4rem); margin: 8px 0; }
+.g-price .pr-top { display: flex; gap: 8px; justify-content: center; margin-bottom: 10px; }
+.g-price .pr-pill { border: 2px solid var(--ink); border-radius: 999px; padding: 2px 10px; font-weight: 800; background: var(--card); }
+.g-price .pr-card { border: 3px solid var(--ink); border-radius: 18px; background: var(--card); box-shadow: 4px 4px 0 var(--ink); padding: 12px; margin-bottom: 12px; }
+.g-price .pr-art { height: 92px; border-radius: 12px; background: var(--swatch); border: 3px solid var(--ink); display: grid; place-items: center; position: relative; }
+.g-price .pr-art span { width: 54px; height: 54px; border-radius: 50% 45% 50% 40%; background: #fffdf7; border: 3px solid var(--ink); }
+.g-price .pr-art b { position: absolute; right: 8px; bottom: 6px; }
+.g-price .pr-name { margin: 8px 0 0; font-size: 1.25rem; }
+.g-price .pr-range { width: 100%; margin: 8px 0 14px; }
+.g-price .pr-lab { font-weight: 800; }
+.g-price .pr-note { color: var(--ink-soft); }

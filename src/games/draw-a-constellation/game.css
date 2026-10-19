@@ -1,0 +1,10 @@
+.g-sky { position: absolute; inset: 0; display: grid; place-items: center; padding: 14px; overflow: auto; color: #f4f1ff; background: #14122a; }
+.g-sky .sky-start, .g-sky .sky-play { width: min(520px, 100%); text-align: center; }
+.g-sky .sky-big { font-family: var(--font-round); font-weight: 900; font-size: 1.8rem; }
+.g-sky .sky-top { display: flex; gap: 8px; align-items: center; justify-content: space-between; }
+.g-sky .sky-svg { width: min(420px, 100%); height: auto; background: #14122a; border: 3px solid var(--ink); border-radius: 18px; touch-action: none; }
+.g-sky circle { fill: #fffdf7; stroke: #1f1a2e; stroke-width: 0.6; cursor: pointer; }
+.g-sky line { stroke: #fffdf7; stroke-width: 1.1; stroke-linecap: round; }
+.g-sky line.is-hit { stroke: #6be3a8; }
+.g-sky line.is-miss { stroke: #8a86a8; stroke-dasharray: 1.4 1.2; }
+.g-sky line.is-extra { stroke: #ffd447; }

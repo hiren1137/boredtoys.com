@@ -1,0 +1,6 @@
+.g-day { position: absolute; inset: 0; overflow: auto; padding: 14px; }
+.g-day .day-play { width: min(520px, 100%); margin: 0 auto; }
+.g-day .day-left { font-weight: 900; text-align: center; }
+.g-day .day-row { display: grid; grid-template-columns: 1fr auto; gap: 4px 10px; align-items: center; margin: 8px 0; font-weight: 700; }
+.g-day .day-row input { grid-column: 1 / -1; width: 100%; }
+.g-day .day-compare { text-align: left; font-size: 0.85rem; padding-left: 18px; }

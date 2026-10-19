@@ -1,0 +1,334 @@
+.g-haggle {
+  height: 820px;
+  padding: 14px 14px 16px;
+  color: var(--ink);
+  overflow: hidden;
+}
+@media (min-width: 720px) {
+  .g-haggle {
+    height: 560px;
+    padding: 18px 22px;
+  }
+}
+.g-haggle[data-state='start'] {
+  display: grid;
+  place-items: center;
+}
+.g-haggle[data-state='result'] {
+  overflow: auto;
+}
+.g-haggle .hg-start {
+  max-width: 480px;
+  text-align: center;
+}
+.g-haggle .hg-lineup {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
+.g-haggle .hg-lineup svg {
+  width: 96px;
+  height: auto;
+}
+.g-haggle .hg-lineup svg:nth-child(2) {
+  transform: translateY(-8px);
+}
+.g-haggle .hg-kicker {
+  display: inline-block;
+  margin: 8px 0 10px;
+  padding: 3px 12px;
+  font-weight: 900;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: var(--tangerine);
+  color: #1f1a2e;
+  border: 2px solid var(--line);
+  border-radius: 999px;
+}
+.g-haggle .hg-big {
+  font-family: var(--font-round);
+  font-weight: 900;
+  font-size: 1.55rem;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+.g-haggle .hg-best {
+  font-weight: 800;
+}
+
+/* ---------- Top ---------- */
+.g-haggle .hg-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.g-haggle .hg-pill {
+  padding: 4px 12px;
+  font-weight: 900;
+  font-size: 0.9rem;
+  background: var(--card);
+  border: 2px solid var(--line);
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.g-haggle .hg-pill--cash {
+  background: #c8f2d4;
+  color: #1f1a2e;
+}
+.g-haggle .hg-mute {
+  margin-left: auto;
+  width: 40px;
+  height: 40px;
+  font-size: 1.1rem;
+  background: #fff;
+  border: 2px solid var(--line);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* ---------- Scene ---------- */
+.g-haggle .hg-scene {
+  display: grid;
+  gap: 12px;
+}
+@media (min-width: 720px) {
+  .g-haggle .hg-scene {
+    grid-template-columns: 220px 1fr;
+    gap: 22px;
+    align-items: start;
+  }
+}
+.g-haggle .hg-who {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  grid-template-rows: auto auto 1fr;
+  column-gap: 12px;
+  align-items: start;
+  padding: 10px;
+  background: color-mix(in srgb, var(--tangerine) 20%, var(--card));
+  border: 3px solid var(--line);
+  border-radius: 20px;
+}
+.g-haggle .hg-face {
+  grid-row: 1 / span 3;
+}
+.g-haggle .hg-face svg {
+  display: block;
+  width: 110px;
+  height: auto;
+}
+@media (min-width: 720px) {
+  .g-haggle .hg-who {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+  .g-haggle .hg-face {
+    grid-row: auto;
+  }
+  .g-haggle .hg-face svg {
+    width: 150px;
+  }
+}
+.g-haggle .hg-who.is-entering {
+  animation: hg-enter 0.45s ease-out;
+}
+@keyframes hg-enter {
+  from { transform: translateX(-30px); opacity: 0; }
+}
+.g-haggle .hg-name {
+  margin: 4px 0 0;
+  font-family: var(--font-round);
+  font-weight: 900;
+  font-size: 1.15rem;
+  line-height: 1.15;
+}
+.g-haggle .hg-kind {
+  justify-self: start;
+  margin: 4px 0 0;
+  padding: 1px 10px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #1f1a2e;
+  background: var(--sunshine);
+  border: 2px solid var(--line);
+  border-radius: 999px;
+}
+@media (min-width: 720px) {
+  .g-haggle .hg-kind {
+    justify-self: center;
+  }
+}
+.g-haggle .hg-patience {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 8px 0 0;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+.g-haggle .hg-patience span {
+  margin-right: 2px;
+}
+.g-haggle .hg-patience i {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid var(--line);
+  background: transparent;
+}
+.g-haggle .hg-patience i.is-on {
+  background: var(--tomato);
+}
+
+.g-haggle .hg-bubble {
+  position: relative;
+  margin: 0 0 12px;
+  padding: 12px 14px;
+  min-height: 4.4em;
+  font-weight: 700;
+  font-size: 1.02rem;
+  line-height: 1.35;
+  background: #fffdf7;
+  color: #1f1a2e;
+  border: 3px solid var(--line);
+  border-radius: 18px;
+}
+.g-haggle .hg-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  padding: 8px 12px;
+  background: var(--paper);
+  border: 2px dashed var(--line);
+  border-radius: 14px;
+}
+.g-haggle .hg-item svg {
+  flex: none;
+}
+.g-haggle .hg-item p {
+  margin: 0;
+  font-weight: 800;
+  line-height: 1.25;
+}
+.g-haggle .hg-item small {
+  display: block;
+  font-weight: 700;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+}
+.g-haggle .hg-offer {
+  margin: 0 0 8px;
+  font-weight: 800;
+}
+.g-haggle .hg-offer b {
+  font-family: var(--font-round);
+  font-size: 1.6rem;
+  margin-left: 6px;
+}
+.g-haggle .hg-form {
+  display: grid;
+  gap: 10px;
+}
+.g-haggle .hg-label {
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+.g-haggle .hg-ask {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.g-haggle .hg-step {
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #1f1a2e;
+  background: var(--sunshine);
+  border: 3px solid var(--line);
+  border-radius: 14px;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.g-haggle .hg-dollar {
+  font-family: var(--font-round);
+  font-weight: 900;
+  font-size: 1.6rem;
+}
+.g-haggle .hg-ask input {
+  width: 130px;
+  min-height: 48px;
+  padding: 4px 10px;
+  font: inherit;
+  font-family: var(--font-round);
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: #1f1a2e;
+  background: #fff;
+  border: 3px solid var(--line);
+  border-radius: 14px;
+}
+.g-haggle .hg-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.g-haggle .hg-outcome {
+  display: grid;
+  gap: 2px;
+  margin: 0 0 14px;
+  padding: 10px 14px;
+  border: 3px solid var(--line);
+  border-radius: 16px;
+  color: #1f1a2e;
+}
+.g-haggle .hg-outcome b {
+  font-family: var(--font-round);
+  font-size: 1.35rem;
+}
+.g-haggle .hg-outcome.is-sold {
+  background: #c8f2d4;
+}
+.g-haggle .hg-outcome.is-gone {
+  background: #ffd6d1;
+}
+
+/* ---------- Result ---------- */
+.g-haggle .hg-result {
+  padding: 4px 0;
+}
+.g-haggle .hg-ledger {
+  margin: 4px 0 14px;
+  padding: 8px 12px;
+  text-align: left;
+  font-size: 0.85rem;
+  border: 2px dashed #1f1a2e;
+  border-radius: 12px;
+}
+.g-haggle .hg-ledger-title {
+  margin: 0 0 4px;
+  font-weight: 900;
+  text-align: center;
+}
+.g-haggle .hg-ledger ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.g-haggle .hg-ledger li {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 2px 0;
+  border-bottom: 1px dotted #b9b3c6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .g-haggle .hg-who.is-entering {
+    animation: none;
+  }
+}

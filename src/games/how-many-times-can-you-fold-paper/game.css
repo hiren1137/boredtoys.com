@@ -1,0 +1,126 @@
+.g-paper {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  color: var(--ink);
+  background: var(--card);
+}
+.g-paper p {
+  margin: 0;
+}
+.g-paper .fp-top {
+  display: grid;
+  gap: 4px 18px;
+  padding: 12px 14px 10px;
+  min-height: 172px;
+  border-bottom: 3px solid var(--line);
+}
+@media (min-width: 640px) {
+  .g-paper .fp-top {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    min-height: 128px;
+    padding: 14px 18px 12px;
+  }
+}
+.g-paper .fp-folds {
+  font-family: var(--font-round);
+  font-weight: 900;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.g-paper .fp-folds [data-n] {
+  font-size: 1.9rem;
+  letter-spacing: 0;
+  font-variant-numeric: tabular-nums;
+}
+.g-paper .fp-thick {
+  font-family: var(--font-round);
+  font-weight: 900;
+  font-size: clamp(1.5rem, 5vw, 2.1rem);
+  line-height: 1.1;
+}
+.g-paper .fp-exact {
+  margin-top: 4px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  overflow-wrap: anywhere;
+  line-height: 1.35;
+}
+.g-paper .fp-compare {
+  font-weight: 900;
+  font-size: 1.02rem;
+  line-height: 1.3;
+}
+.g-paper .fp-next {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+  line-height: 1.35;
+}
+.g-paper .fp-note {
+  margin-top: 4px;
+  font-size: 0.86rem;
+  line-height: 1.35;
+}
+.g-paper.is-record .fp-note {
+  display: inline-block;
+  padding: 2px 8px;
+  background: var(--sunshine);
+  color: #1f1a2e;
+  border: 2px solid var(--line);
+  border-radius: 10px;
+  font-weight: 800;
+}
+.g-paper .fp-view {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+}
+.g-paper .fp-canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+.g-paper .fp-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 10px 12px;
+  border-top: 3px solid var(--line);
+}
+.g-paper .fp-fold {
+  min-width: 150px;
+}
+.g-paper .fp-small {
+  padding-inline: 0.8em;
+  font-size: 0.92rem;
+}
+.g-paper .fp-over {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  overflow: auto;
+  background: rgba(31, 26, 46, 0.45);
+}
+.g-paper .fp-over .result-panel {
+  width: 100%;
+}
+.g-paper .fp-keep {
+  margin: -6px 0 12px;
+}
+@media (max-width: 379px) {
+  .g-paper .fp-controls .btn {
+    padding-inline: 0.6em;
+    font-size: 0.85rem;
+  }
+  .g-paper .fp-fold {
+    min-width: 110px;
+  }
+}
