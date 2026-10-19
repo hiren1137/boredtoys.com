@@ -24,6 +24,7 @@ export const SITE = {
 };
 
 export const ANALYTICS = {
+  googleAnalyticsId: 'G-F8RSHWS6N2', // Google Analytics 4 measurement ID
   cloudflareToken: '', // Cloudflare Web Analytics token
   googleSiteVerification: '0WC0ZFEvoXUX90MpyYWk8KtghoGrR1YD-OJy9tpNoQg', // Google Search Console meta tag content
 };
