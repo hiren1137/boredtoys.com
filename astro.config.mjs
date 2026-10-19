@@ -1,9 +1,16 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
-import { SITE, SPONSORS_ENABLED } from './src/config/site.ts';
+import { RELEASE_TIMEZONE, SITE, SPONSORS_ENABLED } from './src/config/site.ts';
 import { readGames } from './scripts/lib/games.mjs';
 
-const games = readGames();
+const today = new Intl.DateTimeFormat('en-CA', { timeZone: RELEASE_TIMEZONE }).format(new Date());
+const games = readGames().filter(({ data }) => {
+  const day =
+    data.publishedAt instanceof Date
+      ? data.publishedAt.toISOString().slice(0, 10)
+      : String(data.publishedAt).slice(0, 10);
+  return process.env.SHOW_SCHEDULED === '1' || day <= today;
+});
 const lastmodBySlug = new Map(
   games.map(({ data }) => [String(data.slug), new Date(data.updatedAt ?? data.publishedAt)]),
 );

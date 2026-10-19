@@ -20,7 +20,7 @@ tags:
   - "2 player"
   - "personality"
 shortDescription: "20 silly debates, two choices each. Pick a side and meet your personality."
-intro: "In this this or that game, you settle 20 silly debates one tap at a time. Pick a side, then see what your choices say about you."
+intro: "The this or that game lets you settle 20 silly debates one tap at a time. Pick a side, then see what your choices say about you."
 thumbAlt: "A blue card with a cupcake and a pink card with a sliced pie, with a smiling yellow circle between them"
 faqs:
   - question: "Can I see what other people picked?"
