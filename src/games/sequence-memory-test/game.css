@@ -1,0 +1,222 @@
+.g-seqmem {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  padding: 14px 14px 18px;
+  background-color: #fffdf7;
+  background-image: radial-gradient(rgba(31, 26, 46, 0.08) 1.5px, transparent 1.5px);
+  background-size: 26px 26px;
+  color: #1f1a2e;
+  user-select: none;
+  -webkit-user-select: none;
+  outline: none;
+}
+.g-seqmem p {
+  margin: 0;
+}
+
+.g-seqmem .g-top {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  min-height: 64px;
+  padding: 0 48px;
+  text-align: center;
+}
+.g-seqmem .g-level {
+  font-family: var(--font-round);
+  font-weight: 900;
+  font-size: 1.7rem;
+  line-height: 1.15;
+  font-variant-numeric: tabular-nums;
+}
+.g-seqmem .g-status {
+  font-weight: 800;
+  font-size: 1rem;
+  color: #4a4458;
+  min-height: 1.5em;
+}
+.g-seqmem[data-state='input'] .g-status {
+  color: #1f7a48;
+}
+.g-seqmem .g-mute {
+  position: absolute;
+  top: 2px;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #1f1a2e;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 2px 2px 0 #1f1a2e;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.g-seqmem .g-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  width: min(100%, 360px);
+  aspect-ratio: 1;
+  margin: auto 0;
+  touch-action: manipulation;
+}
+.g-seqmem .g-tile {
+  position: relative;
+  border: 3px solid #1f1a2e;
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--c) 22%, #fff);
+  box-shadow: 4px 4px 0 #1f1a2e;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    background-color 0.12s,
+    transform 0.12s,
+    box-shadow 0.12s;
+}
+.g-seqmem .g-tile[aria-disabled='true'] {
+  cursor: default;
+}
+.g-seqmem[data-state='input'] .g-tile:hover {
+  background: color-mix(in srgb, var(--c) 40%, #fff);
+}
+.g-seqmem .g-tile:focus-visible {
+  outline: 3px solid #1f1a2e;
+  outline-offset: 3px;
+}
+.g-seqmem .g-tile[data-lit] {
+  background: var(--c);
+  transform: translate(-2px, -2px) scale(1.04);
+  box-shadow:
+    7px 7px 0 #1f1a2e,
+    0 0 0 6px rgba(255, 255, 255, 0.85),
+    0 0 26px 8px var(--c);
+  transition: none;
+  z-index: 1;
+}
+.g-seqmem .g-tile[data-lit]::after {
+  content: '';
+  position: absolute;
+  top: 12%;
+  left: 14%;
+  width: 34%;
+  height: 16%;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.7);
+  transform: rotate(-12deg);
+}
+.g-seqmem .g-num {
+  position: absolute;
+  left: 9px;
+  bottom: 6px;
+  font-weight: 900;
+  font-size: 0.85rem;
+  color: #1f1a2e;
+  opacity: 0.55;
+}
+
+.g-seqmem .g-board.is-good .g-tile {
+  animation: g-seqmem-good 0.45s ease-out;
+}
+.g-seqmem .g-board.is-bad {
+  animation: g-seqmem-shake 0.42s ease-in-out;
+}
+.g-seqmem .g-tile[data-mark='wrong'] {
+  background: #ff7466;
+}
+.g-seqmem .g-tile[data-mark='wrong']::before {
+  content: '✕';
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: #1f1a2e;
+}
+.g-seqmem .g-tile[data-mark='right'] {
+  background: var(--c);
+  outline: 4px dashed #1f1a2e;
+  outline-offset: 4px;
+}
+
+.g-seqmem .g-overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  overflow-y: auto;
+  background: rgba(255, 253, 247, 0.9);
+  z-index: 2;
+}
+.g-seqmem .g-overlay[hidden] {
+  display: none;
+}
+.g-seqmem .g-screen {
+  max-width: 360px;
+  text-align: center;
+}
+.g-seqmem .g-big {
+  font-family: var(--font-round);
+  font-weight: 900;
+  font-size: 1.45rem;
+  line-height: 1.25;
+}
+.g-seqmem .g-sub {
+  margin-top: 8px !important;
+  color: #4a4458;
+}
+.g-seqmem .g-best {
+  margin-top: 10px !important;
+  font-weight: 800;
+}
+.g-seqmem .g-screen .btn {
+  margin-top: 18px;
+}
+.g-seqmem .g-hint {
+  margin-top: 12px !important;
+  color: #4a4458;
+  font-size: 0.9rem;
+}
+
+@keyframes g-seqmem-good {
+  40% {
+    background: #6be3a8;
+  }
+}
+@keyframes g-seqmem-shake {
+  20%,
+  60% {
+    transform: translateX(-10px);
+  }
+  40%,
+  80% {
+    transform: translateX(10px);
+  }
+}
+
+@media (max-width: 420px) {
+  .g-seqmem .g-board {
+    gap: 10px;
+  }
+  .g-seqmem .g-level {
+    font-size: 1.45rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .g-seqmem .g-tile,
+  .g-seqmem .g-tile[data-lit] {
+    transition: none;
+    transform: none;
+  }
+  .g-seqmem .g-board.is-good .g-tile,
+  .g-seqmem .g-board.is-bad {
+    animation: none;
+  }
+}

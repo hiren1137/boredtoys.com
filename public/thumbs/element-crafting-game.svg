@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <rect width="400" height="300" fill="#fffdf7"/>
+  <g fill="#1f1a2e" opacity=".12">
+    <circle cx="30" cy="30" r="3"/><circle cx="90" cy="30" r="3"/><circle cx="150" cy="30" r="3"/><circle cx="250" cy="30" r="3"/><circle cx="310" cy="30" r="3"/><circle cx="370" cy="30" r="3"/>
+    <circle cx="30" cy="270" r="3"/><circle cx="90" cy="270" r="3"/><circle cx="310" cy="270" r="3"/><circle cx="370" cy="270" r="3"/>
+  </g>
+  <g stroke="#1f1a2e" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+    <!-- water bubble -->
+    <circle cx="112" cy="150" r="58" fill="#6cc8ff"/>
+    <path d="M112 116c-16 22-22 34-22 44a22 22 0 0 0 44 0c0-10-6-22-22-44z" fill="#ffffff"/>
+    <!-- fire bubble -->
+    <circle cx="288" cy="150" r="58" fill="#ff7466"/>
+    <path d="M288 112c-4 18-24 26-24 50a24 24 0 0 0 48 0c0-14-8-18-10-30-6 8-8 12-14 14 2-12 4-22 0-34z" fill="#ffd447"/>
+    <!-- spark in the middle -->
+    <path d="M200 104l13 31 33 4-25 21 7 33-28-17-28 17 7-33-25-21 33-4z" fill="#ffd447"/>
+    <!-- small chips -->
+    <rect x="34" y="226" width="104" height="40" rx="20" fill="#ffffff"/>
+    <rect x="262" y="226" width="104" height="40" rx="20" fill="#ffffff"/>
+    <rect x="150" y="30" width="100" height="40" rx="20" fill="#ffffff"/>
+  </g>
+  <g fill="none" stroke="#1f1a2e" stroke-width="4" stroke-linecap="round">
+    <path d="M200 84v-6M164 96l-6-5M236 96l6-5"/>
+    <path d="M200 214v10M168 206l-8 8M232 206l8 8"/>
+  </g>
+  <g stroke="#1f1a2e" stroke-width="3.5" stroke-linejoin="round">
+    <!-- leaf -->
+    <path d="M52 254c4-14 16-20 30-18-2 14-14 22-30 18z" fill="#6be3a8"/>
+    <rect x="92" y="240" width="34" height="8" rx="4" fill="#1f1a2e"/>
+    <!-- rock -->
+    <path d="M278 256l6-16 16-4 10 10-4 12z" fill="#c7a3ff"/>
+    <rect x="318" y="240" width="34" height="8" rx="4" fill="#1f1a2e"/>
+    <!-- cloud -->
+    <path d="M166 58a9 9 0 0 1 4-17 12 12 0 0 1 22 2 8 8 0 0 1 2 15z" fill="#6cc8ff"/>
+    <rect x="202" y="46" width="34" height="8" rx="4" fill="#1f1a2e"/>
+  </g>
+</svg>

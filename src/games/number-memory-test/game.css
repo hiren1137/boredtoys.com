@@ -1,0 +1,219 @@
+.g-numem {
+  min-height: inherit;
+  display: grid;
+  place-items: center;
+  padding: 20px 16px 24px;
+  text-align: center;
+  color: var(--ink);
+  container-type: inline-size;
+}
+/* Keep the answer box near the top so a phone keyboard never covers it. */
+.g-numem[data-state='answer'] {
+  align-items: start;
+}
+.g-numem p {
+  margin: 0;
+}
+.g-numem .nm-start,
+.g-numem .nm-show,
+.g-numem .nm-passed,
+.g-numem .nm-answer {
+  width: 100%;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+.g-numem .nm-start {
+  max-width: 440px;
+}
+.g-numem .nm-kicker {
+  display: inline-block;
+  padding: 3px 12px;
+  font-weight: 900;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: var(--grape);
+  color: #1f1a2e;
+  border: 2px solid var(--line);
+  border-radius: 999px;
+}
+.g-numem .nm-kicker--good {
+  background: var(--mint);
+}
+.g-numem .nm-big {
+  font-family: var(--font-round);
+  font-weight: 900;
+  font-size: 1.55rem;
+  line-height: 1.2;
+}
+.g-numem .nm-sub {
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+.g-numem .nm-best {
+  font-weight: 800;
+}
+.g-numem .nm-hud {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.g-numem .nm-chip {
+  padding: 3px 12px;
+  font-weight: 900;
+  font-size: 0.85rem;
+  background: var(--grape);
+  color: #1f1a2e;
+  border: 2px solid var(--line);
+  border-radius: 999px;
+}
+.g-numem .nm-restart {
+  font: inherit;
+  font-weight: 800;
+  font-size: 0.85rem;
+  padding: 4px 10px;
+  color: var(--ink);
+  background: transparent;
+  border: 2px solid currentColor;
+  border-radius: 999px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.g-numem .nm-restart:hover {
+  opacity: 1;
+}
+.g-numem .nm-number {
+  /* Shrinks as the number gets longer so it fits on one line, then wraps for very long ones. */
+  font-family: var(--font-round);
+  font-weight: 900;
+  font-size: clamp(1.8rem, calc(150cqi / (var(--len, 1) + 1.5)), 6rem);
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+  max-width: 100%;
+  min-height: 1.2em;
+  animation: nm-pop 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.g-numem .nm-number--done {
+  color: var(--good);
+}
+.g-numem .nm-bar {
+  width: min(320px, 80%);
+  height: 14px;
+  border: 2px solid var(--line);
+  border-radius: 999px;
+  background: var(--paper);
+  overflow: hidden;
+}
+.g-numem .nm-bar span {
+  display: block;
+  height: 100%;
+  background: var(--grape);
+  transform-origin: left center;
+  transition-property: transform;
+  transition-timing-function: linear;
+}
+.g-numem .nm-label {
+  font-family: var(--font-round);
+  font-weight: 900;
+  font-size: 1.4rem;
+  margin-top: 6px;
+}
+.g-numem .nm-input {
+  width: min(100%, 440px);
+  padding: 12px 14px;
+  font: inherit;
+  font-family: var(--font-round);
+  font-weight: 900;
+  font-size: 1.8rem;
+  letter-spacing: 0.08em;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  color: #1f1a2e;
+  background: #fff;
+  border: var(--border) solid var(--line);
+  border-radius: var(--radius-sm);
+  box-shadow: 4px 4px 0 var(--shadow);
+}
+.g-numem .nm-input:focus-visible {
+  outline: 3px solid var(--grape);
+  outline-offset: 3px;
+}
+.g-numem .nm-error {
+  min-height: 1.3em;
+  color: var(--bad);
+  font-weight: 800;
+}
+.g-numem .nm-diff {
+  margin: 0 0 16px;
+  padding: 10px 12px;
+  display: grid;
+  gap: 6px;
+  background: #fff;
+  border: 2px dashed #1f1a2e;
+  border-radius: 14px;
+  text-align: left;
+}
+.g-numem .nm-diff-row {
+  display: grid;
+  grid-template-columns: 5.5em 1fr;
+  align-items: baseline;
+  gap: 8px;
+}
+.g-numem .nm-diff-label {
+  font-weight: 800;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #4a4458;
+}
+.g-numem .nm-diff-digits {
+  font-family: var(--font-round);
+  font-weight: 900;
+  font-size: 1.35rem;
+  letter-spacing: 0.06em;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+  color: #1f1a2e;
+}
+.g-numem .nm-diff-digits span {
+  border-radius: 4px;
+}
+.g-numem .is-target .is-wrong {
+  background: #d4f7e4;
+  color: #12693a;
+}
+.g-numem .is-answer .is-wrong,
+.g-numem .is-answer .is-missing {
+  background: #ffe0dc;
+  color: #b3261e;
+  text-decoration: line-through;
+}
+.g-numem .is-answer .is-missing {
+  text-decoration: none;
+}
+.g-numem .is-target .is-missing {
+  color: #4a4458;
+}
+
+@keyframes nm-pop {
+  from {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .g-numem .nm-number {
+    animation: none;
+  }
+}

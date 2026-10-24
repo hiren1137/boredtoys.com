@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <rect width="400" height="300" fill="#fffdf7"/>
+  <g stroke="#1f1a2e" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+    <rect x="216" y="56" width="164" height="128" rx="22" fill="#3ed68a"/>
+    <rect x="22" y="196" width="122" height="78" rx="18" fill="#ff7466"/>
+    <rect x="146" y="38" width="44" height="22" rx="6" fill="#ffd447"/>
+    <path d="M150 64l-14-10M186 64l14-10" fill="none"/>
+    <circle cx="168" cy="148" r="84" fill="#ffffff"/>
+    <circle cx="168" cy="148" r="66" fill="#6cc8ff"/>
+    <path d="M168 148V96" fill="none" stroke-width="7"/>
+    <path d="M168 148l34 20" fill="none" stroke-width="7"/>
+    <path d="M184 92l-30 54h24l-14 50 40-64h-26l18-40z" fill="#ffd447"/>
+    <path d="M300 224c-6-14-2-26 10-28s16 8 16 8l2-30c0-10 16-10 16 0l-2 38 14 2c10 2 14 10 12 20l-6 26c-2 8-8 12-16 12h-22c-8 0-14-4-18-12z" fill="#ffa3d1"/>
+  </g>
+  <g fill="#1f1a2e">
+    <circle cx="168" cy="148" r="8"/>
+    <text x="298" y="134" text-anchor="middle" font-family="Arial Rounded MT Bold, Arial, sans-serif" font-weight="900" font-size="54">GO</text>
+    <rect x="44" y="222" width="78" height="9" rx="4.5"/>
+    <rect x="44" y="240" width="52" height="9" rx="4.5"/>
+  </g>
+  <g fill="none" stroke-width="5" stroke-linecap="round">
+    <path d="M70 70l-18-10" stroke="#ff7466"/>
+    <path d="M62 110h-22" stroke="#c7a3ff"/>
+    <path d="M74 40l-8-16" stroke="#3ed68a"/>
+    <path d="M388 206l-14 6" stroke="#ffd447"/>
+    <path d="M372 260l14 8" stroke="#6cc8ff"/>
+  </g>
+</svg>
