@@ -17,7 +17,8 @@ jobs:
           HOOK: ${{ secrets.CLOUDFLARE_DEPLOY_HOOK }}
         run: |
           if [ -z "$HOOK" ]; then
-            echo "Add the CLOUDFLARE_DEPLOY_HOOK repository secret first." >&2
-            exit 1
+            # Skip instead of failing so a missing secret doesn't send a failure email every day.
+            echo "::warning::Skipped: add the CLOUDFLARE_DEPLOY_HOOK repository secret to enable daily rebuilds."
+            exit 0
           fi
           curl --fail --silent --show-error -X POST "$HOOK"
