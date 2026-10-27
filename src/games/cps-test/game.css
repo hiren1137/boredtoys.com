@@ -1,0 +1,233 @@
+.g-cps {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  overflow: hidden;
+  background-color: #fffdf7;
+  background-image: radial-gradient(rgba(31, 26, 46, 0.09) 1.5px, transparent 1.5px);
+  background-size: 26px 26px;
+  color: #1f1a2e;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.g-cps-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 12px;
+}
+.g-cps-modes {
+  display: flex;
+  gap: 6px;
+}
+.g-cps-mode {
+  min-width: 48px;
+  padding: 6px 10px;
+  border: 2px solid #1f1a2e;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 2px 2px 0 #1f1a2e;
+  color: #1f1a2e;
+  font: inherit;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+}
+.g-cps-mode[aria-pressed='true'] {
+  background: #ffd447;
+}
+.g-cps-mode:hover:not(:disabled) {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 #1f1a2e;
+}
+.g-cps-mode:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+.g-cps-mode:focus-visible {
+  outline: 3px solid #6cc8ff;
+  outline-offset: 2px;
+}
+.g-cps-best {
+  margin: 0;
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: #4a4458;
+}
+
+.g-cps-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.g-cps-stats > div {
+  display: grid;
+  gap: 1px;
+  padding: 6px 8px;
+  border: 2px solid #1f1a2e;
+  border-radius: 12px;
+  background: #fff;
+  text-align: center;
+}
+.g-cps-stats span {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #4a4458;
+  white-space: nowrap;
+}
+.g-cps-stats b {
+  font-family: var(--font-round);
+  font-weight: 900;
+  font-size: clamp(1.3rem, 4vw, 1.7rem);
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+
+.g-cps-zone {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  place-content: center;
+  gap: 6px;
+  padding: 16px;
+  overflow: hidden;
+  border: 3px solid #1f1a2e;
+  border-radius: 22px;
+  background: #ff7466;
+  box-shadow: 5px 5px 0 #1f1a2e;
+  text-align: center;
+  cursor: pointer;
+  touch-action: none;
+  -webkit-touch-callout: none;
+}
+.g-cps-zone[hidden] {
+  display: none;
+}
+.g-cps-zone:focus {
+  outline: none;
+}
+.g-cps-zone:focus-visible {
+  outline: 4px solid #6cc8ff;
+  outline-offset: 3px;
+}
+.g-cps[data-state='playing'] .g-cps-zone {
+  background: #6be3a8;
+}
+.g-cps[data-state='cooldown'] .g-cps-zone {
+  background: #ffd447;
+  cursor: default;
+}
+.g-cps-zone.is-squish {
+  animation: g-cps-squish 0.12s ease-out;
+}
+@keyframes g-cps-squish {
+  50% {
+    transform: scale(0.985);
+  }
+}
+.g-cps-call,
+.g-cps-sub {
+  margin: 0;
+  pointer-events: none;
+}
+.g-cps-call {
+  font-family: var(--font-round);
+  font-weight: 900;
+  font-size: clamp(1.7rem, 6vw, 2.6rem);
+  line-height: 1.05;
+}
+.g-cps-sub {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+.g-cps-ripple {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  margin: -35px 0 0 -35px;
+  border: 3px solid #1f1a2e;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: g-cps-ripple 0.42s ease-out forwards;
+}
+@keyframes g-cps-ripple {
+  from {
+    transform: scale(0.2);
+    opacity: 0.9;
+  }
+  to {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+.g-cps-restart {
+  position: absolute;
+  right: 22px;
+  bottom: 22px;
+}
+.g-cps-restart[hidden] {
+  display: none;
+}
+
+.g-cps-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.g-cps-result {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  place-items: center;
+  overflow-y: auto;
+}
+.g-cps-result[hidden] {
+  display: none;
+}
+.g-cps[data-state='result'] .g-cps-stats {
+  display: none;
+}
+
+@media (max-width: 479px) {
+  .g-cps {
+    padding: 10px;
+    gap: 8px;
+  }
+  .g-cps-mode {
+    min-width: 0;
+    flex: 1;
+    padding: 6px 4px;
+  }
+  .g-cps-modes {
+    width: 100%;
+  }
+  .g-cps-stats span {
+    font-size: 0.64rem;
+    letter-spacing: 0.02em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .g-cps-zone.is-squish,
+  .g-cps-ripple {
+    animation: none;
+  }
+  .g-cps-mode:hover:not(:disabled) {
+    transform: none;
+  }
+}

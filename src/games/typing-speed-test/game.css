@@ -1,0 +1,335 @@
+.g-type {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 16px 18px;
+  overflow: hidden;
+  color: #1f1a2e;
+  background-color: #fffdf7;
+  background-image: radial-gradient(rgba(31, 26, 46, 0.08) 1.5px, transparent 1.5px);
+  background-size: 26px 26px;
+}
+
+.g-type-hud {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.g-type-chips {
+  display: flex;
+  gap: 6px;
+}
+.g-type-chip {
+  min-width: 52px;
+  padding: 6px 12px;
+  border: 2px solid #1f1a2e;
+  border-radius: 999px;
+  background: #fff;
+  color: #1f1a2e;
+  font: inherit;
+  font-weight: 800;
+  font-size: 0.92rem;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 #1f1a2e;
+}
+.g-type-chip[aria-pressed='true'] {
+  background: var(--tomato, #ff7466);
+}
+.g-type-chip:focus-visible {
+  outline: 3px solid #1f1a2e;
+  outline-offset: 2px;
+}
+.g-type-stats {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+}
+.g-type-stat {
+  padding: 5px 12px;
+  border: 2px solid #1f1a2e;
+  border-radius: 12px;
+  background: var(--sunshine, #ffd447);
+  font-weight: 800;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+.g-type-stat b {
+  display: inline-block;
+  min-width: 2ch;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.g-type-box {
+  position: relative;
+  padding: 14px 18px;
+  border: 3px solid #1f1a2e;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 4px 4px 0 #1f1a2e;
+  cursor: text;
+}
+.g-type-box:focus-within {
+  border-color: var(--tomato-ink, #c0392b);
+  box-shadow: 4px 4px 0 var(--tomato, #ff7466);
+}
+.g-type-view {
+  height: calc(3 * 1.75em);
+  overflow: hidden;
+  font-family: var(--font-round);
+  font-size: clamp(1.2rem, 3.2vw, 1.6rem);
+  line-height: 1.75;
+}
+.g-type-words {
+  position: relative;
+  color: #8a8496;
+  font-weight: 700;
+  word-spacing: 0.1em;
+  transition: transform 0.15s ease-out;
+}
+.g-type .w {
+  display: inline-block;
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+  line-height: 1.3;
+}
+.g-type .w.is-wrong {
+  border-bottom-color: #d93a2b;
+}
+.g-type .l.is-ok {
+  color: #1f1a2e;
+}
+.g-type .l.is-bad {
+  color: #d93a2b;
+  text-decoration: underline wavy #d93a2b;
+  text-underline-offset: 3px;
+}
+.g-type .l.is-extra {
+  color: #a3241a;
+  opacity: 0.75;
+}
+.g-type .l.is-missed {
+  color: #e48e86;
+}
+.g-type .l.is-caret,
+.g-type .w.is-caret-end {
+  position: relative;
+}
+.g-type .l.is-caret::before,
+.g-type .w.is-caret-end::after {
+  content: '';
+  position: absolute;
+  top: 8%;
+  bottom: 8%;
+  width: 3px;
+  border-radius: 2px;
+  background: var(--tomato, #ff7466);
+  animation: g-type-blink 1s steps(1) infinite;
+}
+.g-type .l.is-caret::before {
+  left: -2px;
+}
+.g-type .w.is-caret-end::after {
+  right: -3px;
+}
+.g-type[data-state='running'] .l.is-caret::before,
+.g-type[data-state='running'] .w.is-caret-end::after {
+  animation: none;
+}
+.g-type .g-type-box:not(:focus-within) .is-caret::before,
+.g-type .g-type-box:not(:focus-within) .is-caret-end::after {
+  display: none;
+}
+
+.g-type-input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  opacity: 0;
+  font-size: 16px; /* 16px stops iOS from zooming in on focus */
+  color: transparent;
+  caret-color: transparent;
+  background: transparent;
+  cursor: text;
+}
+
+.g-type-cover {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  border-radius: 15px;
+  background: rgba(255, 253, 247, 0.72);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  font-weight: 900;
+  font-size: 1.05rem;
+  text-align: center;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.15s;
+}
+.g-type-cover span {
+  padding: 8px 14px;
+  border: 2px solid #1f1a2e;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 3px 3px 0 #1f1a2e;
+}
+.g-type-box:focus-within .g-type-cover,
+.g-type[data-state='result'] .g-type-cover {
+  opacity: 0;
+}
+
+.g-type-foot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 16px;
+  font-size: 0.92rem;
+}
+.g-type-foot p {
+  margin: 0;
+}
+.g-type-hint {
+  opacity: 0.8;
+}
+.g-type-best {
+  font-weight: 800;
+}
+
+.g-type-result {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: 14px 12px;
+  background-color: #fffdf7;
+  background-image: radial-gradient(rgba(31, 26, 46, 0.08) 1.5px, transparent 1.5px);
+  background-size: 26px 26px;
+}
+.g-type-result:focus {
+  outline: none;
+}
+.g-type-result[hidden] {
+  display: none;
+}
+.g-type-result .result-panel {
+  margin: auto;
+  width: 100%;
+}
+.g-type-sum {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin: 0 0 14px;
+}
+.g-type-sum div {
+  padding: 6px 8px;
+  border: 2px solid #1f1a2e;
+  border-radius: 12px;
+  background: #fff;
+}
+.g-type-sum dt {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.7;
+}
+.g-type-sum dd {
+  margin: 0;
+  font-weight: 900;
+  font-size: 1.05rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.g-type.is-still .g-type-words,
+.g-type.is-still .g-type-cover {
+  transition: none;
+}
+.g-type.is-still .l.is-caret::before,
+.g-type.is-still .w.is-caret-end::after {
+  animation: none;
+}
+
+@keyframes g-type-blink {
+  50% {
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .g-type-words,
+  .g-type-cover {
+    transition: none;
+  }
+  .g-type .l.is-caret::before,
+  .g-type .w.is-caret-end::after {
+    animation: none;
+  }
+}
+
+@media (max-width: 479px) {
+  .g-type {
+    gap: 10px;
+    padding: 12px 10px;
+  }
+  .g-type-hud {
+    gap: 8px;
+  }
+  .g-type-chip {
+    min-width: 0;
+    padding: 5px 10px;
+    font-size: 0.85rem;
+  }
+  .g-type-stat {
+    padding: 4px 8px;
+    font-size: 0.85rem;
+  }
+  .g-type-restart {
+    order: 2;
+    margin-left: auto;
+  }
+  .g-type-stats {
+    order: 3;
+    width: 100%;
+    margin-left: 0;
+  }
+  .g-type-stat {
+    flex: 1;
+    text-align: center;
+  }
+  .g-type-box {
+    padding: 10px 12px;
+  }
+  .g-type-foot {
+    font-size: 0.85rem;
+  }
+  .g-type-result {
+    padding: 8px 6px;
+  }
+  .g-type-result .result-panel {
+    padding-top: 32px;
+  }
+  .g-type-sum div {
+    padding: 5px 4px;
+  }
+  .g-type-sum dt {
+    font-size: 0.66rem;
+    letter-spacing: 0.02em;
+  }
+  .g-type-sum dd {
+    font-size: 0.95rem;
+  }
+}

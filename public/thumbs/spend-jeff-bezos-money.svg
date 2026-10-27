@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <rect width="400" height="300" fill="#fffdf7"/>
+  <g fill="none" stroke="#6cc8ff" stroke-width="5" stroke-linecap="round">
+    <path d="M0 252c20-10 40 10 60 0s40 10 60 0 40 10 60 0 40 10 60 0 40 10 60 0 40 10 60 0 40 10 40 0"/>
+  </g>
+  <g stroke="#1f1a2e" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M232 214h150l-20 30H252z" fill="#ffffff"/>
+    <path d="M254 214l10-22h76l16 22z" fill="#dcd8e4"/>
+    <path d="M276 192l6-14h40l6 14z" fill="#ffffff"/>
+    <path d="M272 204h10M294 204h10M316 204h10" fill="none" stroke="#6cc8ff"/>
+    <g transform="rotate(-12 120 170)">
+      <path d="M120 40c22 16 30 40 30 70v30H90v-30c0-30 8-54 30-70z" fill="#ffffff"/>
+      <circle cx="120" cy="88" r="11" fill="#6cc8ff"/>
+      <path d="M90 116l-20 30h20zM150 116l20 30h-20z" fill="#ff7466"/>
+      <path d="M104 140c0 12 8 24 16 32 8-8 16-20 16-32z" fill="#ffd447"/>
+    </g>
+    <path d="M44 150l80-30 80 30v74l-80 30-80-30z" fill="#b07a4f"/>
+    <path d="M44 150l80 30 80-30M124 180v74" fill="none"/>
+    <path d="M74 138l80 30v22" fill="none" stroke="#ffd447" stroke-width="8"/>
+    <path d="M64 196l44 16v18l-44-16z" fill="#fffdf7"/>
+    <path d="M72 204l28 10M72 212l20 7" fill="none" stroke-width="3"/>
+  </g>
+  <g fill="#ffd447" stroke="#1f1a2e" stroke-width="4">
+    <circle cx="300" cy="70" r="20"/>
+    <circle cx="350" cy="110" r="14"/>
+  </g>
+  <g font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-weight="900" text-anchor="middle" fill="#1f1a2e">
+    <text x="300" y="78" font-size="22">$</text>
+    <text x="350" y="116" font-size="16">$</text>
+  </g>
+  <rect x="200" y="14" width="186" height="38" rx="12" fill="#6be3a8" stroke="#1f1a2e" stroke-width="5"/>
+  <text x="293" y="41" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="22" font-weight="900" text-anchor="middle" fill="#1f1a2e">$369 billion</text>
+</svg>

@@ -83,6 +83,15 @@ export const ICONS = {
   fleet: `<path d="M4 30v-4c0-3 2-4 4-5l4-6h12l4 6c2 1 4 2 4 5v4z" fill="${R}"/><path d="M32 30v-4c0-3 2-4 4-5l4-6h12l4 6c2 1 4 2 4 5v4z" fill="${S}"/><path d="M18 52v-4c0-3 2-4 4-5l4-6h12l4 6c2 1 4 2 4 5v4z" fill="${M}"/><circle cx="12" cy="31" r="3" fill="${K}"/><circle cx="24" cy="31" r="3" fill="${K}"/><circle cx="40" cy="31" r="3" fill="${K}"/><circle cx="52" cy="31" r="3" fill="${K}"/><circle cx="26" cy="53" r="3" fill="${K}"/><circle cx="38" cy="53" r="3" fill="${K}"/>`,
   cheese: `<path d="M6 44l40-26 12 10v20H6z" fill="${Y}"/><path d="M6 44h52" fill="none"/><circle cx="22" cy="40" r="3" fill="${O}"/><circle cx="38" cy="36" r="4" fill="${O}"/><circle cx="48" cy="44" r="2" fill="${O}"/>`,
   donut: `<circle cx="32" cy="32" r="24" fill="${O}"/><path d="M12 28c2-10 10-16 20-16s18 6 20 16c-2 8-8 10-12 8-4-2-12-2-16 0-4 2-10 0-12-8z" fill="${P}"/><circle cx="32" cy="32" r="7" fill="${W}"/><path d="M22 20l2 3M40 18l-1 3M46 28l-3 1M18 30l3 1" fill="none" stroke="${S}"/>`,
+  parcel: `<path d="M8 22l24-10 24 10v26L32 58 8 48z" fill="${B}"/><path d="M8 22l24 10 24-10M32 32v26" fill="none"/><path d="M20 17l24 10v8" fill="none" stroke="${Y}" stroke-width="4"/>`,
+  van: `<path d="M4 18h36l10 10h8v16H4z" fill="${W}"/><path d="M40 20l8 8h-8z" fill="${S}"/><path d="M10 28h22" fill="none" stroke="${O}" stroke-width="4"/><circle cx="16" cy="46" r="6" fill="${K}"/><circle cx="46" cy="46" r="6" fill="${K}"/>`,
+  warehouse: `<path d="M4 26L32 10l28 16v32H4z" fill="${L}"/><path d="M14 58V36h36v22z" fill="${O}"/><path d="M14 42h36M14 48h36M14 54h36" fill="none" stroke="${K}" stroke-width="2"/><path d="M26 22h12" fill="none"/>`,
+  newspaper: `<path d="M10 10h40v40a6 6 0 0 1-6 6H14a4 4 0 0 1-4-4z" fill="${W}"/><path d="M50 22h6v28a6 6 0 0 1-12 0" fill="${L}"/><path d="M16 18h28" fill="none" stroke-width="5"/><path d="M16 30h12v12H16z" fill="${S}"/><path d="M34 30h10M34 36h10M34 42h10M16 48h28" fill="none" stroke-width="2"/>`,
+  cart: `<path d="M4 10h10l8 30h28l6-22H18" fill="none"/><path d="M18 18h38l-6 22H22z" fill="${M}"/><path d="M28 18v22M40 18v22" fill="none" stroke-width="2"/><circle cx="24" cy="50" r="5" fill="${K}"/><circle cx="46" cy="50" r="5" fill="${K}"/>`,
+  bigclock: `<path d="M22 4h20v10H22zM22 50h20v10H22z" fill="${B}"/><rect x="16" y="14" width="32" height="36" rx="6" fill="${L}"/><circle cx="32" cy="32" r="12" fill="${Y}"/><path d="M32 24v8l6 4" fill="none"/>`,
+  tree: `<path d="M28 42h8v16h-8z" fill="${B}"/><circle cx="32" cy="22" r="14" fill="${M}"/><circle cx="20" cy="34" r="10" fill="${M}"/><circle cx="44" cy="34" r="10" fill="${M}"/><path d="M8 58h48" fill="none"/>`,
+  speaker: `<path d="M18 14c0-4 6-6 14-6s14 2 14 6v38c0 4-6 6-14 6s-14-2-14-6z" fill="${S}"/><path d="M18 14c0 4 6 6 14 6s14-2 14-6" fill="${K}"/><path d="M22 30h20M22 36h20M22 42h20" fill="none" stroke="${W}" stroke-width="2"/>`,
+  ereader: `<rect x="14" y="6" width="36" height="52" rx="5" fill="${K}"/><rect x="18" y="12" width="28" height="38" rx="1" fill="${W}"/><path d="M22 18h20M22 24h20M22 30h16M22 36h20M22 42h12" fill="none" stroke-width="2"/>`,
 } as const;
 
 export type IconKey = keyof typeof ICONS;

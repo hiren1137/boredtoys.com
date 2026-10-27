@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <rect width="400" height="300" fill="#fffdf7"/>
+  <rect x="0" y="246" width="400" height="54" fill="#6cc8ff"/>
+  <g fill="none" stroke="#1f1a2e" stroke-width="3" opacity=".25">
+    <path d="M0 96h400M0 136h400M0 176h400M0 216h400"/>
+  </g>
+  <g stroke="#1f1a2e" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+    <!-- suspect 1: cap -->
+    <path d="M24 250Q26 196 70 194Q114 196 116 250Z" fill="#ff6b5c"/>
+    <circle cx="70" cy="160" r="30" fill="#ffdcb8"/>
+    <path d="M40 152Q40 124 70 123Q98 124 99 148Z" fill="#4d8cff"/>
+    <path d="M92 147Q112 146 118 152Q104 156 90 153Z" fill="#4d8cff"/>
+    <!-- suspect 2: top hat + mustache -->
+    <path d="M116 250Q118 192 162 190Q206 192 208 250Z" fill="#b48cff"/>
+    <circle cx="162" cy="154" r="30" fill="#c98b5e"/>
+    <rect x="126" y="122" width="72" height="9" rx="4" fill="#1f1a2e"/>
+    <rect x="140" y="84" width="44" height="42" rx="4" fill="#1f1a2e"/>
+    <path d="M148 168Q155 161 162 166Q169 161 176 168Q169 172 162 168Q155 172 148 168Z" fill="#2b2233"/>
+    <!-- suspect 3: bow + glasses -->
+    <path d="M208 250Q210 196 254 194Q298 196 300 250Z" fill="#ffa3d1"/>
+    <circle cx="254" cy="160" r="30" fill="#f1b98b"/>
+    <path d="M226 150Q226 128 254 127Q282 128 283 150Q274 138 254 138Q236 138 226 150Z" fill="#d9572b"/>
+    <path d="M268 124L256 116L256 134Z" fill="#ff4fa3"/>
+    <path d="M268 124L280 116L280 134Z" fill="#ff4fa3"/>
+    <!-- suspect 4: beanie -->
+    <path d="M300 250Q302 196 346 194Q390 196 392 250Z" fill="#6be3a8"/>
+    <circle cx="346" cy="160" r="30" fill="#8d5a3b"/>
+    <path d="M316 152Q316 122 346 121Q376 122 376 152Z" fill="#ffac57"/>
+    <circle cx="346" cy="118" r="8" fill="#fff"/>
+  </g>
+  <g fill="#1f1a2e">
+    <circle cx="61" cy="162" r="3.5"/><circle cx="79" cy="162" r="3.5"/>
+    <circle cx="153" cy="154" r="3.5"/><circle cx="171" cy="154" r="3.5"/>
+    <circle cx="245" cy="160" r="3.5"/><circle cx="263" cy="160" r="3.5"/>
+    <circle cx="337" cy="162" r="3.5"/><circle cx="355" cy="162" r="3.5"/>
+  </g>
+  <g fill="none" stroke="#1f1a2e" stroke-width="3">
+    <circle cx="245" cy="160" r="9"/><circle cx="263" cy="160" r="9"/>
+  </g>
+  <g stroke="#1f1a2e" stroke-width="6" stroke-linejoin="round">
+    <circle cx="232" cy="60" r="44" fill="#e3f4ff" fill-opacity=".55"/>
+    <path d="M264 92L300 128" stroke-width="16" stroke-linecap="round"/>
+    <path d="M264 92L300 128" stroke="#ffd447" stroke-width="7" stroke-linecap="round"/>
+  </g>
+  <path d="M206 40Q216 26 232 26" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+  <g font-family="system-ui, sans-serif" font-weight="900" font-size="34" fill="#1f1a2e" text-anchor="middle">
+    <text x="232" y="72">?</text>
+  </g>
+  <g fill="#1f1a2e">
+    <rect x="40" y="262" width="60" height="22" rx="6"/>
+    <rect x="132" y="262" width="60" height="22" rx="6"/>
+    <rect x="224" y="262" width="60" height="22" rx="6"/>
+    <rect x="316" y="262" width="60" height="22" rx="6"/>
+  </g>
+  <g font-family="system-ui, sans-serif" font-weight="900" font-size="15" fill="#fff" text-anchor="middle">
+    <text x="70" y="278">1</text><text x="162" y="278">2</text><text x="254" y="278">3</text><text x="346" y="278">4</text>
+  </g>
+</svg>

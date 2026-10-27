@@ -2,8 +2,8 @@
 slug: spend-bill-gates-money
 title: "Spend Bill Gates' Money"
 h1: "Spend Bill Gates' Money"
-metaTitle: "Spend Bill Gates' Money: Shop With $117.8B"
-metaDescription: "Spend Bill Gates' money on burgers, puppies, superyachts and whole sports teams. Could you blow $117.8 billion? Shop until every dollar is gone."
+metaTitle: "Spend Bill Gates' Money: Shop With $119.1B"
+metaDescription: "Spend Bill Gates' money on burgers, puppies, superyachts and whole sports teams. Could you blow $119.1 billion? Shop until every dollar is gone."
 primaryKeyword: "spend bill gates money"
 secondaryKeywords:
   - "spend bill gates' money game"
@@ -17,12 +17,12 @@ tags:
   - "billionaire"
   - "shopping"
   - "spend"
-shortDescription: "You get $117.8 billion. Buy burgers, yachts and sports teams until it's gone."
+shortDescription: "You get $119.1 billion. Buy burgers, yachts and sports teams until it's gone."
 intro: "Spend Bill Gates' money on anything you like, from rubber ducks to aircraft carriers, and watch his fortune shrink."
 thumbAlt: "A green money counter above a cartoon superyacht, cheeseburger and jet in a shopping cart"
 faqs:
   - question: "How much money do you start with?"
-    answer: "You start with $117.8 billion. That is Bill Gates' estimated net worth on October 18, 2026, according to Forbes Real-Time Billionaires. The figure moves up and down with the stock market."
+    answer: "You start with $119.1 billion. That is Bill Gates' estimated net worth on October 27, 2026, according to Forbes Real-Time Billionaires. The figure moves up and down with the stock market."
   - question: "Are the prices in the game real?"
     answer: "They are rounded estimates of typical prices, like a cheeseburger for $7 or a family house for $420,000. Big items, such as sports teams and aircraft carriers, use rough figures that have been reported in the news."
   - question: "Can I actually spend all of Bill Gates' money?"
@@ -38,7 +38,7 @@ related:
   - draw-a-perfect-circle
 featured: true
 publishedAt: 2026-10-18
-updatedAt: 2026-10-18
+updatedAt: 2026-10-27
 shareText: "I spent {score} of Bill Gates' money. See what you would buy:"
 stageHeight: 1200
 stageHeightMobile: 1200
@@ -77,6 +77,6 @@ Your biggest shopping spree is saved as your personal best.
 
 ## Where the Net Worth Number Comes From
 
-The starting amount of $117.8 billion is Bill Gates' estimated net worth on October 18, 2026, taken from the Forbes Real-Time Billionaires list. Forbes updates its estimate as share prices change, so the real number goes up and down a little every day.
+The starting amount of $119.1 billion is Bill Gates' estimated net worth on October 27, 2026, taken from the Forbes Real-Time Billionaires list. Forbes updates its estimate as share prices change, so the real number goes up and down a little every day.
 
 Gates co-founded Microsoft in 1975, which is where his fortune began. These days he spends much of his time on the Gates Foundation, and he has said he plans to give most of his money away. Forbes reports that he has already given more than $60 billion to the foundation. So in real life, a lot of this money is headed to charity instead of hot tubs and monster trucks.
