@@ -3,7 +3,7 @@ slug: spend-jeff-bezos-money
 title: "Spend Jeff Bezos' Money"
 h1: "Spend Jeff Bezos' Money"
 metaTitle: "Spend Jeff Bezos' Money: Yachts, Rockets & More"
-metaDescription: "Spend Jeff Bezos' money on superyachts, rocket launches and a whole grocery chain. You start with $366 billion. Can you get the counter down to zero?"
+metaDescription: "Spend Jeff Bezos' money on superyachts, rocket launches and a whole grocery chain. You start with $384.8 billion. Can you get the counter down to zero?"
 primaryKeyword: "spend jeff bezos money"
 secondaryKeywords:
   - "spend jeff bezos' money game"
@@ -17,12 +17,12 @@ tags:
   - "billionaire"
   - "shopping"
   - "space"
-shortDescription: "Blow $366 billion on yachts, rockets, warehouses and a grocery chain."
+shortDescription: "Blow $384.8 billion on yachts, rockets, warehouses and a grocery chain."
 intro: "Spend Jeff Bezos' money on delivery vans, rocket launches and a giant sailing yacht, and see how long it takes to hit zero."
 thumbAlt: "A cartoon delivery box with a rocket bursting out of it next to a yacht and a money counter"
 faqs:
   - question: "How much money do you start with?"
-    answer: "You start with $366 billion. That is Jeff Bezos' estimated net worth on November 3, 2026, according to Forbes Real-Time Billionaires. We refresh the figure once a week, so it can move up or down between visits."
+    answer: "You start with $384.8 billion. That is Jeff Bezos' estimated net worth on November 10, 2026, according to Forbes Real-Time Billionaires. We refresh the figure once a week, so it can move up or down between visits."
   - question: "Can you actually spend all of it?"
     answer: "Yes, but only with the biggest items. A grocery store chain, an aircraft carrier and a few giant AI data centers barely make a dent, so the quickest route is a stack of planet-sized pizza orders plus some mopping up at the end."
   - question: "Are the prices real?"
@@ -38,7 +38,7 @@ related:
   - guess-the-price-game
 featured: false
 publishedAt: 2026-10-27
-updatedAt: 2026-11-03
+updatedAt: 2026-11-10
 shareText: "I spent {score} of Jeff Bezos' money and still had change left. Try it:"
 stageHeight: 1200
 stageHeightMobile: 1200
@@ -46,7 +46,7 @@ stageHeightMobile: 1200
 
 ## How To Play Spend Jeff Bezos' Money
 
-Imagine logging in to your bank and seeing $366 billion. No bills to pay, no rules, just one mission: spend it. The green counter at the top of the game shows exactly how much is left, and it follows you down the page while you shop.
+Imagine logging in to your bank and seeing $384.8 billion. No bills to pay, no rules, just one mission: spend it. The green counter at the top of the game shows exactly how much is left, and it follows you down the page while you shop.
 
 Each card in the shop has a price, a **Buy** button, a **Sell** button and a little number box. Tap Buy to add one, tap Sell to give one back, or type a number to order a whole pile at once. Want 300 delivery vans? Type 300. You can never spend more than you have. Ask for too many and the game hands you as many as you can afford, with a small wiggle so you notice.
 
@@ -71,7 +71,7 @@ Your biggest spree is saved on your device as your personal best.
 
 ## Where the Number and Prices Come From
 
-The starting amount is Jeff Bezos' estimated net worth from the Forbes Real-Time Billionaires list on November 3, 2026. Most of his wealth is in shares of the online store he founded in 1994, so the figure rises and falls with the stock market. We pull a fresh number once a week.
+The starting amount is Jeff Bezos' estimated net worth from the Forbes Real-Time Billionaires list on November 10, 2026. Most of his wealth is in shares of the online store he founded in 1994, so the figure rises and falls with the stock market. We pull a fresh number once a week.
 
 Several shop items are based on real purchases and pledges that were widely reported. In 2013 Bezos bought a major US daily newspaper for $250 million. In 2020 he paid about $165 million for a Beverly Hills estate, a record for the area at the time, and he pledged $10 billion to a climate fund. He has put about $42 million into a giant clock built inside a mountain in Texas, designed to keep ticking for 10,000 years.
 
