@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <rect width="400" height="300" fill="#fffdf7"/>
+  <g stroke="#1f1a2e" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+    <rect x="62" y="70" width="276" height="110" rx="22" fill="#1f1a2e" transform="translate(7 7)"/>
+    <rect x="62" y="70" width="276" height="110" rx="22" fill="#ffffff"/>
+    <rect x="40" y="208" width="146" height="58" rx="16" fill="#1f1a2e" transform="translate(5 5)"/>
+    <rect x="40" y="208" width="146" height="58" rx="16" fill="#6cc8ff"/>
+    <rect x="214" y="208" width="146" height="58" rx="16" fill="#1f1a2e" transform="translate(5 5)"/>
+    <rect x="214" y="208" width="146" height="58" rx="16" fill="#ffd447"/>
+    <path d="M300 36c0-12 10-20 22-20 8 0 14 4 17 10 8-2 17 4 17 13 0 10-8 16-17 16h-30c-6 0-9-5-9-11" fill="#c7a3ff"/>
+    <path d="M318 30c4 4 4 10 0 14M334 30c-3 4-3 9 1 13" fill="none" stroke-width="4"/>
+  </g>
+  <g fill="#1f1a2e" font-family="Arial Rounded MT Bold, Arial, sans-serif" font-weight="900" text-anchor="middle">
+    <text x="200" y="142" font-size="54">kite</text>
+    <text x="113" y="246" font-size="26">SEEN</text>
+    <text x="287" y="246" font-size="26">NEW</text>
+  </g>
+  <g fill="#ff7466" stroke="#1f1a2e" stroke-width="4" stroke-linejoin="round">
+    <path d="M40 34c0-9 13-12 16-3 3-9 16-6 16 3 0 10-16 19-16 19s-16-9-16-19z"/>
+    <path d="M84 34c0-9 13-12 16-3 3-9 16-6 16 3 0 10-16 19-16 19s-16-9-16-19z"/>
+    <path d="M128 34c0-9 13-12 16-3 3-9 16-6 16 3 0 10-16 19-16 19s-16-9-16-19z" fill="#ffffff"/>
+  </g>
+  <g fill="none" stroke="#c7a3ff" stroke-width="5" stroke-linecap="round">
+    <path d="M44 120l-16-6M44 140h-18M44 160l-16 6"/>
+    <path d="M356 120l16-6M356 140h18M356 160l16 6"/>
+  </g>
+</svg>

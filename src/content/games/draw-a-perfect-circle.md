@@ -82,4 +82,4 @@ People have tried to draw perfect circles by hand for a very long time. There is
 
 A circle is the only shape where every point on the edge sits exactly the same distance from the center. That is why the game cares so much about the dot. Wheels, plates and coins are round for the same reason: an even edge rolls and stacks smoothly, while a wobbly one would bump along.
 
-Your drawing hand has more games to play. Connect the stars in the [constellation drawing game](/draw-a-constellation/), or paint famous [flags from memory](/draw-flags-from-memory/). If you want to test quick, accurate pointing instead of slow, steady lines, the [aim trainer](/aim-trainer/) is a good match.
+Your drawing hand has more games to play. Connect the stars in the [constellation drawing game](/draw-a-constellation/), or paint famous [flags from memory](/draw-flags-from-memory/). If you want to test quick, accurate pointing instead of slow, steady lines, the [aim trainer](/aim-trainer/) is a good match. For a much wigglier shape, see if you can [draw a map from memory](/draw-a-map-from-memory/) and match a real coastline.

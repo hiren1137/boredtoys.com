@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <rect width="400" height="300" fill="#fffdf7"/>
+  <g stroke="#1f1a2e" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+    <rect x="58" y="28" width="250" height="248" rx="20" fill="#ffffff" transform="rotate(-3 183 152)"/>
+  </g>
+  <g fill="#1f1a2e" opacity=".14">
+    <circle cx="96" cy="60" r="3"/><circle cx="136" cy="58" r="3"/><circle cx="176" cy="56" r="3"/><circle cx="216" cy="54" r="3"/><circle cx="256" cy="52" r="3"/>
+    <circle cx="98" cy="250" r="3"/><circle cx="138" cy="248" r="3"/><circle cx="270" cy="244" r="3"/><circle cx="282" cy="200" r="3"/><circle cx="80" cy="150" r="3"/>
+  </g>
+  <path d="M100.0 118.8L121.2 106.7L134.9 112.7L142.4 124.9L145.5 136.0L156.1 147.2L165.1 153.2L177.2 166.4L190.9 171.5L202.2 178.6L209.8 182.6L218.1 195.2L224.2 196.8L228.7 207.9L230.2 218.0L223.4 223.1L223.4 231.2L223.4 237.3L229.5 237.9L237.0 228.2L246.1 217.0L245.4 207.9L237.0 200.8L240.8 188.7L247.6 186.7L258.7 194.8L264.4 199.8L266.6 192.7L258.2 182.6L241.9 172.9L233.2 169.0L227.5 162.8L231.4 157.7L227.2 156.7L213.4 155.3L201.8 145.7L190.9 122.5L176.8 113.5L172.4 106.3L175.7 95.5L173.2 85.6L184.8 79.3L195.0 81.4L192.4 70.2L193.9 63.7L174.2 60.1L171.2 53.0L155.3 54.6L144.7 57.1L139.4 66.2L127.3 64.1L122.0 77.3L114.4 65.2L105.3 75.9L93.2 77.3L89.4 91.5L92.5 109.7ZM175.0 240.3L188.6 232.2L203.0 236.3L222.7 230.8L215.1 246.4L218.1 255.1L215.1 263.0L202.2 255.1L192.1 250.4L177.2 243.4ZM110.6 176.5L125.8 170.5L131.8 175.5L133.3 189.7L132.6 204.9L131.1 213.0L124.3 212.0L113.7 218.0L113.7 203.9L115.2 183.6Z" fill="#6be3a8" fill-opacity=".75" stroke="#1f9d55" stroke-width="3.5" stroke-dasharray="9 6" stroke-linejoin="round"/>
+  <path d="M107.7 133.6L145.9 123.9L156.2 143.1L172.1 156.4L198.2 173.1L222.1 185.8L240.5 202.5L245.2 224.8L234.6 236.8L241.4 239.7L261.4 215.2L253.6 199.7L259.7 187.7L273.2 203.2L267.2 187.7L246.3 174.1L245.0 159.5L222.7 155.5L194.7 124.2L177.5 112.0L181.7 94.7L203.4 90.5L196.7 71.3L170.6 58.5L147.5 61.5L135.0 69.9L121.4 74.5L96.2 91.2L95.7 124.9ZM190.2 250.4L221.7 243.1L232.6 249.1L228.9 263.0L204.3 251.8Z" fill="none" stroke="#1f1a2e" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+  <g stroke="#1f1a2e" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+    <g transform="translate(342 76)">
+      <circle r="38" fill="#ffd447"/>
+      <path d="M0 -30L9 0L0 30L-9 0Z" fill="#ffffff"/>
+      <path d="M0 -30L9 0L-9 0Z" fill="#ff7466"/>
+      <circle r="4" fill="#1f1a2e"/>
+    </g>
+    <g transform="rotate(38 340 210)">
+      <rect x="318" y="150" width="44" height="110" rx="8" fill="#6cc8ff"/>
+      <path d="M318 260L340 296L362 260Z" fill="#ffe2b8"/>
+      <path d="M333 284L340 296L347 284Z" fill="#1f1a2e"/>
+      <rect x="318" y="150" width="44" height="22" rx="8" fill="#ffa3d1"/>
+    </g>
+  </g>
+  <text x="342" y="31" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="15" fill="#1f1a2e">N</text>
+</svg>

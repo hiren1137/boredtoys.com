@@ -13,5 +13,10 @@
     "forbesUri": "jeff-bezos",
     "netWorth": 384800000000,
     "asOf": "2026-11-10"
+  },
+  "spend-mark-zuckerberg-money": {
+    "forbesUri": "mark-zuckerberg",
+    "netWorth": 216000000000,
+    "asOf": "2026-11-12"
   }
 }

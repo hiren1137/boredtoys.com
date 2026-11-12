@@ -9,7 +9,6 @@ secondaryKeywords:
   - "memory sequence game"
   - "pattern memory test"
   - "simon says memory game"
-  - "visual memory test"
   - "short term memory test"
   - "brain training game"
 category: memory
@@ -81,4 +80,4 @@ In 1956 the psychologist George Miller wrote a famous paper called "The Magical 
 
 Researchers have used a similar idea for decades. The Corsi block-tapping test, created by Philip Corsi in the early 1970s, asks people to tap blocks in the same order a tester did. The electronic toy Simon, released in 1978, turned the same idea into a game with lights and sounds.
 
-Want to compare your memory in another way? The [number memory test](/number-memory-test/) asks you to hold a growing string of digits instead of tile positions. Speed matters too, so check how quickly you respond with the [reaction time test](/reaction-time-test/). For memory with colors, try to [paint flags from memory](/draw-flags-from-memory/).
+Want to compare your memory in another way? The [number memory test](/number-memory-test/) asks you to hold a growing string of digits instead of tile positions. Speed matters too, so check how quickly you respond with the [reaction time test](/reaction-time-test/). For memory with colors, try to [paint flags from memory](/draw-flags-from-memory/). For a pattern that shows all at once instead of one tile at a time, try the [visual memory test](/visual-memory-test/).

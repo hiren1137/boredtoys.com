@@ -84,4 +84,4 @@ The game uses her formula to show how long a strip of printer paper you would ne
 
 Sizes in the game come from common published figures, such as 8,849 m for Mount Everest from the 2020 survey by China and Nepal, and 384,400 km for the Moon's average distance from NASA.
 
-Big numbers like these are fun to compare. The [size of life game](/size-of-life/) does the same trick with living things, from a virus to a giant fungus. [Life Stats](/life-stats/) turns your own age into heartbeats and miles traveled. And the [element crafting game](/element-crafting-game/) shows how a few simple pieces can grow into hundreds of things.
+Big numbers like these are fun to compare. The [size of life game](/size-of-life/) does the same trick with living things, from a virus to a giant fungus. [Life Stats](/life-stats/) turns your own age into heartbeats and miles traveled. And the [element crafting game](/element-crafting-game/) shows how a few simple pieces can grow into hundreds of things. The ocean has a big number too: scroll through [the deep sea](/the-deep-sea/) to reach the bottom of the deepest trench.

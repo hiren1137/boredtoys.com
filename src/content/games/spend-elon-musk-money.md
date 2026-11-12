@@ -77,4 +77,4 @@ Some of the prices in the shop are real-world reference points. In 2022, Musk ag
 
 A pizza for everyone on Earth assumes about 8.2 billion people and a $15 pizza each. That one is a bit silly, and that is the point.
 
-Want a different shopping list? You can [spend Jeff Bezos' money](/spend-jeff-bezos-money/) on warehouses and rockets, or [spend Bill Gates' fortune](/spend-bill-gates-money/) with a charity twist. To see why printing more money does not make everyone rich, try the [money printing game](/money-printer-game/).
+Want a different shopping list? You can [spend Jeff Bezos' money](/spend-jeff-bezos-money/) on warehouses and rockets, or [spend Bill Gates' fortune](/spend-bill-gates-money/) with a charity twist. To see why printing more money does not make everyone rich, try the [money printing game](/money-printer-game/). Or try to [spend Mark Zuckerberg's money](/spend-mark-zuckerberg-money/), where smart glasses and app startups fill the shelves.

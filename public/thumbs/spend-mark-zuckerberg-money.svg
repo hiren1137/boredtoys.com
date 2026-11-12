@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <rect width="400" height="300" fill="#fffdf7"/>
+  <g fill="none" stroke="#6cc8ff" stroke-width="5" stroke-linecap="round">
+    <path d="M0 256c20-10 40 10 60 0s40 10 60 0 40 10 60 0 40 10 60 0 40 10 60 0 40 10 60 0 40 10 40 0"/>
+  </g>
+  <g stroke="#1f1a2e" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M226 220h156l-20 30H246z" fill="#ffffff"/>
+    <path d="M250 220l10-22h82l16 22z" fill="#dcd8e4"/>
+    <path d="M274 198l6-14h44l6 14z" fill="#ffffff"/>
+    <path d="M270 210h10M294 210h10M318 210h10" fill="none" stroke="#6cc8ff"/>
+    <path d="M64 120c0-18 18-30 46-30s46 12 46 30l40 30-18 32-18-10v84H60v-84l-18 10-18-32z" fill="#dcd8e4"/>
+    <path d="M70 120c6 18 22 28 40 28s34-10 40-28" fill="#c7a3ff"/>
+    <path d="M110 148v118" fill="none"/>
+    <path d="M100 148v22M120 148v22" fill="none" stroke-width="3"/>
+    <path d="M70 212h26v24H70zM124 212h26v24h-26z" fill="none" stroke-width="3"/>
+    <path d="M58 84c0-12 9-18 22-18h120c13 0 22 6 22 18v40c0 12-9 18-22 18h-34l-12-16h-28l-12 16H80c-13 0-22-6-22-18z" fill="#c7a3ff"/>
+    <path d="M74 86h52v30H74zM154 86h52v30h-52z" fill="#6cc8ff"/>
+    <path d="M58 98H44M222 98h14" fill="none"/>
+  </g>
+  <g fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round">
+    <path d="M84 96l12-6M164 96l12-6"/>
+  </g>
+  <g fill="#ffd447" stroke="#1f1a2e" stroke-width="4">
+    <circle cx="300" cy="128" r="20"/>
+    <circle cx="352" cy="166" r="14"/>
+  </g>
+  <g font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-weight="900" text-anchor="middle" fill="#1f1a2e">
+    <text x="300" y="136" font-size="22">$</text>
+    <text x="352" y="172" font-size="16">$</text>
+  </g>
+  <rect x="200" y="14" width="186" height="38" rx="12" fill="#6be3a8" stroke="#1f1a2e" stroke-width="5"/>
+  <text x="293" y="41" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="22" font-weight="900" text-anchor="middle" fill="#1f1a2e">$216 billion</text>
+</svg>

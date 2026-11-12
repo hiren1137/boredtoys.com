@@ -86,4 +86,4 @@ Early typewriters were slow and clunky. Their keys could jam if two neighbors we
 
 Today you type all day without thinking about it: messages, search boxes, homework and games. A few minutes of practice here can save you hours over a year.
 
-Fast fingers help in other tests too. Check how many times you can click in one second with the [CPS test](/cps-test/), or how quickly you react to a color change with the [reaction speed test](/reaction-time-test/). Typing also needs a good memory for what comes next, which the [number memory test](/number-memory-test/) puts to work.
+Fast fingers help in other tests too. Check how many times you can click in one second with the [CPS test](/cps-test/), or how quickly you react to a color change with the [reaction speed test](/reaction-time-test/). Typing also needs a good memory for what comes next, which the [number memory test](/number-memory-test/) puts to work. If you want to see how many words your brain can hold, not just your fingers, try the [verbal memory test](/verbal-memory-test/).
