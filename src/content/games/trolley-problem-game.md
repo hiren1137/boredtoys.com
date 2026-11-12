@@ -78,3 +78,5 @@ The summary also shows how many people were hit, how many times you pulled the l
 The trolley problem was made famous by the British thinker Philippa Foot in 1967. She used it to explore a simple question: is it worse to cause something bad than to let it happen? Later, the American philosopher Judith Jarvis Thomson added many new twists to the puzzle.
 
 Since then, the trolley problem has turned up in classrooms, TV shows and endless jokes online. The versions here are made up just for fun. No real trolleys, cats or sandwiches were involved.
+
+Like picking between two options? [This or That](/this-or-that-game/) is a lighter round of quick choices with no tracks in sight. If you prefer a puzzle with one clear answer, crack the cases in the [detective game](/detective-game/). For choices that websites try to make for you, play the [dark patterns game](/dark-patterns-game/).

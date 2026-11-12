@@ -75,6 +75,8 @@ Short tests give higher scores than long ones. Your hand gets tired, so a 60 sec
 - **Find a rhythm.** A steady beat is faster over 10 seconds or more than bursts with pauses.
 - **Warm up first.** A practice round or two loosens your hand before you go for a record.
 
+Fast clicking is only one part of quick hands. Moving to the right spot matters too, which the [aim trainer](/aim-trainer/) tests with 30 jumping targets. Your fingers also get a workout in the [typing speed test](/typing-speed-test/), and the [stimulation clicker game](/stimulation-clicker/) turns all that clicking into silly upgrades.
+
 ## Clicking Styles and a Word on Safety
 
 Fast clickers often talk about two styles. Jitter clicking means tensing your arm so your finger shakes on the button very quickly. Butterfly clicking means tapping one button with two fingers, one after the other. Both can push your clicks per second higher than normal clicking.

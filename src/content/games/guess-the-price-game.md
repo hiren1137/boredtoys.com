@@ -66,3 +66,5 @@ A score above 7,000 means your guesses kept the right number of zeros. A score u
 ## Where the Prices Come From
 
 Each figure is a reported auction result, not a private handshake and not a guess. The reveal names the house: Christie's, Sotheby's or Julien's Auctions. When a report rounded the number, the note on the result says "about." Nothing here is a prediction of what the same object would sell for tomorrow. Prices move, and a second sale of a similar thing can land far from the number in this list.
+
+If guessing prices is your thing, the [haggling game](/haggling-game/) lets you set them yourself and argue with odd customers. To see what all those millions look like next to a real fortune, [spend Jeff Bezos' money](/spend-jeff-bezos-money/) on yachts and rockets. Or settle smaller arguments in [This or That](/this-or-that-game/), where there are no prices at all.

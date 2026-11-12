@@ -78,3 +78,5 @@ Earth does not travel in a perfect circle, so its speed changes a little through
 Leap days are rarer than you might think. Years that end in 00 skip the extra day unless they divide evenly by 400. That is why 2000 had a February 29 but 1900 did not.
 
 Your heart count is the wildest number on the page. Even at a calm 80 beats a minute, a heart beats over 40 million times a year without you asking it to.
+
+Curious who shared the planet with you? [Who was alive when I was born](/who-was-alive-when-i-was-born/) lists famous people who were around on your birthday. [Where Does the Day Go](/where-does-the-day-go/) splits a normal day into sleep, work and fun. For another number that grows fast, see [how many times you can fold a piece of paper](/how-many-times-can-you-fold-paper/).

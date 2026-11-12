@@ -80,3 +80,5 @@ Your highest count is saved as your personal best.
 Games where you combine elements have been around for years. Little Alchemy and Infinite Craft are two famous ones, and this element crafting game is inspired by the same simple idea. The difference is how the answers are made.
 
 Here, every recipe was written by hand ahead of time. That means the game works offline once it loads, it never invents strange results, and the same two items always make the same thing for every player. The trade-off is that the book has an end, but it is a big one, and new recipes get added over time.
+
+Love mixing things to see what happens? The [falling sand game](/falling-sand-game/) lets you pour real-looking elements together and watch them react. If you like working out answers from clues, the [detective game](/detective-game/) is a good next stop. And for a hands-on puzzle about how fast things grow, find out [how many times you can fold paper](/how-many-times-can-you-fold-paper/).

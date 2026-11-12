@@ -79,3 +79,5 @@ Your best total is saved on your device, so you can come back and try to break y
 Mystery stories have been popular for well over a hundred years, and the fun is always the same: you collect small facts and suddenly they click together. Puzzles like these are a gentle kind of logic training. Each clue removes possibilities until only one answer is left, which is the same idea people use to fix a broken bike, find a missing sock or debug a computer program.
 
 These cases are short on purpose. You can solve one in under a minute, and none of the culprits did anything worse than eat too many cookies.
+
+Enjoy careful thinking? The [password game](/password-game/) asks you to follow a growing list of rules at once, and the [trolley problem game](/trolley-problem-game/) gives you choices with no clear right answer. For more figuring out by testing ideas, the [element crafting game](/element-crafting-game/) rewards you for every clever combination.

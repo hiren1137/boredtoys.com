@@ -75,3 +75,5 @@ Some overlaps sound impossible. Benjamin Franklin (1706 to 1790) was alive when 
 Some years are packed with famous births. Anne Frank, Martin Luther King Jr. and Audrey Hepburn were all born in 1929. Pelé, Bruce Lee and John Lennon were all born in 1940.
 
 Every year on our list was checked against Wikidata, a free public database of facts, in October 2026. If you spot a mistake, let us know through the contact page.
+
+Your birthday has more stories to tell. [Life Stats](/life-stats/) turns it into big numbers, like how far you have traveled through space. To see how a normal day splits up, try [Where Does the Day Go](/where-does-the-day-go/). And for a funny test of your values, take on the [trolley problem game](/trolley-problem-game/).

@@ -87,7 +87,7 @@ export function mount(root: HTMLElement): void {
           <option value="az">A to Z</option>
         </select>
       </div>
-      <div class="gc-list" data-list role="list"></div>
+      <div class="gc-list" data-list role="group" aria-label="Your items"></div>
       <div class="gc-foot">
         <span class="gc-tip">Tap or drag an item onto the board</span>
         <button type="button" class="gc-reset" data-reset>Reset</button>
@@ -153,7 +153,6 @@ export function mount(root: HTMLElement): void {
       b.type = 'button';
       b.className = 'gc-chip gc-item';
       b.dataset.name = name;
-      b.setAttribute('role', 'listitem');
       b.setAttribute('aria-pressed', String(selected === name));
       b.innerHTML = `<span class="gc-emoji" aria-hidden="true"></span><span></span>`;
       b.firstElementChild!.textContent = ITEMS.get(name)!.emoji;

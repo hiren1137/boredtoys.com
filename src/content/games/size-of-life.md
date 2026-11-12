@@ -80,3 +80,5 @@ Sizes are measured the way scientists usually describe each one. Tall things lik
 Living things span a huge range of sizes. Most of them are far too small to see. You need a microscope to see a single bacterium, yet a pinch of garden soil can hold millions of them.
 
 At the other end, the biggest living things are not always animals. A coast redwood can grow taller than a 30-story building. In Utah, a grove of aspen trees called Pando shares one root system and counts as a single plant. In Oregon, a honey fungus spreads its threads underground through about 9.6 square kilometers of forest. Most of it stays hidden, and only small clusters of mushrooms ever pop up above the ground.
+
+If giant scales make your head spin in a good way, the [paper folding game](/how-many-times-can-you-fold-paper/) shows how a sheet could stack up past the Moon. [Life Stats](/life-stats/) does the same for your own life, counting your heartbeats and trips around the Sun. And for the biggest scale of all, [draw constellations](/draw-a-constellation/) across the night sky.

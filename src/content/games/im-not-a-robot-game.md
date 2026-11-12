@@ -75,3 +75,5 @@ Those checks are called CAPTCHAs. The name stands for "Completely Automated Publ
 The idea is simple: give a task that is easy for people and hard for programs, like reading squiggly letters. As computers got better at those tasks, the checks kept changing. Some newer ones barely ask you anything and just look at how you use the page.
 
 Every level here is made up for fun. No real security checks were harmed, and no robots were turned away. Well, maybe one in a mustache.
+
+If you liked being annoyed on purpose, the [dark patterns game](/dark-patterns-game/) shows the tricks websites use to make you click the wrong thing. The [password game](/password-game/) is another form that gets out of hand fast. And to prove you are human with pure speed, take the [reaction time test](/reaction-time-test/).

@@ -80,3 +80,5 @@ Because the same pattern repeats each round, you get to practice it over and ove
 In 1956 the psychologist George Miller wrote a famous paper called "The Magical Number Seven, Plus or Minus Two." He pointed out that people can usually hold about seven separate items in short-term memory at once. Later research, including work by Nelson Cowan, suggested the true limit may be closer to four chunks, and that grouping is how people stretch it.
 
 Researchers have used a similar idea for decades. The Corsi block-tapping test, created by Philip Corsi in the early 1970s, asks people to tap blocks in the same order a tester did. The electronic toy Simon, released in 1978, turned the same idea into a game with lights and sounds.
+
+Want to compare your memory in another way? The [number memory test](/number-memory-test/) asks you to hold a growing string of digits instead of tile positions. Speed matters too, so check how quickly you respond with the [reaction time test](/reaction-time-test/). For memory with colors, try to [paint flags from memory](/draw-flags-from-memory/).

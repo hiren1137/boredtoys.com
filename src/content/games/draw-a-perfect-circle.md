@@ -81,3 +81,5 @@ Your best score is saved in your browser, so you can come back and try to beat i
 People have tried to draw perfect circles by hand for a very long time. There is an old story about the painter Giotto, who was asked to prove his skill. Instead of sending a painting, he simply drew a red circle freehand, and it was said to be so round that it impressed everyone who saw it.
 
 A circle is the only shape where every point on the edge sits exactly the same distance from the center. That is why the game cares so much about the dot. Wheels, plates and coins are round for the same reason: an even edge rolls and stacks smoothly, while a wobbly one would bump along.
+
+Your drawing hand has more games to play. Connect the stars in the [constellation drawing game](/draw-a-constellation/), or paint famous [flags from memory](/draw-flags-from-memory/). If you want to test quick, accurate pointing instead of slow, steady lines, the [aim trainer](/aim-trainer/) is a good match.

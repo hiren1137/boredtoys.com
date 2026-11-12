@@ -79,3 +79,5 @@ Real glass is made mostly from sand. The sand is mainly silica, and when it is h
 When real lava flows into the sea in Hawaii, it cools and hardens into new rock, and the meeting of hot lava and seawater sends up big white steam plumes (source: USGS Hawaiian Volcano Observatory). The lava and water reaction in the box copies that idea.
 
 Salt lowers the temperature at which water freezes, which is why towns spread it on icy roads in winter (source: American Chemical Society). In the box, a sprinkle of salt slowly melts ice back into water.
+
+Want more ways to mix things up? In the [element crafting game](/element-crafting-game/) you combine water, fire, earth and wind to discover hundreds of new things. For a calm sound version of a sandbox, layer rain and fire in the [ambient sound mixer](/ambient-sound-mixer/). Curious how big real grains and creatures are? The [Size of Life](/size-of-life/) shows them side by side.

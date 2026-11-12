@@ -78,3 +78,5 @@ Prices running away like this has really happened, and it hurt real people. The 
 - **Hungary, 1946:** the worst case on their list. In July 1946, prices doubled about every 15 hours.
 
 In January 2009, the Reserve Bank of Zimbabwe announced a 100 trillion dollar note, according to Reuters (2009). That note is why the biggest bill in Pretendia stops at P$100 trillion.
+
+Want to handle real-world sized money instead? Try to [spend Bill Gates' money](/spend-bill-gates-money/) and see how far a real fortune goes. If you would rather earn it, open a junk stall in the [haggling game](/haggling-game/). And if you just like watching numbers climb, the [stimulation clicker](/stimulation-clicker/) is pure number-go-up fun.

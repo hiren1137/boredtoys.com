@@ -85,3 +85,5 @@ Your keyboard matters. A big desk keyboard, a laptop and a phone screen all feel
 Early typewriters were slow and clunky. Their keys could jam if two neighbors were hit too fast, and some people think that helped shape the odd order of letters we still use today. Fast typing contests have been around for more than a hundred years, long before computers.
 
 Today you type all day without thinking about it: messages, search boxes, homework and games. A few minutes of practice here can save you hours over a year.
+
+Fast fingers help in other tests too. Check how many times you can click in one second with the [CPS test](/cps-test/), or how quickly you react to a color change with the [reaction speed test](/reaction-time-test/). Typing also needs a good memory for what comes next, which the [number memory test](/number-memory-test/) puts to work.

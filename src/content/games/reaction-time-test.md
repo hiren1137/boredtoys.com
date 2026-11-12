@@ -82,3 +82,5 @@ Here is a rough way to read your average:
 Reaction time experiments go back to the 1800s. Dutch scientist Franciscus Donders used them to try to measure how long thinking itself takes, and Francis Galton timed thousands of visitors at his London lab in the 1880s.
 
 People usually react a little faster to a sound than to a light, which is one reason sprint races start with a starting gun or beep. Reaction times also tend to slow down gradually as people get older, while practice, good sleep and focus can help you squeeze out a few more milliseconds.
+
+Reacting is only the first step. The [aim trainer](/aim-trainer/) adds moving to a target, and the [clicks per second test](/cps-test/) shows how fast you can tap again and again. If you want to train your brain instead of your fingers, the [sequence memory test](/sequence-memory-test/) is a good next challenge.

@@ -84,3 +84,5 @@ There is no wrong way to play, but these make it more fun:
 Silly debates are fun because they are safe. Nobody gets hurt if you think soup from a mug counts as a drink. You still get to defend your choice like it matters.
 
 The questions here were written for this page, from food fights to strange what-ifs. Every summary is about you and your own picks, never about strangers, so there are no fake crowd numbers telling you what everyone else thinks.
+
+Ready for harder choices? The [trolley problem game](/trolley-problem-game/) turns this-or-that into silly moral puzzles. To think about how you really spend your time, see [where your day goes](/where-does-the-day-go/). And to find out which famous faces were around when you arrived, check [who was alive when you were born](/who-was-alive-when-i-was-born/).

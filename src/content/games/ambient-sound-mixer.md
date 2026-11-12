@@ -82,3 +82,5 @@ None of these sounds are recordings. Your browser builds them from scratch while
 Filters then shape that noise. A filter that keeps the high part and adds thousands of tiny clicks becomes rain. Slow swells that rise and fall every few seconds become waves. Sharp little bursts at random times become a campfire. Birds are short beeps that slide down in pitch, and crickets are fast pulses of one high note.
 
 Because the sounds are made fresh each moment, they never loop in an obvious way. The rain you hear right now has never fallen in exactly that pattern before, and it never will again.
+
+If you like watching things change on their own, the [falling sand game](/falling-sand-game/) does for pixels what this mixer does for sound. And if you want the total opposite of calm, the [stimulation clicker](/stimulation-clicker/) piles on noise until you buy your peace back. A quiet mix also pairs well with [Where Does the Day Go](/where-does-the-day-go/), a gentle look at how you spend your hours.

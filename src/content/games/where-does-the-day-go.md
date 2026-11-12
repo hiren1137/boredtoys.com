@@ -70,3 +70,5 @@ The numbers are from the American Time Use Survey, 2023 annual averages, publish
 Sleeping was 9.07 hours. Leisure and sports was 5.15. Working was 3.26. Household activities were 1.92. Eating and drinking was 1.20. Other personal care, the rest of the personal-care group after sleep, was 0.77. Everything else is the remaining 2.63 hours so the rows add to 24.
 
 The survey also notes that on an average weekday they worked, full-time workers spent 8.5 hours working. That is a different question from the one this game asks.
+
+Want more numbers about your own life? [Life Stats](/life-stats/) counts your heartbeats, breaths and trips around the Sun. [Who Was Alive When I Was Born](/who-was-alive-when-i-was-born/) shows the famous people who were already around when you arrived. And if you need a quick break from all that thinking, pick sides in [This or That](/this-or-that-game/).

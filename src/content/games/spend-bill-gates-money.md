@@ -80,3 +80,5 @@ Your biggest shopping spree is saved as your personal best.
 The starting amount of $122.3 billion is Bill Gates' estimated net worth on November 10, 2026, taken from the Forbes Real-Time Billionaires list. Forbes updates its estimate as share prices change, so the real number goes up and down a little every day.
 
 Gates co-founded Microsoft in 1975, which is where his fortune began. These days he spends much of his time on the Gates Foundation, and he has said he plans to give most of his money away. Forbes reports that he has already given more than $60 billion to the foundation. So in real life, a lot of this money is headed to charity instead of hot tubs and monster trucks.
+
+Still have money burning a hole in your pocket? Try to [spend Elon Musk's money](/spend-elon-musk-money/), which is a much bigger pile. To see what happens when a country prints too much cash, play the [money printer game](/money-printer-game/). And to check how well you know real prices, guess what famous items sold for in the [auction price game](/guess-the-price-game/).

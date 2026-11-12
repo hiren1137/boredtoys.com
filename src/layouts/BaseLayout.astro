@@ -45,16 +45,22 @@ const socialX = SITE.socials.x;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     {
       ANALYTICS.googleAnalyticsId && (
-        <Fragment>
-          <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${ANALYTICS.googleAnalyticsId}`} />
-          <script is:inline define:vars={{ gaId: ANALYTICS.googleAnalyticsId }}>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            window.gtag = gtag;
-            gtag('js', new Date());
-            gtag('config', gaId);
-          </script>
-        </Fragment>
+        <script is:inline define:vars={{ gaId: ANALYTICS.googleAnalyticsId }}>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          window.gtag = gtag;
+          gtag('js', new Date());
+          gtag('config', gaId);
+          // Load gtag.js once the page is idle so it doesn't compete with first paint and input; queued calls still send.
+          addEventListener('load', function () {
+            (window.requestIdleCallback || setTimeout)(function () {
+              var s = document.createElement('script');
+              s.async = true;
+              s.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
+              document.head.appendChild(s);
+            });
+          });
+        </script>
       )
     }
     <title>{pageTitle}</title>

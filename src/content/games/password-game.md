@@ -75,3 +75,5 @@ Your fastest time is saved in your browser as your personal best.
 Real passwords work best when they are long and hard to guess, not when they include planets and fruit. Many security experts suggest using a password manager and a different password for every site.
 
 The idea of a password is very old. Guards in ancient armies used secret words to tell friend from stranger at night. Those words were short and easy to say out loud. Yours, after this game, will be neither of those things.
+
+More silly security awaits in the [I'm not a robot game](/im-not-a-robot-game/), where proving you are human gets stranger every level. If you like following clues to one right answer, solve a few cases in the [detective game](/detective-game/). And to see how real sign-up pages trick you, try the [dark patterns game](/dark-patterns-game/).

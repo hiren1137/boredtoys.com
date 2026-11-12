@@ -80,3 +80,5 @@ Psychologists have tested memory like this for over a hundred years with a task 
 Short-term memory is like a tiny whiteboard. It holds a few things for a few seconds, and new things quickly wipe out the old ones. That is why you can forget a code in the time it takes to walk to the next room.
 
 Memory athletes who recite hundreds of digits are not born with a bigger whiteboard. They practice systems that turn digits into pictures, places and stories, then store those in long-term memory instead. With a little practice and some chunking, you can stretch your own score further than you might expect.
+
+Your memory has other sides to test. The [sequence memory test](/sequence-memory-test/) checks how well you remember the order of flashing tiles. [Drawing flags from memory](/draw-flags-from-memory/) tests your memory for colors and shapes. And if you type the digits fast, see how your fingers do on the [typing speed test](/typing-speed-test/).

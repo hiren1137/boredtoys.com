@@ -84,3 +84,5 @@ The card also shows your accuracy. If it is below about 90%, you are rushing a b
 Aiming is a mix of three skills: spotting where the target is, planning the move, and stopping your hand in the right place. An aim trainer lets you practice all three in a short, simple loop with a clear number at the end.
 
 That is why players of fast shooting games like to warm up with drills like this before a match. Even if you never play those games, it is a fun way to see how sharp you feel today. Try a round in the morning and another at night and see if the number changes.
+
+Want to split the skill into parts? The [reaction time test](/reaction-time-test/) checks how fast you notice a change, and the [CPS test](/cps-test/) checks how fast your finger can click. For slow, careful hand control, try to [draw a perfect circle](/draw-a-perfect-circle/) in one smooth stroke.

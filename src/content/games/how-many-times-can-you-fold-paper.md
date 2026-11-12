@@ -83,3 +83,5 @@ To plan it, she worked out a formula for folding in one direction. It says the s
 The game uses her formula to show how long a strip of printer paper you would need for each fold. By fold 20 it is already longer than the distance around the Earth, which is why the folds after 12 only happen on screen.
 
 Sizes in the game come from common published figures, such as 8,849 m for Mount Everest from the 2020 survey by China and Nepal, and 384,400 km for the Moon's average distance from NASA.
+
+Big numbers like these are fun to compare. The [size of life game](/size-of-life/) does the same trick with living things, from a virus to a giant fungus. [Life Stats](/life-stats/) turns your own age into heartbeats and miles traveled. And the [element crafting game](/element-crafting-game/) shows how a few simple pieces can grow into hundreds of things.

@@ -74,3 +74,5 @@ Your best run is saved on your device. More finished sites beats fewer, then few
 The term "dark patterns" was coined by UX designer Harry Brignull in 2010. He used it for designs that are made on purpose to trick people into doing things they did not mean to do. Names like "roach motel" and "sneak into basket" come from the list of types he described.
 
 You see these tricks in real life all the time: cookie banners, sign-up forms, shopping carts and subscription pages. The best defense is knowing their names. Once you have spotted a roach motel or a confirmshaming button, they get much easier to see the next time.
+
+Annoying websites are a theme here. The [I'm Not a Robot game](/im-not-a-robot-game/) pokes fun at checkboxes and picture puzzles, and the [password game](/password-game/) is a sign-up form with rules that get sillier every step. Shops trick you with prices too, so test your sense of value in the [guess the price game](/guess-the-price-game/).

@@ -81,3 +81,5 @@ Flags are not all the same shape. Switzerland and Vatican City use square nation
 The red and white flag of Denmark is often called the oldest national flag still in use, and Guinness World Records lists it as the oldest continuously used national flag.
 
 Japan's flag is known as the Hinomaru, which means "circle of the sun." Its simple red disc on white makes it one of the easiest flags to draw, but getting the circle perfectly centered is harder than it looks.
+
+If you enjoy drawing what you remember, you can also [draw a constellation](/draw-a-constellation/) by linking stars into famous shapes. To train your memory without a paintbrush, try the [number memory test](/number-memory-test/) or the [sequence memory test](/sequence-memory-test/), which both get harder one step at a time.

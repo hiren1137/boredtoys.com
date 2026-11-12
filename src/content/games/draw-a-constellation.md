@@ -70,3 +70,5 @@ There is no single official drawing in the sky. People agreed on these stick fig
 The International Astronomical Union lists 88 constellations. This game uses a dozen of the easy ones: Orion, the Big Dipper (part of Ursa Major), Cassiopeia, Cygnus, Leo, Scorpius, Lyra, Crux, the Great Square of Pegasus, Aquila, Gemini and Taurus.
 
 The maps are simplified on purpose. Real stars have exact positions and brightness from catalogs. Here the goal is the figure you would sketch from memory, not a chart you could navigate by. Bigger dots only mean "this star stands out in the stick figure," not a measured magnitude.
+
+Like drawing from memory? You can also [draw flags from memory](/draw-flags-from-memory/) and see how many stripes you get right. To test how steady your hand is, try to [draw a perfect circle](/draw-a-perfect-circle/). And if space makes you think about scale, the [size of life](/size-of-life/) zooms from tiny viruses to giant trees.

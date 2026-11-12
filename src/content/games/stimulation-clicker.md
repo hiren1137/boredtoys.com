@@ -76,3 +76,5 @@ The result screen also shows the total stimulation you earned and how many times
 Clicker games, also called incremental games, are built around one simple loop. You do a small action, a number goes up, and you spend that number to make it go up faster. Each new upgrade comes along just as the last one starts to feel slow.
 
 This version adds a twist. Every upgrade makes the screen busier, so the louder it gets, the closer you are to the quiet ending. It is a silly way to notice how much stuff can compete for your attention at once, and how nice it feels when it all stops.
+
+When you need that quiet for real, build a calm mix of rain and campfire in the [ambient sound mixer](/ambient-sound-mixer/). If clicking is your favorite part, measure your raw speed with the [CPS test](/cps-test/). And for another screen that tries hard to annoy you, try the [I'm Not a Robot game](/im-not-a-robot-game/).

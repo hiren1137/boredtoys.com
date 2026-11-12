@@ -78,3 +78,5 @@ The result screen also shows what share of every customer's secret top price you
 Haggling is a little game of guessing what the other person is thinking. You want a high price, they want a low one, and somewhere in the middle there is a number that makes you both happy enough. Every counter gives away a clue about how badly you want to sell.
 
 In this game every customer is made up, every item is ridiculous, and nobody gets hurt if you overcharge for a haunted rubber duck. It is a safe place to practice being brave about asking for more.
+
+Want to sharpen your sense of value first? The [guess the price game](/guess-the-price-game/) asks what famous objects really sold for at auction. In the [money printer game](/money-printer-game/) you see what happens when cash stops being worth much. And to spot the sneaky tricks real shops use, play the [dark patterns game](/dark-patterns-game/).
