@@ -1,22 +1,22 @@
 {
   "spend-bill-gates-money": {
     "forbesUri": "bill-gates",
-    "netWorth": 122300000000,
-    "asOf": "2026-11-10"
+    "netWorth": 121800000000,
+    "asOf": "2026-11-17"
   },
   "spend-elon-musk-money": {
     "forbesUri": "elon-musk",
-    "netWorth": 897500000000,
-    "asOf": "2026-11-10"
+    "netWorth": 874100000000,
+    "asOf": "2026-11-17"
   },
   "spend-jeff-bezos-money": {
     "forbesUri": "jeff-bezos",
-    "netWorth": 384800000000,
-    "asOf": "2026-11-10"
+    "netWorth": 376700000000,
+    "asOf": "2026-11-17"
   },
   "spend-mark-zuckerberg-money": {
     "forbesUri": "mark-zuckerberg",
-    "netWorth": 216000000000,
-    "asOf": "2026-11-12"
+    "netWorth": 215200000000,
+    "asOf": "2026-11-17"
   }
 }
