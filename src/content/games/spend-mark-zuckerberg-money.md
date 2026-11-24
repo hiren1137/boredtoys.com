@@ -3,7 +3,7 @@ slug: spend-mark-zuckerberg-money
 title: "Spend Mark Zuckerberg's Money"
 h1: "Spend Mark Zuckerberg's Money"
 metaTitle: "Spend Mark Zuckerberg's Money: VR, Yachts & More"
-metaDescription: "Spend Mark Zuckerberg's money on VR headsets, superyachts and whole app startups. You start with $215.2 billion. Can you get the counter down to zero?"
+metaDescription: "Spend Mark Zuckerberg's money on VR headsets, superyachts and whole app startups. You start with $205.5 billion. Can you get the counter down to zero?"
 primaryKeyword: "spend mark zuckerberg money"
 secondaryKeywords:
   - "spend mark zuckerberg's money game"
@@ -17,12 +17,12 @@ tags:
   - "billionaire"
   - "shopping"
   - "tech"
-shortDescription: "Blow $215.2 billion on VR gear, app startups, superyachts and a cattle ranch."
+shortDescription: "Blow $205.5 billion on VR gear, app startups, superyachts and a cattle ranch."
 intro: "Spend Mark Zuckerberg's money on gray T-shirts, VR headsets, app startups and a superyacht, and see how long it takes to hit zero."
 thumbAlt: "A cartoon VR headset and a gray hoodie next to a superyacht and a green money counter"
 faqs:
   - question: "How much money do you start with?"
-    answer: "You start with $215.2 billion. That is Mark Zuckerberg's estimated net worth on November 17, 2026, according to Forbes Real-Time Billionaires. We refresh the figure once a week, so it may be a little different next time you visit."
+    answer: "You start with $205.5 billion. That is Mark Zuckerberg's estimated net worth on November 24, 2026, according to Forbes Real-Time Billionaires. We refresh the figure once a week, so it may be a little different next time you visit."
   - question: "Can you really spend every last dollar?"
     answer: "Yes. Big buys like the messaging app startup, an aircraft carrier and a stack of data centers get you most of the way. Then a planet-wide pizza order takes a huge bite, and small things like donuts and socks let you land on exactly $0."
   - question: "Are the prices real?"
@@ -38,7 +38,7 @@ related:
   - money-printer-game
 featured: false
 publishedAt: 2026-11-12
-updatedAt: 2026-11-17
+updatedAt: 2026-11-24
 shareText: "I spent {score} of Mark Zuckerberg's money. Bet you can't outspend me:"
 stageHeight: 1200
 stageHeightMobile: 1200
@@ -46,7 +46,7 @@ stageHeightMobile: 1200
 
 ## How To Play Spend Mark Zuckerberg's Money
 
-You have just been handed $215.2 billion. Your only job is to get rid of it. The green counter at the top of the game shows how much is left, and it stays pinned to the screen while you scroll through the shop.
+You have just been handed $205.5 billion. Your only job is to get rid of it. The green counter at the top of the game shows how much is left, and it stays pinned to the screen while you scroll through the shop.
 
 Every card has a price, a **Buy** button, a **Sell** button and a small number box. Tap Buy to add one. Tap Sell to return one. Or type a number to grab a whole stack, like 40 VR headsets for the office. If you ask for more than you can afford, the game gives you the most you can pay for and wiggles the card so you notice.
 
@@ -71,7 +71,7 @@ Your biggest spree is saved on this device as your personal best.
 
 ## Where the Number and Prices Come From
 
-The starting amount is Mark Zuckerberg's estimated net worth from the Forbes Real-Time Billionaires list on November 17, 2026. Most of it is tied up in shares of the social media company he started in his college dorm in 2004, so the figure moves with the stock market. We update it once a week.
+The starting amount is Mark Zuckerberg's estimated net worth from the Forbes Real-Time Billionaires list on November 24, 2026. Most of it is tied up in shares of the social media company he started in his college dorm in 2004, so the figure moves with the stock market. We update it once a week.
 
 Some shop items are based on real deals. His company bought a photo-sharing app for about $1 billion in 2012, then a VR headset maker for about $2 billion and a messaging app for about $19 billion in 2014. In 2016 he and his wife pledged $3 billion toward science aimed at curing diseases.
 
